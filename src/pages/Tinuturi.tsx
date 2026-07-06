@@ -1,7 +1,6 @@
 import { useMemo } from 'react'
 import { Link, useSearchParams } from 'react-router-dom'
 import LeafletMap from '../components/LeafletMap'
-import MapViewer from '../components/MapViewer'
 import SpriteImage from '../components/SpriteImage'
 import {
   AREA_DESCRIPTIONS,
@@ -16,15 +15,12 @@ import { useLanguage } from '../lib/i18n'
 import { pokedex } from '../lib/pokedex'
 import { useShiny } from '../lib/shiny'
 import { usePageTitle } from '../lib/usePageTitle'
-import ancientMap from '../assets/maps/ancient-retreat.png'
-import jubilifeMap from '../assets/maps/jubilife-village.png'
 
 interface MapView {
   key: string
   label: string
   img: string
-  /** Prezent doar la ținuturile cu Pokémon sălbatici (nu la așezări). */
-  area?: AreaId
+  area: AreaId
 }
 
 // Numele zonelor la Serebii (harta tiled, ca în PLA-Live-Map).
@@ -41,16 +37,12 @@ export default function Tinuturi() {
   const { shiny } = useShiny()
   usePageTitle(`${t('nav.tinuturi')}${t('site.pageTitleSuffix')}`)
 
-  const views: MapView[] = [
-    ...AREA_ORDER.map((id) => ({
-      key: id,
-      label: AREA_NAMES[lang][id],
-      img: AREA_MAP_IMAGE[id],
-      area: id,
-    })),
-    { key: 'jubilife-village', label: 'Jubilife Village', img: jubilifeMap },
-    { key: 'ancient-retreat', label: 'Ancient Retreat', img: ancientMap },
-  ]
+  const views: MapView[] = AREA_ORDER.map((id) => ({
+    key: id,
+    label: AREA_NAMES[lang][id],
+    img: AREA_MAP_IMAGE[id],
+    area: id,
+  }))
 
   const [params, setParams] = useSearchParams()
   const zona = params.get('zona')
@@ -116,18 +108,13 @@ export default function Tinuturi() {
         })}
       </div>
 
-      {/* Harta interactivă (pan + zoom). Ținuturile folosesc tile-urile Serebii
-          (ca PLA-Live-Map); așezările folosesc imaginea statică. */}
+      {/* Harta interactivă (tile-uri Serebii prin Leaflet, ca PLA-Live-Map). */}
       <div className="mt-4">
-        {current.area ? (
-          <LeafletMap
-            key={current.area}
-            area={SEREBII[current.area]}
-            label={current.label}
-          />
-        ) : (
-          <MapViewer src={current.img} alt={current.label} />
-        )}
+        <LeafletMap
+          key={current.area}
+          area={SEREBII[current.area]}
+          label={current.label}
+        />
         <p className="mt-2 text-xs text-muted">{t('map.dragHint')}</p>
       </div>
 
