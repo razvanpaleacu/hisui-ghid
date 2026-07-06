@@ -1,5 +1,6 @@
 import { useMemo } from 'react'
 import { Link, useSearchParams } from 'react-router-dom'
+import LeafletMap from '../components/LeafletMap'
 import MapViewer from '../components/MapViewer'
 import SpriteImage from '../components/SpriteImage'
 import {
@@ -24,6 +25,15 @@ interface MapView {
   img: string
   /** Prezent doar la ținuturile cu Pokémon sălbatici (nu la așezări). */
   area?: AreaId
+}
+
+// Numele zonelor la Serebii (harta tiled, ca în PLA-Live-Map).
+const SEREBII: Record<AreaId, string> = {
+  'obsidian-fieldlands': 'obsidianfieldlands',
+  'crimson-mirelands': 'crimsonmirelands',
+  'cobalt-coastlands': 'cobaltcoastlands',
+  'coronet-highlands': 'coronethighlands',
+  'alabaster-icelands': 'alabastericelands',
 }
 
 export default function Tinuturi() {
@@ -106,12 +116,19 @@ export default function Tinuturi() {
         })}
       </div>
 
-      {/* Harta interactivă (pan + zoom). */}
+      {/* Harta interactivă (pan + zoom). Ținuturile folosesc tile-urile Serebii
+          (ca PLA-Live-Map); așezările folosesc imaginea statică. */}
       <div className="mt-4">
-        <MapViewer src={current.img} alt={current.label} />
-        <p className="mt-2 text-xs text-muted">
-          {t('map.dragHint')}
-        </p>
+        {current.area ? (
+          <LeafletMap
+            key={current.area}
+            area={SEREBII[current.area]}
+            label={current.label}
+          />
+        ) : (
+          <MapViewer src={current.img} alt={current.label} />
+        )}
+        <p className="mt-2 text-xs text-muted">{t('map.dragHint')}</p>
       </div>
 
       {/* Detaliile ținutului selectat. */}
