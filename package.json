@@ -7,7 +7,8 @@
     "dev": "vite",
     "build": "tsc --noEmit -p tsconfig.json && vite build",
     "preview": "vite preview",
-    "data": "node scripts/build-pokedex.mjs"
+    "data": "node scripts/build-pokedex.mjs",
+    "deploy": "npm run build && gh-pages -d dist"
   },
   "dependencies": {
     "@fontsource-variable/inter": "^5.1.0",
@@ -20,6 +21,7 @@
     "@types/react-dom": "^18.3.0",
     "@vitejs/plugin-react": "^4.3.2",
     "autoprefixer": "^10.4.20",
+    "gh-pages": "^6.3.0",
     "postcss": "^8.4.47",
     "tailwindcss": "^3.4.13",
     "typescript": "~5.6.2",

@@ -56,10 +56,13 @@ npm run preview    # servește build-ul local
 `vite.config.ts` folosește `base: './'` (căi relative), iar rutarea e pe hash,
 deci build-ul funcționează din orice subdirector, fără altă configurare:
 
-1. `npm run build`
-2. Publică directorul `dist/` pe branch-ul `gh-pages` (de ex. cu `npx gh-pages -d dist`)
-   sau printr-un workflow GitHub Actions care face upload la `dist/`.
-3. În Settings → Pages alege sursa corespunzătoare.
+```bash
+npm run deploy   # build + publicare pe branch-ul gh-pages
+```
+
+Site-ul apare la `https://<utilizator>.github.io/<nume-repo>/`.
+(La prima publicare, sursa Pages trebuie setată pe branch-ul `gh-pages` —
+Settings → Pages, sau `gh api -X POST repos/<utilizator>/<repo>/pages -f "source[branch]=gh-pages"`.)
 
 Dacă preferi `base` explicit, setează în `vite.config.ts` `base: '/nume-repo/'`.
 
