@@ -1,4 +1,9 @@
 import type { Lang } from '../lib/i18n'
+import alabasterMap from '../assets/maps/alabaster-icelands.png'
+import cobaltMap from '../assets/maps/cobalt-coastlands.png'
+import coronetMap from '../assets/maps/coronet-highlands.png'
+import crimsonMap from '../assets/maps/crimson-mirelands.png'
+import obsidianMap from '../assets/maps/obsidian-fieldlands.png'
 
 /** Cele cinci ținuturi deschise ale regiunii Hisui. */
 export type AreaId =
@@ -33,6 +38,18 @@ export const AREA_NAMES: Record<Lang, Record<AreaId, string>> = {
     'coronet-highlands': 'Coronet Highlands',
     'alabaster-icelands': 'Alabaster Icelands',
   },
+}
+
+/**
+ * Imaginile oficiale ale hărților fiecărui ținut (din joc), găzduite local
+ * (proiect privat, personal). Sursă: Bulbapedia.
+ */
+export const AREA_MAP_IMAGE: Record<AreaId, string> = {
+  'obsidian-fieldlands': obsidianMap,
+  'crimson-mirelands': crimsonMap,
+  'cobalt-coastlands': cobaltMap,
+  'coronet-highlands': coronetMap,
+  'alabaster-icelands': alabasterMap,
 }
 
 /** Etichete scurte pentru hartă (numele complete nu încap în forme). */

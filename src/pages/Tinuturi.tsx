@@ -1,8 +1,9 @@
-import { useMemo, type ReactNode } from 'react'
+import { useMemo } from 'react'
 import { Link, useSearchParams } from 'react-router-dom'
 import SpriteImage from '../components/SpriteImage'
 import {
   AREA_DESCRIPTIONS,
+  AREA_MAP_IMAGE,
   AREA_NAMES,
   AREA_ORDER,
   type AreaId,
@@ -13,56 +14,6 @@ import { useLanguage } from '../lib/i18n'
 import { pokedex } from '../lib/pokedex'
 import { useShiny } from '../lib/shiny'
 import { usePageTitle } from '../lib/usePageTitle'
-
-// Miniaturi tematice, originale — evocă terenul fiecărui ținut (nu harta oficială).
-function Thumb({ id }: { id: AreaId }): ReactNode {
-  switch (id) {
-    case 'alabaster-icelands':
-      return (
-        <>
-          <rect width="100" height="60" fill="#cfe6f2" />
-          <path d="M0 60 L22 30 L38 48 L58 22 L74 46 L100 26 L100 60 Z" fill="#eef7fb" />
-          <path d="M0 60 L22 30 L38 48 L58 22 L74 46 L100 26" fill="none" stroke="#a9cfe2" strokeWidth="1.5" />
-        </>
-      )
-    case 'obsidian-fieldlands':
-      return (
-        <>
-          <rect width="100" height="60" fill="#bfe3a6" />
-          <path d="M0 60 C25 44 40 52 60 42 C78 34 90 40 100 34 L100 60 Z" fill="#a4d386" />
-          <path d="M12 60 C26 46 34 52 50 44 C66 36 78 42 100 38" fill="none" stroke="#7fbf9c" strokeWidth="3" opacity="0.7" />
-          <circle cx="80" cy="16" r="8" fill="#f4e08a" />
-        </>
-      )
-    case 'coronet-highlands':
-      return (
-        <>
-          <rect width="100" height="60" fill="#d8cdbb" />
-          <path d="M0 60 L30 18 L52 60 Z" fill="#b8ab93" />
-          <path d="M40 60 L70 8 L100 60 Z" fill="#9c8f78" />
-          <path d="M64 20 L70 8 L77 22 Z" fill="#f0efe9" />
-        </>
-      )
-    case 'crimson-mirelands':
-      return (
-        <>
-          <rect width="100" height="60" fill="#d7b48a" />
-          <path d="M0 60 C20 50 30 56 48 50 C68 44 82 52 100 46 L100 60 Z" fill="#c59a6b" />
-          <path d="M0 40 C24 36 40 44 60 40 C80 36 90 42 100 40" fill="none" stroke="#8f5b47" strokeWidth="2" opacity="0.6" />
-          <path d="M0 50 C24 46 40 54 60 50 C80 46 90 52 100 50" fill="none" stroke="#8f5b47" strokeWidth="2" opacity="0.5" />
-        </>
-      )
-    case 'cobalt-coastlands':
-      return (
-        <>
-          <rect width="100" height="60" fill="#8fccd6" />
-          <path d="M0 22 C22 30 34 18 56 26 C76 32 88 22 100 28 L100 0 L0 0 Z" fill="#d9d2ba" />
-          <path d="M0 40 C18 46 30 38 48 44 C66 50 80 42 100 46" fill="none" stroke="#eaf6f8" strokeWidth="2.5" opacity="0.8" />
-          <path d="M0 52 C18 58 30 50 48 56 C66 60 80 54 100 58" fill="none" stroke="#eaf6f8" strokeWidth="2.5" opacity="0.6" />
-        </>
-      )
-  }
-}
 
 // Poziții procentuale pe desktop (hub-and-spoke). Pe mobil se ignoră (grilă).
 const LAYOUT: Record<AreaId | 'center', { x: number; y: number }> = {
@@ -124,9 +75,14 @@ export default function Tinuturi() {
             : 'border-line hover:border-accent/40'
         }`}
       >
-        <svg viewBox="0 0 100 60" className="block h-16 w-full" aria-hidden="true">
-          <Thumb id={id} />
-        </svg>
+        <div className="h-20 w-full overflow-hidden bg-[var(--map-water)]">
+          <img
+            src={AREA_MAP_IMAGE[id]}
+            alt=""
+            loading="lazy"
+            className="h-full w-full object-cover transition-transform duration-300 group-hover:scale-105"
+          />
+        </div>
         <div className="px-3 py-2">
           <p className="truncate text-xs font-semibold group-hover:text-accent">
             {AREA_NAMES[lang][id]}
@@ -203,6 +159,12 @@ export default function Tinuturi() {
             <p className="mt-1 max-w-prose text-sm leading-relaxed text-muted">
               {AREA_DESCRIPTIONS[lang][selected]}
             </p>
+            <img
+              src={AREA_MAP_IMAGE[selected]}
+              alt={AREA_NAMES[lang][selected]}
+              loading="lazy"
+              className="mt-4 w-full max-w-lg rounded-xl border border-line"
+            />
             <p className="mt-4 text-xs font-semibold uppercase tracking-wide text-muted">
               {t('map.pokemonHere')} ·{' '}
               {formatPokemonCount(pokemonHere.length, lang)}

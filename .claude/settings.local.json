@@ -58,7 +58,16 @@
       "Bash(curl -s \"https://pokeapi.co/api/v2/pokemon/cherrim/\")",
       "Bash(curl -s \"https://pokeapi.co/api/v2/pokemon-form/cherrim-sunshine/\")",
       "Bash(git commit -q -m 'Forme complete \\(regionale Alola/Galar/Paldea, Rotom, Cherrim…\\) + fix footer & Gliscor *)",
-      "Bash(git commit *)"
+      "Bash(git commit *)",
+      "Bash(curl -s \"https://www.serebii.net/pokearth/hisui/obsidianfieldlands.shtml\")",
+      "Bash(curl -s -A \"Mozilla/5.0\" \"https://bulbapedia.bulbagarden.net/wiki/Obsidian_Fieldlands\")",
+      "Bash(curl -s -A \"Mozilla/5.0\" \"https://bulbapedia.bulbagarden.net/wiki/Hisui\")",
+      "Bash(curl -s -o /dev/null -w '%{http_code}' https://archives.bulbagarden.net/media/upload/thumb/4/4d/Hisui_Obsidian_Fieldlands_Map.png/800px-Hisui_Obsidian_Fieldlands_Map.png)",
+      "Bash(curl -s -o /dev/null -w '%{http_code}' -H 'Referer: http://localhost:5173/' https://archives.bulbagarden.net/media/upload/thumb/4/4d/Hisui_Obsidian_Fieldlands_Map.png/800px-Hisui_Obsidian_Fieldlands_Map.png)",
+      "Bash(curl -s -o /dev/null -w '%{http_code}' -H 'Referer: https://razvanpaleacu.github.io/' https://archives.bulbagarden.net/media/upload/thumb/4/4d/Hisui_Obsidian_Fieldlands_Map.png/800px-Hisui_Obsidian_Fieldlands_Map.png)",
+      "Bash(curl -s -o /dev/null -w '%{http_code}' -A Mozilla/5.0 -H 'Referer: http://localhost:5173/' https://archives.bulbagarden.net/media/upload/thumb/4/4d/Hisui_Obsidian_Fieldlands_Map.png/800px-Hisui_Obsidian_Fieldlands_Map.png)",
+      "Bash(curl -s -I https://archives.bulbagarden.net/media/upload/thumb/4/4d/Hisui_Obsidian_Fieldlands_Map.png/800px-Hisui_Obsidian_Fieldlands_Map.png)",
+      "Bash(curl -s -I \"https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/25.png\")"
     ]
   }
 }
