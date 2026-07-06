@@ -1,7 +1,8 @@
 import { useEffect, useLayoutEffect, useMemo, useState } from 'react'
 import PokemonCard from '../components/PokemonCard'
-import { AREA_ORDER } from '../data/areas'
+import { AREA_NAMES, AREA_ORDER } from '../data/areas'
 import { LOCATIONS } from '../data/locations'
+import { PLA_INFO } from '../data/pladata'
 import { STAT_LABELS, STAT_ORDER, formatPokemonCount } from '../lib/format'
 import { useLanguage } from '../lib/i18n'
 import { pokedex } from '../lib/pokedex'
@@ -43,6 +44,51 @@ const view: PokedexView = {
 
 function statTotal(p: PokedexEntry): number {
   return STAT_ORDER.reduce((sum, k) => sum + p.stats[k], 0)
+}
+
+// Index de căutare: pentru fiecare Pokémon, un text cu tot ce se poate căuta —
+// nume (RO/EN), număr, tipuri, ținuturi, forme, plus etichete (shiny/distorsiuni).
+const SEARCH_BLOBS = new Map<string, string>(
+  pokedex.map((p) => {
+    const parts: string[] = [
+      p.name,
+      p.displayName,
+      String(p.dexNumber),
+      `#${String(p.dexNumber).padStart(3, '0')}`,
+      String(p.nationalDex),
+      ...p.types.flatMap((t) => [TYPE_LABELS.ro[t], TYPE_LABELS.en[t]]),
+      ...(LOCATIONS[p.name] ?? []).flatMap((a) => [
+        AREA_NAMES.ro[a],
+        AREA_NAMES.en[a],
+      ]),
+      ...(p.forms ?? []).flatMap((f) => [f.label.ro, f.label.en]),
+    ]
+    if (p.isHisuianForm) parts.push('hisui', 'hisuian')
+    const info = PLA_INFO[p.name]
+    if (info?.distortionOnly)
+      parts.push('distortion', 'distortions', 'distorsiune', 'distorsiuni')
+    if (info?.behavior) parts.push(info.behavior)
+    return [p.name, parts.join(' ').toLowerCase()]
+  }),
+)
+
+/** Un Pokémon corespunde dacă TOȚI termenii căutării se regăsesc în index. */
+function matchesSearch(p: PokedexEntry, query: string): boolean {
+  const q = query.trim().toLowerCase()
+  if (!q) return true
+  const blob = SEARCH_BLOBS.get(p.name) ?? ''
+  return q.split(/\s+/).every((term) => {
+    const num = term.replace(/^#/, '')
+    if (/^\d+$/.test(num)) {
+      return (
+        p.dexNumber === Number(num) ||
+        p.nationalDex === Number(num) ||
+        String(p.dexNumber).startsWith(num) ||
+        blob.includes(term)
+      )
+    }
+    return blob.includes(term)
+  })
 }
 
 /** Cheia de sortare după locație: indicele primului ținut (în ordinea jocului). */
@@ -90,7 +136,6 @@ export default function Pokedex() {
   }, [])
 
   const filtered = useMemo(() => {
-    const q = query.trim().toLowerCase().replace(/^#/, '')
     return pokedex.filter((p) => {
       if (
         selectedTypes.length > 0 &&
@@ -98,11 +143,7 @@ export default function Pokedex() {
       ) {
         return false
       }
-      if (!q) return true
-      if (/^\d+$/.test(q)) {
-        return p.dexNumber === Number(q) || String(p.dexNumber).startsWith(q)
-      }
-      return p.name.includes(q) || p.displayName.toLowerCase().includes(q)
+      return matchesSearch(p, query)
     })
   }, [query, selectedTypes])
 

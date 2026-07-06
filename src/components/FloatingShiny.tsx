@@ -1,7 +1,7 @@
 import { useLanguage } from '../lib/i18n'
 import { useShiny } from '../lib/shiny'
 
-/** Comutator shiny plutitor, fixat pe ecran — mereu la îndemână, fără scroll. */
+/** Comutator shiny — plasat în bara de butoane plutitoare din Layout. */
 export default function FloatingShiny() {
   const { t } = useLanguage()
   const { shiny, toggle } = useShiny()
@@ -13,7 +13,7 @@ export default function FloatingShiny() {
       aria-checked={shiny}
       aria-label={t('shiny.aria')}
       onClick={toggle}
-      className={`fixed bottom-5 right-5 z-30 inline-flex items-center gap-2 rounded-full border px-4 py-2.5 text-sm font-semibold shadow-lg backdrop-blur transition-all active:scale-95 sm:bottom-6 sm:right-6 ${
+      className={`inline-flex items-center gap-2 rounded-full border px-4 py-2.5 text-sm font-semibold shadow-lg backdrop-blur transition-all active:scale-95 ${
         shiny
           ? 'border-transparent bg-accent text-white'
           : 'border-line bg-surface/90 text-ink hover:border-accent hover:text-accent'

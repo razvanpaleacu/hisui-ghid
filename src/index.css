@@ -3,19 +3,51 @@
 @tailwind utilities;
 
 :root {
+  color-scheme: light;
   --bg: #fafaf7;
   --surface: #ffffff;
   --text: #1a1a1a;
   --muted: #6b7280;
   --border: #ececec;
   --accent: #2f6f4e;
+  --map-water: #e9eff1;
+  --map-land: #f5f2e9;
+  --map-coast: #e2dccb;
+  --map-hover: #eaf1ec;
+}
+
+/* Temă întunecată — variabile comune (aplicate fie automat după device, fie forțat). */
+@media (prefers-color-scheme: dark) {
+  :root:not([data-theme]) {
+    color-scheme: dark;
+    --bg: #121317;
+    --surface: #1c1e24;
+    --text: #ededee;
+    --muted: #9aa0aa;
+    --border: #2b2e35;
+    --accent: #4fb082;
+    --map-water: #16262d;
+    --map-land: #24261f;
+    --map-coast: #393c32;
+    --map-hover: #21362b;
+  }
+}
+
+:root[data-theme='dark'] {
+  color-scheme: dark;
+  --bg: #121317;
+  --surface: #1c1e24;
+  --text: #ededee;
+  --muted: #9aa0aa;
+  --border: #2b2e35;
+  --accent: #4fb082;
+  --map-water: #16262d;
+  --map-land: #24261f;
+  --map-coast: #393c32;
+  --map-hover: #21362b;
 }
 
 @layer base {
-  html {
-    color-scheme: light;
-  }
-
   body {
     @apply bg-canvas font-sans text-ink antialiased;
   }

@@ -160,14 +160,26 @@ const SUFFIX_LABELS = {
 const EXCLUDE_VARIETY =
   /-(mega|gmax|totem|cap|cosplay|rock-star|belle|pop-star|phd|libre|partner|starter|eternamax|primal|world|original|busted|hangry|ash)/
 
+const HOME = 'https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/other/home'
+
 // Forme care în PokéAPI nu sunt varietăți separate, ci „pokemon-form"
-// (ex. Cherrim înnorat/însorit). Le adăugăm punctual.
+// (ex. Cherrim înnorat/însorit). Folosim render-urile HOME (HD), nu sprite-urile
+// pixel, ca să rămână coerente cu restul imaginilor.
 const CURATED_FORMS = {
   cherrim: {
     primaryKey: 'overcast',
     primaryLabel: { ro: 'Înnorat', en: 'Overcast' },
     extra: [
-      { formName: 'cherrim-sunshine', key: 'sunshine', label: { ro: 'Însorit', en: 'Sunshine' } },
+      {
+        key: 'sunshine',
+        label: { ro: 'Însorit', en: 'Sunshine' },
+        sprites: {
+          normal: `${HOME}/421-sunshine.png`,
+          shiny: `${HOME}/shiny/421-sunshine.png`,
+          artwork: `${HOME}/421-sunshine.png`,
+          artworkShiny: `${HOME}/shiny/421-sunshine.png`,
+        },
+      },
     ],
   },
 }
@@ -262,17 +274,14 @@ function genderForms(pokemon, base) {
       key: 'male',
       label: { ro: 'Mascul', en: 'Male' },
       ...commonMeta,
-      sprites: {
-        normal: home.front_default ?? base.sprites.normal,
-        shiny: home.front_shiny ?? base.sprites.shiny,
-        artwork: home.front_default ?? base.sprites.artwork,
-        artworkShiny: home.front_shiny ?? base.sprites.artworkShiny,
-      },
+      // Masculul e forma principală → păstrăm official-artwork (coerent cu grila).
+      sprites: base.sprites,
     },
     {
       key: 'female',
       label: { ro: 'Femelă', en: 'Female' },
       ...commonMeta,
+      // Nu există artwork oficial pentru femelă; folosim render-ul HOME (HD).
       sprites: {
         normal: home.front_female,
         shiny: home.front_shiny_female ?? home.front_female,
@@ -347,9 +356,6 @@ async function buildEntry(entry) {
     forms[0].key = curated.primaryKey
     forms[0].label = curated.primaryLabel
     for (const ex of curated.extra) {
-      const pf = await fetchJson(`${API}/pokemon-form/${ex.formName}/`)
-      const ps = pf.sprites ?? {}
-      if (!ps.front_default) continue
       forms.push({
         key: ex.key,
         label: ex.label,
@@ -359,12 +365,7 @@ async function buildEntry(entry) {
         stats: form.stats,
         height: form.height,
         weight: form.weight,
-        sprites: {
-          normal: ps.front_default,
-          shiny: ps.front_shiny ?? ps.front_default,
-          artwork: ps.front_default,
-          artworkShiny: ps.front_shiny ?? ps.front_default,
-        },
+        sprites: ex.sprites,
       })
     }
   }

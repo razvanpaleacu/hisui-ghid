@@ -1,10 +1,12 @@
-import { Suspense, useLayoutEffect } from 'react'
+import { Suspense, useEffect, useLayoutEffect, useState } from 'react'
 import { Link, Outlet, useLocation } from 'react-router-dom'
 import { useLanguage, type StringKey } from '../lib/i18n'
+import BackToTop from './BackToTop'
 import ErrorBoundary from './ErrorBoundary'
 import FloatingShiny from './FloatingShiny'
 import LanguageSelector from './LanguageSelector'
 import PageLoading from './PageLoading'
+import ThemeToggle from './ThemeToggle'
 
 const TABS: { to: string; labelKey: StringKey; isActive: (path: string) => boolean }[] = [
   {
@@ -45,6 +47,15 @@ export default function Layout() {
     pathname.startsWith('/pokedex') ||
     pathname.startsWith('/tinuturi')
 
+  // Butonul „înapoi sus" apare după ce derulezi puțin.
+  const [scrolled, setScrolled] = useState(false)
+  useEffect(() => {
+    const onScroll = () => setScrolled(window.scrollY > 500)
+    onScroll()
+    window.addEventListener('scroll', onScroll, { passive: true })
+    return () => window.removeEventListener('scroll', onScroll)
+  }, [])
+
   return (
     <>
       <header className="sticky top-0 z-10 border-b border-line bg-canvas/90 backdrop-blur">
@@ -57,7 +68,8 @@ export default function Layout() {
               Hisui
             </Link>
             <span className="text-sm text-muted">{t('site.tagline')}</span>
-            <div className="ml-auto">
+            <div className="ml-auto flex items-center gap-2">
+              <ThemeToggle />
               <LanguageSelector />
             </div>
           </div>
@@ -112,7 +124,10 @@ export default function Layout() {
         </div>
       </footer>
 
-      {showShiny && <FloatingShiny />}
+      <div className="fixed bottom-5 right-5 z-30 flex flex-col items-end gap-2.5 sm:bottom-6 sm:right-6">
+        {scrolled && <BackToTop />}
+        {showShiny && <FloatingShiny />}
+      </div>
     </>
   )
 }

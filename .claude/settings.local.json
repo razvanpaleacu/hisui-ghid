@@ -57,7 +57,8 @@
       "Bash(curl -s \"https://pokeapi.co/api/v2/pokemon/vulpix-alola/\")",
       "Bash(curl -s \"https://pokeapi.co/api/v2/pokemon/cherrim/\")",
       "Bash(curl -s \"https://pokeapi.co/api/v2/pokemon-form/cherrim-sunshine/\")",
-      "Bash(git commit -q -m 'Forme complete \\(regionale Alola/Galar/Paldea, Rotom, Cherrim…\\) + fix footer & Gliscor *)"
+      "Bash(git commit -q -m 'Forme complete \\(regionale Alola/Galar/Paldea, Rotom, Cherrim…\\) + fix footer & Gliscor *)",
+      "Bash(git commit *)"
     ]
   }
 }

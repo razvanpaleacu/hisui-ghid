@@ -25,6 +25,12 @@ fără backend, ușor de găzduit gratuit.
 - Tab-uri stub pentru **Mecanici** și **Ghid & Sfaturi** — se completează ulterior.
 - **Selector de limbă RO/EN** în antet — toată interfața e disponibilă în română
   și engleză; alegerea se reține în `localStorage` (implicit engleză la prima vizită).
+- **Mod întunecat** care urmează setarea dispozitivului (auto), cu comutator manual
+  luminos/întunecat/auto.
+- **Căutare inteligentă** (nume, număr, tip, ținut, formă, cu termeni combinați),
+  buton **shiny plutitor** mereu vizibil și buton **înapoi sus**.
+- **Hartă interactivă** hub-and-spoke: o prezentare centrală a regiunii cu cele cinci
+  ținuturi în jur, fiecare cu miniatură tematică; click → Pokémonii zonei.
 
 ## Rulare locală
 

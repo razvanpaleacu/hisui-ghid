@@ -2574,10 +2574,10 @@
         "height": 5,
         "weight": 93,
         "sprites": {
-          "normal": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/421-sunshine.png",
-          "shiny": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/shiny/421-sunshine.png",
-          "artwork": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/421-sunshine.png",
-          "artworkShiny": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/shiny/421-sunshine.png"
+          "normal": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/other/home/421-sunshine.png",
+          "shiny": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/other/home/shiny/421-sunshine.png",
+          "artwork": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/other/home/421-sunshine.png",
+          "artworkShiny": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/other/home/shiny/421-sunshine.png"
         }
       }
     ]
@@ -2690,10 +2690,10 @@
         "height": 3,
         "weight": 55,
         "sprites": {
-          "normal": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/other/home/415.png",
-          "shiny": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/other/home/shiny/415.png",
-          "artwork": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/other/home/415.png",
-          "artworkShiny": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/other/home/shiny/415.png"
+          "normal": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/415.png",
+          "shiny": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/shiny/415.png",
+          "artwork": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/other/official-artwork/415.png",
+          "artworkShiny": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/other/official-artwork/shiny/415.png"
         }
       },
       {
@@ -3989,10 +3989,10 @@
         "height": 8,
         "weight": 495,
         "sprites": {
-          "normal": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/other/home/449.png",
-          "shiny": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/other/home/shiny/449.png",
-          "artwork": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/other/home/449.png",
-          "artworkShiny": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/other/home/shiny/449.png"
+          "normal": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/449.png",
+          "shiny": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/shiny/449.png",
+          "artwork": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/other/official-artwork/449.png",
+          "artworkShiny": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/other/official-artwork/shiny/449.png"
         }
       },
       {
@@ -4075,10 +4075,10 @@
         "height": 20,
         "weight": 3000,
         "sprites": {
-          "normal": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/other/home/450.png",
-          "shiny": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/other/home/shiny/450.png",
-          "artwork": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/other/home/450.png",
-          "artworkShiny": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/other/home/shiny/450.png"
+          "normal": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/450.png",
+          "shiny": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/shiny/450.png",
+          "artwork": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/other/official-artwork/450.png",
+          "artworkShiny": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/other/official-artwork/shiny/450.png"
         }
       },
       {
