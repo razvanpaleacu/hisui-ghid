@@ -128,24 +128,77 @@ async function getHisuiDex() {
   }
 }
 
-// Sufixe de varietăți care sunt forme alternative reale (nu cosmetice, ca
-// literele Unown, plăcile Arceus, aparatele Rotom sau șepcile Pikachu).
-const ALT_FORM_LABELS = [
-  { suffix: '-origin', key: 'origin', labelKey: 'form.origin' },
-  { suffix: '-altered', key: 'altered', labelKey: 'form.altered' },
-  { suffix: '-sky', key: 'sky', labelKey: 'form.sky' },
-  { suffix: '-land', key: 'land', labelKey: 'form.land' },
-  { suffix: '-therian', key: 'therian', labelKey: 'form.therian' },
-  { suffix: '-incarnate', key: 'incarnate', labelKey: 'form.incarnate' },
-  { suffix: '-female', key: 'female', labelKey: 'form.female' },
-  { suffix: '-male', key: 'male', labelKey: 'form.male' },
-]
+// Etichete bilingve pentru sufixele de forme (regionale + alternative reale).
+const SUFFIX_LABELS = {
+  alola: { ro: 'Alola', en: 'Alolan' },
+  galar: { ro: 'Galar', en: 'Galarian' },
+  paldea: { ro: 'Paldea', en: 'Paldean' },
+  hisui: { ro: 'Hisui', en: 'Hisui' },
+  origin: { ro: 'Origin', en: 'Origin' },
+  altered: { ro: 'Altered', en: 'Altered' },
+  sky: { ro: 'Sky', en: 'Sky' },
+  land: { ro: 'Land', en: 'Land' },
+  therian: { ro: 'Therian', en: 'Therian' },
+  incarnate: { ro: 'Incarnate', en: 'Incarnate' },
+  male: { ro: 'Mascul', en: 'Male' },
+  female: { ro: 'Femelă', en: 'Female' },
+  'red-striped': { ro: 'Dungi roșii', en: 'Red-Striped' },
+  'blue-striped': { ro: 'Dungi albastre', en: 'Blue-Striped' },
+  'white-striped': { ro: 'Dungi albe', en: 'White-Striped' },
+  plant: { ro: 'Frunze', en: 'Plant' },
+  sandy: { ro: 'Nisip', en: 'Sandy' },
+  trash: { ro: 'Gunoi', en: 'Trash' },
+  heat: { ro: 'Heat', en: 'Heat' },
+  wash: { ro: 'Wash', en: 'Wash' },
+  frost: { ro: 'Frost', en: 'Frost' },
+  fan: { ro: 'Fan', en: 'Fan' },
+  mow: { ro: 'Mow', en: 'Mow' },
+}
 
-function labelForVariety(name) {
-  for (const f of ALT_FORM_LABELS) {
-    if (name.endsWith(f.suffix)) return { key: f.key, labelKey: f.labelKey }
-  }
-  return null
+// Varietăți cosmetice / de luptă pe care NU le includem (megaevoluții, Gigantamax,
+// șepcile lui Pikachu, forme de totem etc.).
+const EXCLUDE_VARIETY =
+  /-(mega|gmax|totem|cap|cosplay|rock-star|belle|pop-star|phd|libre|partner|starter|eternamax|primal|world|original|busted|hangry|ash)/
+
+// Forme care în PokéAPI nu sunt varietăți separate, ci „pokemon-form"
+// (ex. Cherrim înnorat/însorit). Le adăugăm punctual.
+const CURATED_FORMS = {
+  cherrim: {
+    primaryKey: 'overcast',
+    primaryLabel: { ro: 'Înnorat', en: 'Overcast' },
+    extra: [
+      { formName: 'cherrim-sunshine', key: 'sunshine', label: { ro: 'Însorit', en: 'Sunshine' } },
+    ],
+  },
+}
+
+/** Sufixul unei varietăți față de numele speciei (ex. „vulpix-alola" → „alola"). */
+function variantSuffix(name, speciesName) {
+  if (name === speciesName) return ''
+  if (name.startsWith(`${speciesName}-`)) return name.slice(speciesName.length + 1)
+  return ''
+}
+
+/** Eticheta unui sufix: din hartă, altfel title-case ca fallback. */
+function labelForSuffix(suffix) {
+  if (SUFFIX_LABELS[suffix]) return SUFFIX_LABELS[suffix]
+  const titled = suffix
+    .split('-')
+    .map((p) => p.charAt(0).toUpperCase() + p.slice(1))
+    .join(' ')
+  return { ro: titled, en: titled }
+}
+
+/** Eticheta formei principale (Hisui/regional/alternativă/standard). */
+function computePrimaryLabel(pokemonName, speciesName, varieties) {
+  const suffix = variantSuffix(pokemonName, speciesName)
+  if (suffix) return { key: suffix, label: labelForSuffix(suffix) }
+  const hasRegional = varieties.some((v) =>
+    /-(alola|galar|paldea)$/.test(v.pokemon.name),
+  )
+  return hasRegional
+    ? { key: 'original', label: { ro: 'Originală', en: 'Original' } }
+    : { key: 'default', label: { ro: 'Standard', en: 'Standard' } }
 }
 
 /** Extrage câmpurile comune (tipuri/statistici/sprite-uri) dintr-un „pokemon". */
@@ -207,7 +260,7 @@ function genderForms(pokemon, base) {
   return [
     {
       key: 'male',
-      labelKey: 'form.male',
+      label: { ro: 'Mascul', en: 'Male' },
       ...commonMeta,
       sprites: {
         normal: home.front_default ?? base.sprites.normal,
@@ -218,7 +271,7 @@ function genderForms(pokemon, base) {
     },
     {
       key: 'female',
-      labelKey: 'form.female',
+      label: { ro: 'Femelă', en: 'Female' },
       ...commonMeta,
       sprites: {
         normal: home.front_female,
@@ -250,28 +303,31 @@ async function buildEntry(entry) {
   const form = extractForm(pokemon)
   const isHisuianForm = pokemon.name.endsWith('-hisui')
 
-  // Eticheta formei principale.
-  const primaryLabel = isHisuianForm
-    ? { key: 'hisui', labelKey: 'form.hisui' }
-    : labelForVariety(pokemon.name) ?? { key: 'default', labelKey: 'form.default' }
-
-  const forms = [{ ...primaryLabel, ...form }]
+  // Forma principală + eticheta ei.
+  const pl = computePrimaryLabel(pokemon.name, species.name, species.varieties)
+  const forms = [{ key: pl.key, label: pl.label, ...form }]
 
   if (isHisuianForm) {
     // Forma originală (varietatea default a speciei).
     const defaultVariety = species.varieties.find((v) => v.is_default)
     if (defaultVariety && defaultVariety.pokemon.name !== pokemon.name) {
       const basePokemon = await fetchJson(defaultVariety.pokemon.url)
-      forms.push({ key: 'original', labelKey: 'form.original', ...extractForm(basePokemon) })
+      forms.push({
+        key: 'original',
+        label: { ro: 'Originală', en: 'Original' },
+        ...extractForm(basePokemon),
+      })
     }
   } else {
-    // Forme alternative (Origin/Therian/Sky/…, femelă de Basculegion) din varietăți.
+    // Toate celelalte varietăți reale: regionale (Alola/Galar/Paldea), Rotom,
+    // Wormadam, Basculin, legendari (Origin/Therian/…) — fără cele cosmetice.
     for (const v of species.varieties) {
       if (v.pokemon.name === pokemon.name) continue
-      const label = labelForVariety(v.pokemon.name)
-      if (!label) continue
+      if (EXCLUDE_VARIETY.test(v.pokemon.name)) continue
+      const suffix = variantSuffix(v.pokemon.name, species.name)
+      if (!suffix) continue
       const altPokemon = await fetchJson(v.pokemon.url)
-      forms.push({ ...label, ...extractForm(altPokemon) })
+      forms.push({ key: suffix, label: labelForSuffix(suffix), ...extractForm(altPokemon) })
     }
   }
 
@@ -282,6 +338,34 @@ async function buildEntry(entry) {
     if (pair) {
       // Înlocuim forma principală cu perechea mascul/femelă (același stil HOME).
       forms.splice(0, 1, ...pair)
+    }
+  }
+
+  // Forme punctuale de tip „pokemon-form" (ex. Cherrim înnorat/însorit).
+  const curated = CURATED_FORMS[species.name]
+  if (curated) {
+    forms[0].key = curated.primaryKey
+    forms[0].label = curated.primaryLabel
+    for (const ex of curated.extra) {
+      const pf = await fetchJson(`${API}/pokemon-form/${ex.formName}/`)
+      const ps = pf.sprites ?? {}
+      if (!ps.front_default) continue
+      forms.push({
+        key: ex.key,
+        label: ex.label,
+        id: form.id,
+        name: form.name,
+        types: form.types,
+        stats: form.stats,
+        height: form.height,
+        weight: form.weight,
+        sprites: {
+          normal: ps.front_default,
+          shiny: ps.front_shiny ?? ps.front_default,
+          artwork: ps.front_default,
+          artworkShiny: ps.front_shiny ?? ps.front_default,
+        },
+      })
     }
   }
 

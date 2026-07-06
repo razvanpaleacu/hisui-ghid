@@ -51,7 +51,13 @@
       "WebFetch(domain:samurai-gamers.com)",
       "WebFetch(domain:screenrant.com)",
       "Bash(node -e \"const d=require\\('./src/data/pokedex-hisui.json'\\); const {PLA_INFO}=0;\")",
-      "Bash(git commit -q -m 'Matchup-uri de tip, evoluție PLA, comportament, distorsiuni, shiny global, tastatură, hartă mai frumoasă *)"
+      "Bash(git commit -q -m 'Matchup-uri de tip, evoluție PLA, comportament, distorsiuni, shiny global, tastatură, hartă mai frumoasă *)",
+      "Bash(python3 -c \"import json; d=json.load\\(open\\('src/data/pokedex-hisui.json'\\)\\); names=[p['name'] for p in d]; print\\(len\\(names\\)\\); print\\('\\\\n'.join\\(names\\)\\)\")",
+      "Bash(python3)",
+      "Bash(curl -s \"https://pokeapi.co/api/v2/pokemon/vulpix-alola/\")",
+      "Bash(curl -s \"https://pokeapi.co/api/v2/pokemon/cherrim/\")",
+      "Bash(curl -s \"https://pokeapi.co/api/v2/pokemon-form/cherrim-sunshine/\")",
+      "Bash(git commit -q -m 'Forme complete \\(regionale Alola/Galar/Paldea, Rotom, Cherrim…\\) + fix footer & Gliscor *)"
     ]
   }
 }

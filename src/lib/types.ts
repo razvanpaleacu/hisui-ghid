@@ -1,3 +1,5 @@
+import type { Lang } from './i18n'
+
 export type TypeName =
   | 'normal'
   | 'fire'
@@ -35,13 +37,13 @@ export interface PokemonSprites {
 }
 
 /**
- * O formă selectabilă a unui Pokémon: forma Hisui vs originală, Origin/Therian/
- * Sky pentru legendari, sau mascul/femelă acolo unde sprite-urile diferă.
- * `labelKey` e o cheie i18n (form.hisui, form.original, form.origin, …).
+ * O formă selectabilă a unui Pokémon: forma Hisui vs originală, regionale
+ * (Alola/Galar/Paldea), Origin/Therian/Sky, mascul/femelă, Cherrim etc.
+ * `label` e eticheta bilingvă gata tradusă.
  */
 export interface PokemonForm {
   key: string
-  labelKey: string
+  label: Record<Lang, string>
   id: number
   name: string
   types: TypeName[]

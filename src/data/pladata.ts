@@ -175,7 +175,7 @@ export const PLA_INFO: Record<string, PlaInfo> = {
   "bronzong": { evolvesFrom: "bronzor", evolveMethod: { ro: 'Nivel 33', en: 'Level 33' } },
   "electabuzz": { evolvesFrom: "elekid", evolveMethod: { ro: 'Nivel 30', en: 'Level 30' } },
   "electivire": { evolvesFrom: "electabuzz", evolveMethod: { ro: 'Folosește Electirizer', en: 'Use Electirizer' }, behavior: "aggressive" },
-  "gliscor": { evolvesFrom: "gligar", evolveMethod: { ro: 'Folosește Razor Fang', en: 'Use Razor Fang' }, behavior: "aggressive" },
+  "gliscor": { evolvesFrom: "gligar", evolveMethod: { ro: 'Folosește Razor Fang noaptea', en: 'Use a Razor Fang at night' }, behavior: "aggressive" },
   "gible": { behavior: "skittish" },
   "gabite": { evolvesFrom: "gible", evolveMethod: { ro: 'Nivel 24', en: 'Level 24' }, behavior: "skittish" },
   "garchomp": { evolvesFrom: "gabite", evolveMethod: { ro: 'Nivel 48', en: 'Level 48' }, behavior: "aggressive" },

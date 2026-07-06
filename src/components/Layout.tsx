@@ -95,7 +95,7 @@ export default function Layout() {
       </main>
 
       <footer className="border-t border-line">
-        <div className="mx-auto w-full max-w-page px-4 py-6 text-xs leading-relaxed text-muted sm:px-6">
+        <div className="mx-auto w-full max-w-page px-4 pb-20 pt-6 text-xs leading-relaxed text-muted sm:px-6">
           <p>{t('footer.disclaimer')}</p>
           <p className="mt-1">
             {t('footer.credit')}{' '}

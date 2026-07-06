@@ -11,8 +11,13 @@ fără backend, ușor de găzduit gratuit.
   comutator normal/shiny (inclusiv un buton plutitor mereu vizibil) și pagină de detaliu
   pentru fiecare Pokémon (tipuri, statistici, înălțime/greutate, **descriere originală**,
   locații).
-- **Sistem de forme** în detaliu: formele Hisui vs originale (ex. Zoroark), formele
-  legendarilor (Origin/Altered/Sky/Land/Therian) și mascul/femelă acolo unde diferă vizibil.
+- **Sistem de forme** complet în detaliu: forme regionale (Alola, Galar, Paldea, Hisui),
+  formele legendarilor (Origin/Altered/Sky/Land/Therian), Rotom, Wormadam, Basculin,
+  Cherrim (Înnorat/Însorit) și mascul/femelă acolo unde diferă vizibil. Fiecare formă are
+  propriile tipuri, statistici, sprite-uri și matchup-uri.
+- **Slăbiciuni/rezistențe/imunități** de tip, **metodă de evoluție** (specifică PLA),
+  **comportament în teren** și marcarea celor exclusiv din **distorsiuni spațio-temporale**.
+- Navigare cu **săgețile ←/→** între Pokémoni.
 - **Locațiile** fiecărui Pokémon (cele cinci ținuturi), plus o **hartă interactivă** a
   regiunii care înlocuiește tab-ul Ținuturi: alegi o zonă și vezi Pokémonii care apar acolo.
 - Formele regionale Hisui sunt rezolvate corect, cu sprite-urile, tipurile și statisticile

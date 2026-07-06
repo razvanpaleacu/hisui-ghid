@@ -88,7 +88,7 @@ export default function PokemonDetail() {
 
   const src = shiny ? display.sprites.artworkShiny : display.sprites.artwork
   const alt = `${pokemon.displayName}${
-    activeForm ? ` (${t(activeForm.labelKey as StringKey)})` : ''
+    activeForm ? ` (${activeForm.label[lang]})` : ''
   }${shiny ? t('common.shinyAlt') : ''}`
   const statTotal = STAT_ORDER.reduce((sum, k) => sum + display.stats[k], 0)
   const matchups = defensiveMatchups(display.types)
@@ -182,7 +182,7 @@ export default function PokemonDetail() {
                           : 'text-muted hover:text-ink'
                       }`}
                     >
-                      {t(f.labelKey as StringKey)}
+                      {f.label[lang]}
                     </button>
                   )
                 })}
@@ -202,7 +202,7 @@ export default function PokemonDetail() {
             </h1>
             {activeForm && (
               <span className="rounded-full border border-accent/40 px-2.5 py-0.5 text-xs font-medium text-accent">
-                {t(activeForm.labelKey as StringKey)}
+                {activeForm.label[lang]}
               </span>
             )}
           </div>
