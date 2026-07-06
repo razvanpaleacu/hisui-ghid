@@ -67,7 +67,10 @@
       "Bash(curl -s -o /dev/null -w '%{http_code}' -H 'Referer: https://razvanpaleacu.github.io/' https://archives.bulbagarden.net/media/upload/thumb/4/4d/Hisui_Obsidian_Fieldlands_Map.png/800px-Hisui_Obsidian_Fieldlands_Map.png)",
       "Bash(curl -s -o /dev/null -w '%{http_code}' -A Mozilla/5.0 -H 'Referer: http://localhost:5173/' https://archives.bulbagarden.net/media/upload/thumb/4/4d/Hisui_Obsidian_Fieldlands_Map.png/800px-Hisui_Obsidian_Fieldlands_Map.png)",
       "Bash(curl -s -I https://archives.bulbagarden.net/media/upload/thumb/4/4d/Hisui_Obsidian_Fieldlands_Map.png/800px-Hisui_Obsidian_Fieldlands_Map.png)",
-      "Bash(curl -s -I \"https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/25.png\")"
+      "Bash(curl -s -I \"https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/25.png\")",
+      "Bash(curl -s -o \"src/assets/maps/jubilife-village.png\" \"https://archives.bulbagarden.net/media/upload/thumb/a/a9/Hisui_Jubilife_Village_Map.png/800px-Hisui_Jubilife_Village_Map.png\")",
+      "Bash(curl -s -o \"src/assets/maps/ancient-retreat.png\" \"https://archives.bulbagarden.net/media/upload/thumb/9/95/Hisui_Ancient_Retreat_Map.png/800px-Hisui_Ancient_Retreat_Map.png\")",
+      "Bash(curl -s -o \"src/assets/maps/hisui-region.png\" \"https://archives.bulbagarden.net/media/upload/thumb/5/5b/Hisui.png/600px-Hisui.png\")"
     ]
   }
 }

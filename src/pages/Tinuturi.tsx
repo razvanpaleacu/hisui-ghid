@@ -14,20 +14,24 @@ import { useLanguage } from '../lib/i18n'
 import { pokedex } from '../lib/pokedex'
 import { useShiny } from '../lib/shiny'
 import { usePageTitle } from '../lib/usePageTitle'
+import ancientMap from '../assets/maps/ancient-retreat.png'
+import jubilifeMap from '../assets/maps/jubilife-village.png'
 
-// Poziții procentuale pe desktop (hub-and-spoke). Pe mobil se ignoră (grilă).
-const LAYOUT: Record<AreaId | 'center', { x: number; y: number }> = {
-  center: { x: 50, y: 49 },
-  'alabaster-icelands': { x: 19, y: 17 },
-  'coronet-highlands': { x: 50, y: 11 },
-  'cobalt-coastlands': { x: 83, y: 30 },
-  'crimson-mirelands': { x: 74, y: 82 },
-  'obsidian-fieldlands': { x: 24, y: 82 },
+// Cele 7 panouri, în aranjamentul din harta jocului: cinci ținuturi + două
+// așezări (Jubilife Village, Ancient Retreat). Pozițiile sunt procentuale, pe
+// desktop (hub-and-spoke); pe mobil se ignoră și panourile curg într-o grilă.
+// `route` = felul conectorului portocaliu ('v' = vertical întâi, 'h' = orizontal).
+interface Panel {
+  key: string
+  label: string
+  img: string
+  x: number
+  y: number
+  route: 'v' | 'h'
+  area?: AreaId
 }
 
-function isAreaId(value: string | null): value is AreaId {
-  return !!value && (AREA_ORDER as string[]).includes(value)
-}
+const CENTER = { x: 45, y: 51 }
 
 export default function Tinuturi() {
   const { lang, t } = useLanguage()
@@ -36,7 +40,10 @@ export default function Tinuturi() {
 
   const [params, setParams] = useSearchParams()
   const zonaParam = params.get('zona')
-  const selected: AreaId | null = isAreaId(zonaParam) ? zonaParam : null
+  const selected: AreaId | null =
+    zonaParam && (AREA_ORDER as string[]).includes(zonaParam)
+      ? (zonaParam as AreaId)
+      : null
 
   const select = (id: AreaId) => {
     setParams(id === selected ? {} : { zona: id }, { replace: true })
@@ -50,6 +57,16 @@ export default function Tinuturi() {
     [selected],
   )
 
+  const panels: Panel[] = [
+    { key: 'alabaster-icelands', label: AREA_NAMES[lang]['alabaster-icelands'], img: AREA_MAP_IMAGE['alabaster-icelands'], x: 17, y: 17, route: 'v', area: 'alabaster-icelands' },
+    { key: 'coronet-highlands', label: AREA_NAMES[lang]['coronet-highlands'], img: AREA_MAP_IMAGE['coronet-highlands'], x: 45, y: 12, route: 'v', area: 'coronet-highlands' },
+    { key: 'ancient-retreat', label: 'Ancient Retreat', img: ancientMap, x: 76, y: 17, route: 'v' },
+    { key: 'jubilife-village', label: 'Jubilife Village', img: jubilifeMap, x: 13, y: 51, route: 'h' },
+    { key: 'cobalt-coastlands', label: AREA_NAMES[lang]['cobalt-coastlands'], img: AREA_MAP_IMAGE['cobalt-coastlands'], x: 83, y: 49, route: 'h', area: 'cobalt-coastlands' },
+    { key: 'obsidian-fieldlands', label: AREA_NAMES[lang]['obsidian-fieldlands'], img: AREA_MAP_IMAGE['obsidian-fieldlands'], x: 30, y: 87, route: 'v', area: 'obsidian-fieldlands' },
+    { key: 'crimson-mirelands', label: AREA_NAMES[lang]['crimson-mirelands'], img: AREA_MAP_IMAGE['crimson-mirelands'], x: 61, y: 87, route: 'v', area: 'crimson-mirelands' },
+  ]
+
   const counts = useMemo(() => {
     const m = {} as Record<AreaId, number>
     for (const id of AREA_ORDER) {
@@ -58,42 +75,38 @@ export default function Tinuturi() {
     return m
   }, [])
 
-  const card = (id: AreaId) => {
-    const active = selected === id
-    const pos = LAYOUT[id]
+  const connectorPoints = (p: Panel) =>
+    p.route === 'v'
+      ? `${CENTER.x},${CENTER.y} ${CENTER.x},${p.y} ${p.x},${p.y}`
+      : `${CENTER.x},${CENTER.y} ${p.x},${CENTER.y} ${p.x},${p.y}`
+
+  const panelInner = (p: Panel) => {
+    const active = p.area && selected === p.area
     return (
-      <button
-        key={id}
-        type="button"
-        aria-pressed={active}
-        aria-label={t('map.openArea', { name: AREA_NAMES[lang][id] })}
-        onClick={() => select(id)}
-        style={{ top: `${pos.y}%`, left: `${pos.x}%` }}
-        className={`group z-10 w-full overflow-hidden rounded-xl border bg-surface text-left shadow-soft transition-all hover:-translate-y-0.5 hover:shadow-lift lg:absolute lg:w-[150px] lg:-translate-x-1/2 lg:-translate-y-1/2 ${
-          active
-            ? 'border-accent ring-2 ring-accent/30'
-            : 'border-line hover:border-accent/40'
-        }`}
-      >
-        <div className="h-20 w-full overflow-hidden bg-[var(--map-water)]">
+      <>
+        <p
+          className={`mb-1 truncate text-center text-xs font-semibold ${
+            active ? 'text-accent' : 'text-ink'
+          }`}
+        >
+          {p.label}
+        </p>
+        <div className="overflow-hidden rounded-lg border border-line">
           <img
-            src={AREA_MAP_IMAGE[id]}
-            alt=""
+            src={p.img}
+            alt={p.label}
             loading="lazy"
-            className="h-full w-full object-cover transition-transform duration-300 group-hover:scale-105"
+            className="h-[70px] w-full object-cover transition-transform duration-300 group-hover:scale-105"
           />
         </div>
-        <div className="px-3 py-2">
-          <p className="truncate text-xs font-semibold group-hover:text-accent">
-            {AREA_NAMES[lang][id]}
-          </p>
-          <p className="text-[11px] text-muted">
-            {formatPokemonCount(counts[id], lang)}
-          </p>
-        </div>
-      </button>
+      </>
     )
   }
+
+  const panelPos = (p: { x: number; y: number }) => ({
+    top: `${p.y}%`,
+    left: `${p.x}%`,
+  })
 
   return (
     <div className="animate-fade-in">
@@ -104,32 +117,39 @@ export default function Tinuturi() {
         {t('map.intro')}
       </p>
 
-      <div className="relative mt-8 grid grid-cols-2 gap-3 sm:grid-cols-3 lg:block lg:h-[560px]">
-        {/* Liniile de legătură (doar pe desktop). */}
+      <div
+        className="relative mt-8 grid grid-cols-2 gap-4 rounded-2xl border border-line p-4 sm:grid-cols-3 lg:block lg:h-[660px]"
+        style={{ background: 'var(--map-board)' }}
+      >
+        {/* Conectorii portocalii (doar pe desktop). */}
         <svg
           viewBox="0 0 100 100"
           preserveAspectRatio="none"
           className="pointer-events-none absolute inset-0 hidden h-full w-full lg:block"
           aria-hidden="true"
         >
-          {AREA_ORDER.map((id) => (
-            <line
-              key={id}
-              x1={LAYOUT.center.x}
-              y1={LAYOUT.center.y}
-              x2={LAYOUT[id].x}
-              y2={LAYOUT[id].y}
-              stroke="var(--accent)"
-              strokeWidth="0.4"
-              opacity="0.4"
+          {panels.map((p) => (
+            <polyline
+              key={p.key}
+              points={connectorPoints(p)}
+              fill="none"
+              stroke="#c96f3c"
+              strokeWidth={2}
+              strokeLinejoin="round"
+              strokeLinecap="round"
+              vectorEffect="non-scaling-stroke"
             />
           ))}
+          {panels.map((p) => (
+            <circle key={`d-${p.key}`} cx={p.x} cy={p.y} r={1.2} fill="#c96f3c" vectorEffect="non-scaling-stroke" />
+          ))}
+          <circle cx={CENTER.x} cy={CENTER.y} r={1.6} fill="#c96f3c" vectorEffect="non-scaling-stroke" />
         </svg>
 
         {/* Prezentarea centrală a regiunii. */}
         <div
-          style={{ top: `${LAYOUT.center.y}%`, left: `${LAYOUT.center.x}%` }}
-          className="z-10 col-span-2 mx-auto w-full max-w-[220px] rounded-xl border border-line bg-surface p-2 shadow-soft sm:col-span-3 lg:absolute lg:w-[150px] lg:max-w-none lg:-translate-x-1/2 lg:-translate-y-1/2"
+          style={panelPos(CENTER)}
+          className="z-10 col-span-2 mx-auto w-full max-w-[200px] rounded-xl border border-line bg-surface p-2 shadow-soft sm:col-span-3 lg:absolute lg:w-[140px] lg:max-w-none lg:-translate-x-1/2 lg:-translate-y-1/2"
         >
           <svg viewBox="0 0 120 80" className="block w-full" aria-hidden="true">
             <rect width="120" height="80" rx="6" fill="var(--map-water)" />
@@ -143,7 +163,33 @@ export default function Tinuturi() {
           <p className="mt-1 text-center text-xs font-semibold">Hisui</p>
         </div>
 
-        {AREA_ORDER.map((id) => card(id))}
+        {panels.map((p) =>
+          p.area ? (
+            <button
+              key={p.key}
+              type="button"
+              aria-pressed={selected === p.area}
+              aria-label={t('map.openArea', { name: p.label })}
+              onClick={() => p.area && select(p.area)}
+              style={panelPos(p)}
+              className={`group z-10 w-full rounded-xl border bg-surface p-2 shadow-soft transition-all hover:-translate-y-0.5 hover:shadow-lift lg:absolute lg:w-[150px] lg:-translate-x-1/2 lg:-translate-y-1/2 ${
+                selected === p.area
+                  ? 'border-accent ring-2 ring-accent/30'
+                  : 'border-line hover:border-accent/40'
+              }`}
+            >
+              {panelInner(p)}
+            </button>
+          ) : (
+            <div
+              key={p.key}
+              style={panelPos(p)}
+              className="group z-10 w-full rounded-xl border border-line bg-surface p-2 shadow-soft lg:absolute lg:w-[150px] lg:-translate-x-1/2 lg:-translate-y-1/2"
+            >
+              {panelInner(p)}
+            </div>
+          ),
+        )}
       </div>
 
       <div className="mt-8">
@@ -167,7 +213,7 @@ export default function Tinuturi() {
             />
             <p className="mt-4 text-xs font-semibold uppercase tracking-wide text-muted">
               {t('map.pokemonHere')} ·{' '}
-              {formatPokemonCount(pokemonHere.length, lang)}
+              {formatPokemonCount(counts[selected], lang)}
             </p>
             <div className="mt-3 grid grid-cols-3 gap-3 sm:grid-cols-4 md:grid-cols-5 lg:grid-cols-6">
               {pokemonHere.map((p) => (

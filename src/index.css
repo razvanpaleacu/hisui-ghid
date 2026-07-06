@@ -14,6 +14,7 @@
   --map-land: #f5f2e9;
   --map-coast: #e2dccb;
   --map-hover: #eaf1ec;
+  --map-board: #e9e1cf;
 }
 
 /* Temă întunecată — variabile comune (aplicate fie automat după device, fie forțat). */
@@ -30,6 +31,7 @@
     --map-land: #24261f;
     --map-coast: #393c32;
     --map-hover: #21362b;
+    --map-board: #201f18;
   }
 }
 
