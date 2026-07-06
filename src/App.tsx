@@ -6,12 +6,12 @@ import { ShinyProvider } from './lib/shiny'
 import Ghid from './pages/Ghid'
 import Mecanici from './pages/Mecanici'
 import NotFound from './pages/NotFound'
-import Tinuturi from './pages/Tinuturi'
 
-// Pokédexul (împreună cu JSON-ul de date) se încarcă separat, ca să nu
-// umfle bundle-ul inițial; Suspense-ul din Layout arată skeleton-uri.
+// Paginile grele (JSON-ul Pokédexului, harta cu Leaflet) se încarcă separat,
+// ca să nu umfle bundle-ul inițial; Suspense-ul din Layout arată skeleton-uri.
 const Pokedex = lazy(() => import('./pages/Pokedex'))
 const PokemonDetail = lazy(() => import('./pages/PokemonDetail'))
+const Tinuturi = lazy(() => import('./pages/Tinuturi'))
 
 export default function App() {
   return (

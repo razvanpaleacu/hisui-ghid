@@ -14,6 +14,7 @@ import { formatDexNumber, formatPokemonCount } from '../lib/format'
 import { useLanguage } from '../lib/i18n'
 import { pokedex } from '../lib/pokedex'
 import { useShiny } from '../lib/shiny'
+import { TYPE_COLORS } from '../lib/typeInfo'
 import { usePageTitle } from '../lib/usePageTitle'
 
 interface MapView {
@@ -21,6 +22,7 @@ interface MapView {
   label: string
   img: string
   area: AreaId
+  accent: string
 }
 
 // Numele zonelor la Serebii (harta tiled, ca în PLA-Live-Map).
@@ -30,6 +32,15 @@ const SEREBII: Record<AreaId, string> = {
   'cobalt-coastlands': 'cobaltcoastlands',
   'coronet-highlands': 'coronethighlands',
   'alabaster-icelands': 'alabastericelands',
+}
+
+// Culoarea de accent a fiecărui ținut (tipul dominant), pentru carduri.
+const AREA_ACCENT: Record<AreaId, string> = {
+  'obsidian-fieldlands': TYPE_COLORS.grass,
+  'crimson-mirelands': TYPE_COLORS.poison,
+  'cobalt-coastlands': TYPE_COLORS.water,
+  'coronet-highlands': TYPE_COLORS.rock,
+  'alabaster-icelands': TYPE_COLORS.ice,
 }
 
 export default function Tinuturi() {
@@ -42,7 +53,16 @@ export default function Tinuturi() {
     label: AREA_NAMES[lang][id],
     img: AREA_MAP_IMAGE[id],
     area: id,
+    accent: AREA_ACCENT[id],
   }))
+
+  const counts = useMemo(() => {
+    const m = {} as Record<AreaId, number>
+    for (const id of AREA_ORDER) {
+      m[id] = pokedex.filter((p) => LOCATIONS[p.name]?.includes(id)).length
+    }
+    return m
+  }, [])
 
   const [params, setParams] = useSearchParams()
   const zona = params.get('zona')
@@ -69,11 +89,11 @@ export default function Tinuturi() {
         {t('map.intro')}
       </p>
 
-      {/* Selector de zonă. */}
+      {/* Selector de zonă — carduri cu numele suprapus pe hartă. */}
       <div
         role="tablist"
         aria-label={t('nav.tinuturi')}
-        className="mt-6 flex gap-2 overflow-x-auto pb-1"
+        className="mt-6 grid grid-cols-2 gap-3 sm:grid-cols-3 lg:grid-cols-5"
       >
         {views.map((v) => {
           const active = v.key === current.key
@@ -84,25 +104,33 @@ export default function Tinuturi() {
               role="tab"
               aria-selected={active}
               onClick={() => selectView(v.key)}
-              className={`shrink-0 overflow-hidden rounded-lg border text-left transition-all ${
-                active
-                  ? 'border-accent ring-2 ring-accent/30'
-                  : 'border-line hover:border-accent/40'
-              }`}
+              style={active ? { boxShadow: `0 0 0 2px ${v.accent}` } : undefined}
+              className="group relative aspect-video overflow-hidden rounded-xl border border-line text-left transition-all duration-200 hover:-translate-y-1 hover:shadow-lift focus-visible:-translate-y-1"
             >
               <img
                 src={v.img}
                 alt=""
                 loading="lazy"
-                className="h-12 w-24 object-cover"
-              />
-              <span
-                className={`block px-2 py-1 text-[11px] font-medium ${
-                  active ? 'text-accent' : 'text-muted'
+                className={`absolute inset-0 h-full w-full object-cover transition-all duration-500 group-hover:scale-110 ${
+                  active ? '' : 'saturate-[0.8] group-hover:saturate-100'
                 }`}
-              >
-                {v.label}
-              </span>
+              />
+              <div className="absolute inset-0 bg-gradient-to-t from-black/85 via-black/25 to-transparent" />
+              <div className="absolute inset-x-0 bottom-0 p-2.5">
+                <div className="flex items-center gap-1.5">
+                  <span
+                    aria-hidden="true"
+                    className="h-2 w-2 shrink-0 rounded-full"
+                    style={{ background: v.accent }}
+                  />
+                  <span className="truncate text-sm font-semibold text-white drop-shadow">
+                    {v.label}
+                  </span>
+                </div>
+                <span className="text-[11px] text-white/75">
+                  {formatPokemonCount(counts[v.area], lang)}
+                </span>
+              </div>
             </button>
           )
         })}
