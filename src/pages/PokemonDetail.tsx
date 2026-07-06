@@ -1,5 +1,7 @@
 import { useEffect, useState } from 'react'
 import { Link, useParams } from 'react-router-dom'
+import { AREA_NAMES, sortAreas } from '../data/areas'
+import { LOCATIONS } from '../data/locations'
 import ShinyToggle from '../components/ShinyToggle'
 import SpriteImage from '../components/SpriteImage'
 import StatBar from '../components/StatBar'
@@ -58,6 +60,8 @@ export default function PokemonDetail() {
     pokemon.isHisuianForm ? ` (${t('common.hisuiForm')})` : ''
   }${shiny ? t('common.shinyAlt') : ''}`
   const statTotal = STAT_ORDER.reduce((sum, k) => sum + pokemon.stats[k], 0)
+  const locationEntry = LOCATIONS[pokemon.name]
+  const areas = locationEntry ? sortAreas(locationEntry) : []
 
   return (
     <div className="animate-fade-in">
@@ -172,21 +176,23 @@ export default function PokemonDetail() {
             <h2 className="text-sm font-semibold uppercase tracking-wide text-muted">
               {t('detail.locations')}
             </h2>
-            {pokemon.locations.length === 0 ? (
-              <p className="mt-2 text-sm text-muted">
-                {t('detail.locationsSoon')}
-              </p>
-            ) : (
+            {areas.length > 0 ? (
               <ul className="mt-2 flex flex-wrap gap-2">
-                {pokemon.locations.map((loc) => (
+                {areas.map((id) => (
                   <li
-                    key={loc}
+                    key={id}
                     className="rounded-full border border-line bg-surface px-3 py-1 text-xs"
                   >
-                    {loc}
+                    {AREA_NAMES[lang][id]}
                   </li>
                 ))}
               </ul>
+            ) : (
+              <p className="mt-2 text-sm text-muted">
+                {locationEntry
+                  ? t('detail.locationsSpecial')
+                  : t('detail.locationsSoon')}
+              </p>
             )}
           </section>
         </div>

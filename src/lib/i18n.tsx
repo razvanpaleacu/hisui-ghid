@@ -52,6 +52,7 @@ const STRINGS_RO = {
   'detail.total': 'Total:',
   'detail.locations': 'Unde îl găsești',
   'detail.locationsSoon': 'Locații: în curând.',
+  'detail.locationsSpecial': 'Întâlnire specială — nu apare în sălbăticie.',
   'detail.pageTitle': '{name} — Pokédex Hisui',
   'detail.notFoundTitle': 'Pokémon negăsit',
   'detail.notFoundBody':
@@ -106,6 +107,7 @@ const STRINGS_EN: Record<StringKey, string> = {
   'detail.total': 'Total:',
   'detail.locations': 'Where to find it',
   'detail.locationsSoon': 'Locations: coming soon.',
+  'detail.locationsSpecial': 'Special encounter — not found in the wild.',
   'detail.pageTitle': '{name} — Hisui Pokédex',
   'detail.notFoundTitle': 'Pokémon not found',
   'detail.notFoundBody':
