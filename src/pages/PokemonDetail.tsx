@@ -1,6 +1,7 @@
 import { useEffect, useState } from 'react'
 import { Link, useParams } from 'react-router-dom'
 import { AREA_NAMES, sortAreas } from '../data/areas'
+import { DESCRIPTIONS } from '../data/descriptions'
 import { LOCATIONS } from '../data/locations'
 import ShinyToggle from '../components/ShinyToggle'
 import SpriteImage from '../components/SpriteImage'
@@ -13,7 +14,7 @@ import {
   STAT_LABELS,
   STAT_ORDER,
 } from '../lib/format'
-import { useLanguage } from '../lib/i18n'
+import { useLanguage, type StringKey } from '../lib/i18n'
 import { byName, pokedex } from '../lib/pokedex'
 import { usePageTitle } from '../lib/usePageTitle'
 
@@ -22,6 +23,16 @@ export default function PokemonDetail() {
   const { name } = useParams<{ name: string }>()
   const pokemon = name ? byName.get(name) : undefined
   const [shiny, setShiny] = useState(false)
+  const [formIdx, setFormIdx] = useState(0)
+
+  // Resetăm forma selectată la schimbarea Pokémonului CHIAR în timpul randării
+  // (nu într-un efect post-paint), ca să nu apară un cadru cu forma greșită
+  // când navighezi între doi Pokémoni care ambii au forme.
+  const [trackedName, setTrackedName] = useState(name)
+  if (name !== trackedName) {
+    setTrackedName(name)
+    setFormIdx(0)
+  }
 
   usePageTitle(
     pokemon
@@ -55,21 +66,26 @@ export default function PokemonDetail() {
   const prev = index > 0 ? pokedex[index - 1] : undefined
   const next = index < pokedex.length - 1 ? pokedex[index + 1] : undefined
 
-  const src = shiny ? pokemon.sprites.artworkShiny : pokemon.sprites.artwork
+  const forms = pokemon.forms
+  const activeForm =
+    forms && forms.length > 0 ? forms[Math.min(formIdx, forms.length - 1)] : undefined
+  // Forma afișată — atât intrarea, cât și PokemonForm au tipuri/stat/sprite-uri.
+  const display = activeForm ?? pokemon
+
+  const src = shiny ? display.sprites.artworkShiny : display.sprites.artwork
   const alt = `${pokemon.displayName}${
-    pokemon.isHisuianForm ? ` (${t('common.hisuiForm')})` : ''
+    activeForm ? ` (${t(activeForm.labelKey as StringKey)})` : ''
   }${shiny ? t('common.shinyAlt') : ''}`
-  const statTotal = STAT_ORDER.reduce((sum, k) => sum + pokemon.stats[k], 0)
+  const statTotal = STAT_ORDER.reduce((sum, k) => sum + display.stats[k], 0)
+
+  const description = DESCRIPTIONS[pokemon.name]?.[lang]
   const locationEntry = LOCATIONS[pokemon.name]
   const areas = locationEntry ? sortAreas(locationEntry) : []
 
   return (
     <div className="animate-fade-in">
       <div className="flex items-center justify-between gap-4">
-        <Link
-          to="/"
-          className="text-sm font-medium text-accent hover:underline"
-        >
+        <Link to="/" className="text-sm font-medium text-accent hover:underline">
           {t('detail.back')}
         </Link>
         <div className="flex gap-4 text-sm tabular-nums">
@@ -104,7 +120,33 @@ export default function PokemonDetail() {
               loading="eager"
             />
           </div>
-          <div className="mt-3 flex justify-center">
+          <div className="mt-3 flex flex-col items-center gap-3">
+            {forms && forms.length > 1 && (
+              <div
+                role="group"
+                aria-label={t('form.label')}
+                className="inline-flex flex-wrap items-center justify-center rounded-full border border-line bg-surface p-0.5"
+              >
+                {forms.map((f, i) => {
+                  const active = i === Math.min(formIdx, forms.length - 1)
+                  return (
+                    <button
+                      key={f.key}
+                      type="button"
+                      aria-pressed={active}
+                      onClick={() => setFormIdx(i)}
+                      className={`rounded-full px-3 py-1 text-xs font-medium transition-colors ${
+                        active
+                          ? 'bg-accent text-white'
+                          : 'text-muted hover:text-ink'
+                      }`}
+                    >
+                      {t(f.labelKey as StringKey)}
+                    </button>
+                  )
+                })}
+              </div>
+            )}
             <ShinyToggle checked={shiny} onChange={setShiny} />
           </div>
         </div>
@@ -118,21 +160,21 @@ export default function PokemonDetail() {
             <h1 className="text-3xl font-semibold tracking-tight">
               {pokemon.displayName}
             </h1>
-            {pokemon.isHisuianForm && (
+            {activeForm && (
               <span className="rounded-full border border-accent/40 px-2.5 py-0.5 text-xs font-medium text-accent">
-                {t('common.hisuiFormBadge')}
+                {t(activeForm.labelKey as StringKey)}
               </span>
             )}
           </div>
           <div className="mt-3 flex flex-wrap gap-1.5">
-            {pokemon.types.map((type) => (
+            {display.types.map((type) => (
               <TypeBadge key={type} type={type} size="md" />
             ))}
           </div>
 
-          {pokemon.description && (
+          {description && (
             <p className="mt-4 max-w-prose text-sm leading-relaxed text-muted">
-              {pokemon.description}
+              {description}
             </p>
           )}
 
@@ -140,13 +182,13 @@ export default function PokemonDetail() {
             <div>
               <dt className="text-muted">{t('detail.height')}</dt>
               <dd className="mt-0.5 font-medium">
-                {formatHeight(pokemon.height, lang)}
+                {formatHeight(display.height, lang)}
               </dd>
             </div>
             <div>
               <dt className="text-muted">{t('detail.weight')}</dt>
               <dd className="mt-0.5 font-medium">
-                {formatWeight(pokemon.weight, lang)}
+                {formatWeight(display.weight, lang)}
               </dd>
             </div>
           </dl>
@@ -160,7 +202,7 @@ export default function PokemonDetail() {
                 <StatBar
                   key={key}
                   label={STAT_LABELS[lang][key]}
-                  value={pokemon.stats[key]}
+                  value={display.stats[key]}
                 />
               ))}
             </div>

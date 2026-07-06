@@ -1,4 +1,4 @@
-import { Suspense } from 'react'
+import { Suspense, useLayoutEffect } from 'react'
 import { Link, Outlet, useLocation } from 'react-router-dom'
 import { useLanguage, type StringKey } from '../lib/i18n'
 import ErrorBoundary from './ErrorBoundary'
@@ -31,6 +31,12 @@ const TABS: { to: string; labelKey: StringKey; isActive: (path: string) => boole
 export default function Layout() {
   const { pathname } = useLocation()
   const { t } = useLanguage()
+
+  // La schimbarea paginii urcăm sus — excepție face Pokédexul („/"), care își
+  // restaurează singur poziția de scroll ca să nu pierzi locul din grilă.
+  useLayoutEffect(() => {
+    if (pathname !== '/') window.scrollTo(0, 0)
+  }, [pathname])
 
   return (
     <>

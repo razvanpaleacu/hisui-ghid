@@ -34,6 +34,23 @@ export interface PokemonSprites {
   artworkShiny: string
 }
 
+/**
+ * O formă selectabilă a unui Pokémon: forma Hisui vs originală, Origin/Therian/
+ * Sky pentru legendari, sau mascul/femelă acolo unde sprite-urile diferă.
+ * `labelKey` e o cheie i18n (form.hisui, form.original, form.origin, …).
+ */
+export interface PokemonForm {
+  key: string
+  labelKey: string
+  id: number
+  name: string
+  types: TypeName[]
+  stats: PokemonStats
+  height: number
+  weight: number
+  sprites: PokemonSprites
+}
+
 export interface PokedexEntry {
   /** Numărul din Pokédexul Hisui (1–242). */
   dexNumber: number
@@ -54,6 +71,9 @@ export interface PokedexEntry {
   sprites: PokemonSprites
   /** Zonele din Hisui unde apare — completate manual, ulterior. */
   locations: string[]
-  /** Descriere scurtă originală (opțională) — NU flavor text oficial. */
-  description?: string
+  /**
+   * Formele selectabile (când sunt ≥ 2). Prima e forma principală, identică
+   * cu datele de sus. Absent când Pokémonul are o singură formă.
+   */
+  forms?: PokemonForm[]
 }

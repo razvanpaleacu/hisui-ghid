@@ -1,74 +1,157 @@
-import StubPage, { type StubContent } from '../components/StubPage'
-import { useLanguage, type Lang } from '../lib/i18n'
+import { useMemo } from 'react'
+import { Link, useSearchParams } from 'react-router-dom'
+import SpriteImage from '../components/SpriteImage'
+import {
+  AREA_DESCRIPTIONS,
+  AREA_NAMES,
+  AREA_ORDER,
+  AREA_SHORT,
+  type AreaId,
+} from '../data/areas'
+import { LOCATIONS } from '../data/locations'
+import { formatDexNumber, formatPokemonCount } from '../lib/format'
+import { useLanguage } from '../lib/i18n'
+import { pokedex } from '../lib/pokedex'
+import { usePageTitle } from '../lib/usePageTitle'
 
-const CONTENT: Record<Lang, StubContent> = {
-  ro: {
-    title: 'Ținuturile Hisui',
-    intro:
-      'Regiunea Hisui — vechiul Sinnoh — e împărțită în cinci zone deschise, fiecare cu propriul climat și proprii Pokémoni. Ghidurile detaliate pentru fiecare ținut sunt în lucru.',
-    items: [
-      {
-        title: 'Câmpiile de Obsidian',
-        description:
-          'Obsidian Fieldlands — pajiști, păduri și râuri; prima zonă pe care o explorezi și locul ideal pentru primele capturi.',
-      },
-      {
-        title: 'Mlaștinile Purpurii',
-        description:
-          'Crimson Mirelands — mlaștini cețoase și terenuri noroioase, casa multor Pokémoni de tip Pământ și Otravă.',
-      },
-      {
-        title: 'Coasta de Cobalt',
-        description:
-          'Cobalt Coastlands — plaje, faleze și ape adânci, cu Pokémoni de tip Apă și Zbor.',
-      },
-      {
-        title: 'Podișul Coronet',
-        description:
-          'Coronet Highlands — drumul stâncos spre vârful muntelui Coronet, cu peșteri și Pokémoni de tip Rocă și Dragon.',
-      },
-      {
-        title: 'Ținuturile de Gheață Alabastru',
-        description:
-          'Alabaster Icelands — tundra înghețată din nordul regiunii, cu viscol, gheață și Pokémoni rari.',
-      },
-    ],
-  },
-  en: {
-    title: 'Hisui Areas',
-    intro:
-      'The Hisui region — ancient Sinnoh — is divided into five open areas, each with its own climate and its own Pokémon. Detailed guides for each area are in the works.',
-    items: [
-      {
-        title: 'Obsidian Fieldlands',
-        description:
-          'Meadows, forests and rivers; the first area you explore and the ideal place for your first catches.',
-      },
-      {
-        title: 'Crimson Mirelands',
-        description:
-          'Misty bogs and muddy terrain, home to many Ground- and Poison-type Pokémon.',
-      },
-      {
-        title: 'Cobalt Coastlands',
-        description:
-          'Beaches, cliffs and deep waters, with Water- and Flying-type Pokémon.',
-      },
-      {
-        title: 'Coronet Highlands',
-        description:
-          'The rocky climb to the peak of Mount Coronet, with caves and Rock- and Dragon-type Pokémon.',
-      },
-      {
-        title: 'Alabaster Icelands',
-        description:
-          'The frozen tundra in the north of the region, with blizzards, ice and rare Pokémon.',
-      },
-    ],
-  },
+// Forme abstracte, originale — o hartă stilizată, nu cea oficială din joc.
+// Poziționate aproximativ ca geografia regiunii: gheață la nord, coasta la sud,
+// muntele Coronet în centru, câmpiile la vest și mlaștinile la est.
+const REGIONS: { id: AreaId; cx: number; cy: number; rx: number; ry: number }[] = [
+  { id: 'alabaster-icelands', cx: 200, cy: 64, rx: 150, ry: 46 },
+  { id: 'obsidian-fieldlands', cx: 94, cy: 210, rx: 78, ry: 82 },
+  { id: 'coronet-highlands', cx: 200, cy: 226, rx: 50, ry: 122 },
+  { id: 'crimson-mirelands', cx: 306, cy: 210, rx: 80, ry: 84 },
+  { id: 'cobalt-coastlands', cx: 200, cy: 398, rx: 150, ry: 48 },
+]
+
+function isAreaId(value: string | null): value is AreaId {
+  return !!value && (AREA_ORDER as string[]).includes(value)
 }
 
 export default function Tinuturi() {
-  const { lang } = useLanguage()
-  return <StubPage content={CONTENT[lang]} />
+  const { lang, t } = useLanguage()
+  usePageTitle(`${t('nav.tinuturi')}${t('site.pageTitleSuffix')}`)
+
+  const [params, setParams] = useSearchParams()
+  const zonaParam = params.get('zona')
+  const selected: AreaId | null = isAreaId(zonaParam) ? zonaParam : null
+
+  const select = (id: AreaId) => {
+    setParams(id === selected ? {} : { zona: id }, { replace: true })
+  }
+
+  const pokemonHere = useMemo(
+    () =>
+      selected
+        ? pokedex.filter((p) => LOCATIONS[p.name]?.includes(selected))
+        : [],
+    [selected],
+  )
+
+  return (
+    <div className="animate-fade-in">
+      <h1 className="text-2xl font-semibold tracking-tight">
+        {t('nav.tinuturi')}
+      </h1>
+      <p className="mt-2 max-w-prose text-sm leading-relaxed text-muted">
+        {t('map.intro')}
+      </p>
+
+      <div className="mt-8 grid gap-8 lg:grid-cols-[minmax(0,440px)_1fr]">
+        <svg
+          viewBox="0 0 400 460"
+          className="w-full select-none"
+          role="group"
+          aria-label={t('nav.tinuturi')}
+        >
+          {REGIONS.map((r) => {
+            const active = selected === r.id
+            return (
+              <g
+                key={r.id}
+                role="button"
+                tabIndex={0}
+                aria-pressed={active}
+                aria-label={t('map.openArea', { name: AREA_NAMES[lang][r.id] })}
+                onClick={() => select(r.id)}
+                onKeyDown={(e) => {
+                  if (e.key === 'Enter' || e.key === ' ') {
+                    e.preventDefault()
+                    select(r.id)
+                  }
+                }}
+                className="cursor-pointer outline-none [&:focus-visible>ellipse]:stroke-accent"
+              >
+                <ellipse
+                  cx={r.cx}
+                  cy={r.cy}
+                  rx={r.rx}
+                  ry={r.ry}
+                  className={`transition-colors ${
+                    active
+                      ? 'fill-accent stroke-accent'
+                      : 'fill-surface stroke-line hover:fill-[#EAF1EC]'
+                  }`}
+                  strokeWidth={2}
+                />
+                <text
+                  x={r.cx}
+                  y={r.cy}
+                  textAnchor="middle"
+                  dominantBaseline="central"
+                  className={`pointer-events-none text-[15px] font-semibold ${
+                    active ? 'fill-white' : 'fill-ink'
+                  }`}
+                >
+                  {AREA_SHORT[lang][r.id]}
+                </text>
+              </g>
+            )
+          })}
+        </svg>
+
+        <div>
+          {!selected ? (
+            <div className="rounded-xl border border-dashed border-line px-6 py-16 text-center text-sm text-muted">
+              {t('map.selectHint')}
+            </div>
+          ) : (
+            <div className="animate-fade-in">
+              <h2 className="text-lg font-semibold tracking-tight">
+                {AREA_NAMES[lang][selected]}
+              </h2>
+              <p className="mt-1 max-w-prose text-sm leading-relaxed text-muted">
+                {AREA_DESCRIPTIONS[lang][selected]}
+              </p>
+              <p className="mt-4 text-xs font-semibold uppercase tracking-wide text-muted">
+                {t('map.pokemonHere')} · {formatPokemonCount(pokemonHere.length, lang)}
+              </p>
+              <div className="mt-3 grid grid-cols-3 gap-3 sm:grid-cols-4 md:grid-cols-5">
+                {pokemonHere.map((p) => (
+                  <Link
+                    key={p.name}
+                    to={`/pokedex/${p.name}`}
+                    className="group rounded-lg border border-line bg-surface p-2 text-center transition-colors hover:border-accent"
+                  >
+                    <SpriteImage
+                      src={p.sprites.normal}
+                      alt={p.displayName}
+                      className="mx-auto aspect-square w-full"
+                    />
+                    <p className="mt-1 text-[10px] tabular-nums text-muted">
+                      {formatDexNumber(p.dexNumber)}
+                    </p>
+                    <p className="truncate text-xs font-medium group-hover:text-accent">
+                      {p.displayName}
+                    </p>
+                  </Link>
+                ))}
+              </div>
+            </div>
+          )}
+        </div>
+      </div>
+    </div>
+  )
 }

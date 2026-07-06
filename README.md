@@ -7,14 +7,19 @@ fără backend, ușor de găzduit gratuit.
 În versiunea curentă:
 
 - **Pokédex Hisui complet** — toate cele 242 de intrări, cu căutare după nume/număr,
-  filtrare după tip, comutator normal/shiny și pagină de detaliu pentru fiecare Pokémon
-  (tipuri, statistici de bază, înălțime/greutate, locații — în curând).
-- Formele regionale Hisui (Growlithe, Zorua, Braviary etc.) sunt rezolvate corect,
-  cu sprite-urile, tipurile și statisticile formei din Hisui, nu ale celei originale.
-- Tab-uri stub pentru **Ținuturile Hisui**, **Mecanici** și **Ghid & Sfaturi** —
-  se completează în sesiuni viitoare.
+  filtrare după tip, **sortare** (număr, nume, statistici, înălțime/greutate),
+  comutator normal/shiny (inclusiv un buton plutitor mereu vizibil) și pagină de detaliu
+  pentru fiecare Pokémon (tipuri, statistici, înălțime/greutate, **descriere originală**,
+  locații).
+- **Sistem de forme** în detaliu: formele Hisui vs originale (ex. Zoroark), formele
+  legendarilor (Origin/Altered/Sky/Land/Therian) și mascul/femelă acolo unde diferă vizibil.
+- **Locațiile** fiecărui Pokémon (cele cinci ținuturi), plus o **hartă interactivă** a
+  regiunii care înlocuiește tab-ul Ținuturi: alegi o zonă și vezi Pokémonii care apar acolo.
+- Formele regionale Hisui sunt rezolvate corect, cu sprite-urile, tipurile și statisticile
+  formei din Hisui, nu ale celei originale.
+- Tab-uri stub pentru **Mecanici** și **Ghid & Sfaturi** — se completează ulterior.
 - **Selector de limbă RO/EN** în antet — toată interfața e disponibilă în română
-  și engleză; alegerea se reține în `localStorage`.
+  și engleză; alegerea se reține în `localStorage` (implicit engleză la prima vizită).
 
 ## Rulare locală
 

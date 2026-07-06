@@ -128,6 +128,108 @@ async function getHisuiDex() {
   }
 }
 
+// Sufixe de varietăți care sunt forme alternative reale (nu cosmetice, ca
+// literele Unown, plăcile Arceus, aparatele Rotom sau șepcile Pikachu).
+const ALT_FORM_LABELS = [
+  { suffix: '-origin', key: 'origin', labelKey: 'form.origin' },
+  { suffix: '-altered', key: 'altered', labelKey: 'form.altered' },
+  { suffix: '-sky', key: 'sky', labelKey: 'form.sky' },
+  { suffix: '-land', key: 'land', labelKey: 'form.land' },
+  { suffix: '-therian', key: 'therian', labelKey: 'form.therian' },
+  { suffix: '-incarnate', key: 'incarnate', labelKey: 'form.incarnate' },
+  { suffix: '-female', key: 'female', labelKey: 'form.female' },
+  { suffix: '-male', key: 'male', labelKey: 'form.male' },
+]
+
+function labelForVariety(name) {
+  for (const f of ALT_FORM_LABELS) {
+    if (name.endsWith(f.suffix)) return { key: f.key, labelKey: f.labelKey }
+  }
+  return null
+}
+
+/** Extrage câmpurile comune (tipuri/statistici/sprite-uri) dintr-un „pokemon". */
+function extractForm(pokemon) {
+  const stats = {}
+  for (const s of pokemon.stats) {
+    const key = STAT_KEYS[s.stat.name]
+    if (key) stats[key] = s.base_stat
+  }
+
+  const artwork = pokemon.sprites.other?.['official-artwork'] ?? {}
+  const normal = pokemon.sprites.front_default
+  const shiny = pokemon.sprites.front_shiny ?? normal
+  if (!normal) {
+    throw new Error(`"${pokemon.name}" nu are sprite front_default în PokéAPI.`)
+  }
+
+  return {
+    id: pokemon.id,
+    name: pokemon.name,
+    types: pokemon.types.map((t) => t.type.name),
+    stats,
+    height: pokemon.height,
+    weight: pokemon.weight,
+    sprites: {
+      normal,
+      shiny,
+      artwork: artwork.front_default ?? normal,
+      // Unele forme nu au artwork shiny — cădem pe sprite-ul shiny obișnuit.
+      artworkShiny: artwork.front_shiny ?? shiny,
+    },
+  }
+}
+
+// Specii cu diferențe de sex vizibile care merită un comutator. Majoritatea
+// speciilor marcate `has_gender_differences` au diferențe minuscule (coada lui
+// Pikachu etc.) și n-au artwork oficial femelă — le sărim ca să nu aglomerăm.
+// (Basculegion e tratat separat, prin varietăți male/female, cu artwork oficial.)
+const GENDER_DIFF_NOTABLE = new Set(['hippopotas', 'hippowdon', 'combee'])
+
+/**
+ * Forme mascul/femelă din sprite-urile HOME (același stil pentru ambele, ca să
+ * se schimbe doar aspectul de sex, nu stilul de desen). Întoarce [male, female]
+ * sau null dacă nu există sprite femelă.
+ */
+function genderForms(pokemon, base) {
+  const s = pokemon.sprites
+  const home = s.other?.home ?? {}
+  if (!home.front_female) return null
+  const commonMeta = {
+    id: pokemon.id,
+    name: pokemon.name,
+    // Diferențele de sex sunt cosmetice: tipuri/statistici/dimensiuni identice.
+    types: base.types,
+    stats: base.stats,
+    height: base.height,
+    weight: base.weight,
+  }
+  return [
+    {
+      key: 'male',
+      labelKey: 'form.male',
+      ...commonMeta,
+      sprites: {
+        normal: home.front_default ?? base.sprites.normal,
+        shiny: home.front_shiny ?? base.sprites.shiny,
+        artwork: home.front_default ?? base.sprites.artwork,
+        artworkShiny: home.front_shiny ?? base.sprites.artworkShiny,
+      },
+    },
+    {
+      key: 'female',
+      labelKey: 'form.female',
+      ...commonMeta,
+      sprites: {
+        normal: home.front_female,
+        shiny: home.front_shiny_female ?? home.front_female,
+        artwork: home.front_female,
+        artworkShiny: home.front_shiny_female ?? home.front_female,
+      },
+    },
+  ]
+}
+
 async function buildEntry(entry) {
   const species = await fetchJson(entry.pokemon_species.url)
 
@@ -145,39 +247,58 @@ async function buildEntry(entry) {
   }
 
   const pokemon = await fetchJson(variety.pokemon.url)
+  const form = extractForm(pokemon)
+  const isHisuianForm = pokemon.name.endsWith('-hisui')
 
-  const stats = {}
-  for (const s of pokemon.stats) {
-    const key = STAT_KEYS[s.stat.name]
-    if (key) stats[key] = s.base_stat
+  // Eticheta formei principale.
+  const primaryLabel = isHisuianForm
+    ? { key: 'hisui', labelKey: 'form.hisui' }
+    : labelForVariety(pokemon.name) ?? { key: 'default', labelKey: 'form.default' }
+
+  const forms = [{ ...primaryLabel, ...form }]
+
+  if (isHisuianForm) {
+    // Forma originală (varietatea default a speciei).
+    const defaultVariety = species.varieties.find((v) => v.is_default)
+    if (defaultVariety && defaultVariety.pokemon.name !== pokemon.name) {
+      const basePokemon = await fetchJson(defaultVariety.pokemon.url)
+      forms.push({ key: 'original', labelKey: 'form.original', ...extractForm(basePokemon) })
+    }
+  } else {
+    // Forme alternative (Origin/Therian/Sky/…, femelă de Basculegion) din varietăți.
+    for (const v of species.varieties) {
+      if (v.pokemon.name === pokemon.name) continue
+      const label = labelForVariety(v.pokemon.name)
+      if (!label) continue
+      const altPokemon = await fetchJson(v.pokemon.url)
+      forms.push({ ...label, ...extractForm(altPokemon) })
+    }
   }
 
-  const artwork = pokemon.sprites.other?.['official-artwork'] ?? {}
-  const normal = pokemon.sprites.front_default
-  const shiny = pokemon.sprites.front_shiny ?? normal
-  if (!normal) {
-    throw new Error(`"${pokemon.name}" nu are sprite front_default în PokéAPI.`)
+  // Diferențe de sex vizibile (când nu există deja o varietate de sex).
+  const hasGenderVariety = forms.some((f) => f.key === 'female' || f.key === 'male')
+  if (GENDER_DIFF_NOTABLE.has(species.name) && !hasGenderVariety) {
+    const pair = genderForms(pokemon, form)
+    if (pair) {
+      // Înlocuim forma principală cu perechea mascul/femelă (același stil HOME).
+      forms.splice(0, 1, ...pair)
+    }
   }
 
   return {
     dexNumber: entry.entry_number,
-    id: pokemon.id,
+    id: form.id,
     nationalDex: species.id,
-    name: pokemon.name,
+    name: form.name,
     displayName: displayNameFor(species.name),
-    types: pokemon.types.map((t) => t.type.name),
-    stats,
-    height: pokemon.height,
-    weight: pokemon.weight,
-    isHisuianForm: pokemon.name.endsWith('-hisui'),
-    sprites: {
-      normal,
-      shiny,
-      artwork: artwork.front_default ?? normal,
-      // Unele forme nu au artwork shiny — cădem pe sprite-ul shiny obișnuit.
-      artworkShiny: artwork.front_shiny ?? shiny,
-    },
+    types: form.types,
+    stats: form.stats,
+    height: form.height,
+    weight: form.weight,
+    isHisuianForm,
+    sprites: form.sprites,
     locations: [],
+    ...(forms.length > 1 ? { forms } : {}),
   }
 }
 

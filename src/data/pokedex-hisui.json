@@ -84,7 +84,61 @@
       "artwork": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/other/official-artwork/10244.png",
       "artworkShiny": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/other/official-artwork/shiny/10244.png"
     },
-    "locations": []
+    "locations": [],
+    "forms": [
+      {
+        "key": "hisui",
+        "labelKey": "form.hisui",
+        "id": 10244,
+        "name": "decidueye-hisui",
+        "types": [
+          "grass",
+          "fighting"
+        ],
+        "stats": {
+          "hp": 88,
+          "attack": 112,
+          "defense": 80,
+          "specialAttack": 95,
+          "specialDefense": 95,
+          "speed": 60
+        },
+        "height": 16,
+        "weight": 370,
+        "sprites": {
+          "normal": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/10244.png",
+          "shiny": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/shiny/10244.png",
+          "artwork": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/other/official-artwork/10244.png",
+          "artworkShiny": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/other/official-artwork/shiny/10244.png"
+        }
+      },
+      {
+        "key": "original",
+        "labelKey": "form.original",
+        "id": 724,
+        "name": "decidueye",
+        "types": [
+          "grass",
+          "ghost"
+        ],
+        "stats": {
+          "hp": 78,
+          "attack": 107,
+          "defense": 75,
+          "specialAttack": 100,
+          "specialDefense": 100,
+          "speed": 70
+        },
+        "height": 16,
+        "weight": 366,
+        "sprites": {
+          "normal": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/724.png",
+          "shiny": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/shiny/724.png",
+          "artwork": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/other/official-artwork/724.png",
+          "artworkShiny": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/other/official-artwork/shiny/724.png"
+        }
+      }
+    ]
   },
   {
     "dexNumber": 4,
@@ -169,7 +223,60 @@
       "artwork": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/other/official-artwork/10233.png",
       "artworkShiny": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/other/official-artwork/shiny/10233.png"
     },
-    "locations": []
+    "locations": [],
+    "forms": [
+      {
+        "key": "hisui",
+        "labelKey": "form.hisui",
+        "id": 10233,
+        "name": "typhlosion-hisui",
+        "types": [
+          "fire",
+          "ghost"
+        ],
+        "stats": {
+          "hp": 73,
+          "attack": 84,
+          "defense": 78,
+          "specialAttack": 119,
+          "specialDefense": 85,
+          "speed": 95
+        },
+        "height": 16,
+        "weight": 698,
+        "sprites": {
+          "normal": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/10233.png",
+          "shiny": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/shiny/10233.png",
+          "artwork": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/other/official-artwork/10233.png",
+          "artworkShiny": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/other/official-artwork/shiny/10233.png"
+        }
+      },
+      {
+        "key": "original",
+        "labelKey": "form.original",
+        "id": 157,
+        "name": "typhlosion",
+        "types": [
+          "fire"
+        ],
+        "stats": {
+          "hp": 78,
+          "attack": 84,
+          "defense": 78,
+          "specialAttack": 109,
+          "specialDefense": 85,
+          "speed": 100
+        },
+        "height": 17,
+        "weight": 795,
+        "sprites": {
+          "normal": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/157.png",
+          "shiny": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/shiny/157.png",
+          "artwork": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/other/official-artwork/157.png",
+          "artworkShiny": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/other/official-artwork/shiny/157.png"
+        }
+      }
+    ]
   },
   {
     "dexNumber": 7,
@@ -254,7 +361,60 @@
       "artwork": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/other/official-artwork/10236.png",
       "artworkShiny": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/other/official-artwork/shiny/10236.png"
     },
-    "locations": []
+    "locations": [],
+    "forms": [
+      {
+        "key": "hisui",
+        "labelKey": "form.hisui",
+        "id": 10236,
+        "name": "samurott-hisui",
+        "types": [
+          "water",
+          "dark"
+        ],
+        "stats": {
+          "hp": 90,
+          "attack": 108,
+          "defense": 80,
+          "specialAttack": 100,
+          "specialDefense": 65,
+          "speed": 85
+        },
+        "height": 15,
+        "weight": 582,
+        "sprites": {
+          "normal": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/10236.png",
+          "shiny": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/shiny/10236.png",
+          "artwork": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/other/official-artwork/10236.png",
+          "artworkShiny": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/other/official-artwork/shiny/10236.png"
+        }
+      },
+      {
+        "key": "original",
+        "labelKey": "form.original",
+        "id": 503,
+        "name": "samurott",
+        "types": [
+          "water"
+        ],
+        "stats": {
+          "hp": 95,
+          "attack": 100,
+          "defense": 85,
+          "specialAttack": 108,
+          "specialDefense": 70,
+          "speed": 70
+        },
+        "height": 15,
+        "weight": 946,
+        "sprites": {
+          "normal": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/503.png",
+          "shiny": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/shiny/503.png",
+          "artwork": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/other/official-artwork/503.png",
+          "artworkShiny": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/other/official-artwork/shiny/503.png"
+        }
+      }
+    ]
   },
   {
     "dexNumber": 10,
@@ -1984,7 +2144,61 @@
       "artwork": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/other/official-artwork/415.png",
       "artworkShiny": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/other/official-artwork/shiny/415.png"
     },
-    "locations": []
+    "locations": [],
+    "forms": [
+      {
+        "key": "male",
+        "labelKey": "form.male",
+        "id": 415,
+        "name": "combee",
+        "types": [
+          "bug",
+          "flying"
+        ],
+        "stats": {
+          "hp": 30,
+          "attack": 30,
+          "defense": 42,
+          "specialAttack": 30,
+          "specialDefense": 42,
+          "speed": 70
+        },
+        "height": 3,
+        "weight": 55,
+        "sprites": {
+          "normal": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/other/home/415.png",
+          "shiny": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/other/home/shiny/415.png",
+          "artwork": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/other/home/415.png",
+          "artworkShiny": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/other/home/shiny/415.png"
+        }
+      },
+      {
+        "key": "female",
+        "labelKey": "form.female",
+        "id": 415,
+        "name": "combee",
+        "types": [
+          "bug",
+          "flying"
+        ],
+        "stats": {
+          "hp": 30,
+          "attack": 30,
+          "defense": 42,
+          "specialAttack": 30,
+          "specialDefense": 42,
+          "speed": 70
+        },
+        "height": 3,
+        "weight": 55,
+        "sprites": {
+          "normal": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/other/home/female/415.png",
+          "shiny": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/other/home/shiny/female/415.png",
+          "artwork": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/other/home/female/415.png",
+          "artworkShiny": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/other/home/shiny/female/415.png"
+        }
+      }
+    ]
   },
   {
     "dexNumber": 71,
@@ -2386,7 +2600,61 @@
       "artwork": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/other/official-artwork/10234.png",
       "artworkShiny": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/other/official-artwork/shiny/10234.png"
     },
-    "locations": []
+    "locations": [],
+    "forms": [
+      {
+        "key": "hisui",
+        "labelKey": "form.hisui",
+        "id": 10234,
+        "name": "qwilfish-hisui",
+        "types": [
+          "dark",
+          "poison"
+        ],
+        "stats": {
+          "hp": 65,
+          "attack": 95,
+          "defense": 85,
+          "specialAttack": 55,
+          "specialDefense": 55,
+          "speed": 85
+        },
+        "height": 5,
+        "weight": 39,
+        "sprites": {
+          "normal": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/10234.png",
+          "shiny": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/shiny/10234.png",
+          "artwork": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/other/official-artwork/10234.png",
+          "artworkShiny": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/other/official-artwork/shiny/10234.png"
+        }
+      },
+      {
+        "key": "original",
+        "labelKey": "form.original",
+        "id": 211,
+        "name": "qwilfish",
+        "types": [
+          "water",
+          "poison"
+        ],
+        "stats": {
+          "hp": 65,
+          "attack": 95,
+          "defense": 85,
+          "specialAttack": 55,
+          "specialDefense": 55,
+          "speed": 85
+        },
+        "height": 5,
+        "weight": 39,
+        "sprites": {
+          "normal": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/211.png",
+          "shiny": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/shiny/211.png",
+          "artwork": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/other/official-artwork/211.png",
+          "artworkShiny": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/other/official-artwork/shiny/211.png"
+        }
+      }
+    ]
   },
   {
     "dexNumber": 85,
@@ -2671,7 +2939,60 @@
       "artwork": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/other/official-artwork/10237.png",
       "artworkShiny": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/other/official-artwork/shiny/10237.png"
     },
-    "locations": []
+    "locations": [],
+    "forms": [
+      {
+        "key": "hisui",
+        "labelKey": "form.hisui",
+        "id": 10237,
+        "name": "lilligant-hisui",
+        "types": [
+          "grass",
+          "fighting"
+        ],
+        "stats": {
+          "hp": 70,
+          "attack": 105,
+          "defense": 75,
+          "specialAttack": 50,
+          "specialDefense": 75,
+          "speed": 105
+        },
+        "height": 12,
+        "weight": 192,
+        "sprites": {
+          "normal": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/10237.png",
+          "shiny": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/shiny/10237.png",
+          "artwork": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/other/official-artwork/10237.png",
+          "artworkShiny": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/other/official-artwork/shiny/10237.png"
+        }
+      },
+      {
+        "key": "original",
+        "labelKey": "form.original",
+        "id": 549,
+        "name": "lilligant",
+        "types": [
+          "grass"
+        ],
+        "stats": {
+          "hp": 70,
+          "attack": 60,
+          "defense": 75,
+          "specialAttack": 110,
+          "specialDefense": 75,
+          "speed": 90
+        },
+        "height": 11,
+        "weight": 163,
+        "sprites": {
+          "normal": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/549.png",
+          "shiny": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/shiny/549.png",
+          "artwork": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/other/official-artwork/549.png",
+          "artworkShiny": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/other/official-artwork/shiny/549.png"
+        }
+      }
+    ]
   },
   {
     "dexNumber": 95,
@@ -3045,7 +3366,59 @@
       "artwork": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/other/official-artwork/449.png",
       "artworkShiny": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/other/official-artwork/shiny/449.png"
     },
-    "locations": []
+    "locations": [],
+    "forms": [
+      {
+        "key": "male",
+        "labelKey": "form.male",
+        "id": 449,
+        "name": "hippopotas",
+        "types": [
+          "ground"
+        ],
+        "stats": {
+          "hp": 68,
+          "attack": 72,
+          "defense": 78,
+          "specialAttack": 38,
+          "specialDefense": 42,
+          "speed": 32
+        },
+        "height": 8,
+        "weight": 495,
+        "sprites": {
+          "normal": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/other/home/449.png",
+          "shiny": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/other/home/shiny/449.png",
+          "artwork": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/other/home/449.png",
+          "artworkShiny": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/other/home/shiny/449.png"
+        }
+      },
+      {
+        "key": "female",
+        "labelKey": "form.female",
+        "id": 449,
+        "name": "hippopotas",
+        "types": [
+          "ground"
+        ],
+        "stats": {
+          "hp": 68,
+          "attack": 72,
+          "defense": 78,
+          "specialAttack": 38,
+          "specialDefense": 42,
+          "speed": 32
+        },
+        "height": 8,
+        "weight": 495,
+        "sprites": {
+          "normal": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/other/home/female/449.png",
+          "shiny": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/other/home/shiny/female/449.png",
+          "artwork": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/other/home/female/449.png",
+          "artworkShiny": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/other/home/shiny/female/449.png"
+        }
+      }
+    ]
   },
   {
     "dexNumber": 108,
@@ -3073,7 +3446,59 @@
       "artwork": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/other/official-artwork/450.png",
       "artworkShiny": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/other/official-artwork/shiny/450.png"
     },
-    "locations": []
+    "locations": [],
+    "forms": [
+      {
+        "key": "male",
+        "labelKey": "form.male",
+        "id": 450,
+        "name": "hippowdon",
+        "types": [
+          "ground"
+        ],
+        "stats": {
+          "hp": 108,
+          "attack": 112,
+          "defense": 118,
+          "specialAttack": 68,
+          "specialDefense": 72,
+          "speed": 47
+        },
+        "height": 20,
+        "weight": 3000,
+        "sprites": {
+          "normal": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/other/home/450.png",
+          "shiny": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/other/home/shiny/450.png",
+          "artwork": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/other/home/450.png",
+          "artworkShiny": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/other/home/shiny/450.png"
+        }
+      },
+      {
+        "key": "female",
+        "labelKey": "form.female",
+        "id": 450,
+        "name": "hippowdon",
+        "types": [
+          "ground"
+        ],
+        "stats": {
+          "hp": 108,
+          "attack": 112,
+          "defense": 118,
+          "specialAttack": 68,
+          "specialDefense": 72,
+          "speed": 47
+        },
+        "height": 20,
+        "weight": 3000,
+        "sprites": {
+          "normal": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/other/home/female/450.png",
+          "shiny": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/other/home/shiny/female/450.png",
+          "artwork": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/other/home/female/450.png",
+          "artworkShiny": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/other/home/shiny/female/450.png"
+        }
+      }
+    ]
   },
   {
     "dexNumber": 109,
@@ -3301,7 +3726,60 @@
       "artwork": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/other/official-artwork/10241.png",
       "artworkShiny": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/other/official-artwork/shiny/10241.png"
     },
-    "locations": []
+    "locations": [],
+    "forms": [
+      {
+        "key": "hisui",
+        "labelKey": "form.hisui",
+        "id": 10241,
+        "name": "sliggoo-hisui",
+        "types": [
+          "steel",
+          "dragon"
+        ],
+        "stats": {
+          "hp": 58,
+          "attack": 75,
+          "defense": 83,
+          "specialAttack": 83,
+          "specialDefense": 113,
+          "speed": 40
+        },
+        "height": 7,
+        "weight": 685,
+        "sprites": {
+          "normal": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/10241.png",
+          "shiny": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/shiny/10241.png",
+          "artwork": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/other/official-artwork/10241.png",
+          "artworkShiny": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/other/official-artwork/shiny/10241.png"
+        }
+      },
+      {
+        "key": "original",
+        "labelKey": "form.original",
+        "id": 705,
+        "name": "sliggoo",
+        "types": [
+          "dragon"
+        ],
+        "stats": {
+          "hp": 68,
+          "attack": 75,
+          "defense": 53,
+          "specialAttack": 83,
+          "specialDefense": 113,
+          "speed": 60
+        },
+        "height": 8,
+        "weight": 175,
+        "sprites": {
+          "normal": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/705.png",
+          "shiny": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/shiny/705.png",
+          "artwork": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/other/official-artwork/705.png",
+          "artworkShiny": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/other/official-artwork/shiny/705.png"
+        }
+      }
+    ]
   },
   {
     "dexNumber": 117,
@@ -3330,7 +3808,60 @@
       "artwork": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/other/official-artwork/10242.png",
       "artworkShiny": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/other/official-artwork/shiny/10242.png"
     },
-    "locations": []
+    "locations": [],
+    "forms": [
+      {
+        "key": "hisui",
+        "labelKey": "form.hisui",
+        "id": 10242,
+        "name": "goodra-hisui",
+        "types": [
+          "steel",
+          "dragon"
+        ],
+        "stats": {
+          "hp": 80,
+          "attack": 100,
+          "defense": 100,
+          "specialAttack": 110,
+          "specialDefense": 150,
+          "speed": 60
+        },
+        "height": 17,
+        "weight": 3341,
+        "sprites": {
+          "normal": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/10242.png",
+          "shiny": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/shiny/10242.png",
+          "artwork": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/other/official-artwork/10242.png",
+          "artworkShiny": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/other/official-artwork/shiny/10242.png"
+        }
+      },
+      {
+        "key": "original",
+        "labelKey": "form.original",
+        "id": 706,
+        "name": "goodra",
+        "types": [
+          "dragon"
+        ],
+        "stats": {
+          "hp": 90,
+          "attack": 100,
+          "defense": 70,
+          "specialAttack": 110,
+          "specialDefense": 150,
+          "speed": 80
+        },
+        "height": 20,
+        "weight": 1505,
+        "sprites": {
+          "normal": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/706.png",
+          "shiny": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/shiny/706.png",
+          "artwork": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/other/official-artwork/706.png",
+          "artworkShiny": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/other/official-artwork/shiny/706.png"
+        }
+      }
+    ]
   },
   {
     "dexNumber": 118,
@@ -4274,7 +4805,60 @@
       "artwork": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/other/official-artwork/10229.png",
       "artworkShiny": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/other/official-artwork/shiny/10229.png"
     },
-    "locations": []
+    "locations": [],
+    "forms": [
+      {
+        "key": "hisui",
+        "labelKey": "form.hisui",
+        "id": 10229,
+        "name": "growlithe-hisui",
+        "types": [
+          "fire",
+          "rock"
+        ],
+        "stats": {
+          "hp": 60,
+          "attack": 75,
+          "defense": 45,
+          "specialAttack": 65,
+          "specialDefense": 50,
+          "speed": 55
+        },
+        "height": 8,
+        "weight": 227,
+        "sprites": {
+          "normal": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/10229.png",
+          "shiny": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/shiny/10229.png",
+          "artwork": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/other/official-artwork/10229.png",
+          "artworkShiny": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/other/official-artwork/shiny/10229.png"
+        }
+      },
+      {
+        "key": "original",
+        "labelKey": "form.original",
+        "id": 58,
+        "name": "growlithe",
+        "types": [
+          "fire"
+        ],
+        "stats": {
+          "hp": 55,
+          "attack": 70,
+          "defense": 45,
+          "specialAttack": 70,
+          "specialDefense": 50,
+          "speed": 60
+        },
+        "height": 7,
+        "weight": 190,
+        "sprites": {
+          "normal": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/58.png",
+          "shiny": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/shiny/58.png",
+          "artwork": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/other/official-artwork/58.png",
+          "artworkShiny": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/other/official-artwork/shiny/58.png"
+        }
+      }
+    ]
   },
   {
     "dexNumber": 151,
@@ -4303,7 +4887,60 @@
       "artwork": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/other/official-artwork/10230.png",
       "artworkShiny": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/other/official-artwork/shiny/10230.png"
     },
-    "locations": []
+    "locations": [],
+    "forms": [
+      {
+        "key": "hisui",
+        "labelKey": "form.hisui",
+        "id": 10230,
+        "name": "arcanine-hisui",
+        "types": [
+          "fire",
+          "rock"
+        ],
+        "stats": {
+          "hp": 95,
+          "attack": 115,
+          "defense": 80,
+          "specialAttack": 95,
+          "specialDefense": 80,
+          "speed": 90
+        },
+        "height": 20,
+        "weight": 1680,
+        "sprites": {
+          "normal": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/10230.png",
+          "shiny": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/shiny/10230.png",
+          "artwork": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/other/official-artwork/10230.png",
+          "artworkShiny": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/other/official-artwork/shiny/10230.png"
+        }
+      },
+      {
+        "key": "original",
+        "labelKey": "form.original",
+        "id": 59,
+        "name": "arcanine",
+        "types": [
+          "fire"
+        ],
+        "stats": {
+          "hp": 90,
+          "attack": 110,
+          "defense": 80,
+          "specialAttack": 100,
+          "specialDefense": 80,
+          "speed": 95
+        },
+        "height": 19,
+        "weight": 1550,
+        "sprites": {
+          "normal": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/59.png",
+          "shiny": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/shiny/59.png",
+          "artwork": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/other/official-artwork/59.png",
+          "artworkShiny": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/other/official-artwork/shiny/59.png"
+        }
+      }
+    ]
   },
   {
     "dexNumber": 152,
@@ -4756,7 +5393,61 @@
       "artwork": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/other/official-artwork/902.png",
       "artworkShiny": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/other/official-artwork/shiny/902.png"
     },
-    "locations": []
+    "locations": [],
+    "forms": [
+      {
+        "key": "male",
+        "labelKey": "form.male",
+        "id": 902,
+        "name": "basculegion-male",
+        "types": [
+          "water",
+          "ghost"
+        ],
+        "stats": {
+          "hp": 120,
+          "attack": 112,
+          "defense": 65,
+          "specialAttack": 80,
+          "specialDefense": 75,
+          "speed": 78
+        },
+        "height": 30,
+        "weight": 1100,
+        "sprites": {
+          "normal": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/902.png",
+          "shiny": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/shiny/902.png",
+          "artwork": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/other/official-artwork/902.png",
+          "artworkShiny": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/other/official-artwork/shiny/902.png"
+        }
+      },
+      {
+        "key": "female",
+        "labelKey": "form.female",
+        "id": 10248,
+        "name": "basculegion-female",
+        "types": [
+          "water",
+          "ghost"
+        ],
+        "stats": {
+          "hp": 120,
+          "attack": 92,
+          "defense": 65,
+          "specialAttack": 100,
+          "specialDefense": 75,
+          "speed": 78
+        },
+        "height": 30,
+        "weight": 1100,
+        "sprites": {
+          "normal": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/10248.png",
+          "shiny": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/shiny/10248.png",
+          "artwork": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/other/official-artwork/10248.png",
+          "artworkShiny": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/other/official-artwork/shiny/10248.png"
+        }
+      }
+    ]
   },
   {
     "dexNumber": 168,
@@ -5470,7 +6161,60 @@
       "artwork": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/other/official-artwork/10231.png",
       "artworkShiny": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/other/official-artwork/shiny/10231.png"
     },
-    "locations": []
+    "locations": [],
+    "forms": [
+      {
+        "key": "hisui",
+        "labelKey": "form.hisui",
+        "id": 10231,
+        "name": "voltorb-hisui",
+        "types": [
+          "electric",
+          "grass"
+        ],
+        "stats": {
+          "hp": 40,
+          "attack": 30,
+          "defense": 50,
+          "specialAttack": 55,
+          "specialDefense": 55,
+          "speed": 100
+        },
+        "height": 5,
+        "weight": 130,
+        "sprites": {
+          "normal": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/10231.png",
+          "shiny": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/shiny/10231.png",
+          "artwork": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/other/official-artwork/10231.png",
+          "artworkShiny": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/other/official-artwork/shiny/10231.png"
+        }
+      },
+      {
+        "key": "original",
+        "labelKey": "form.original",
+        "id": 100,
+        "name": "voltorb",
+        "types": [
+          "electric"
+        ],
+        "stats": {
+          "hp": 40,
+          "attack": 30,
+          "defense": 50,
+          "specialAttack": 55,
+          "specialDefense": 55,
+          "speed": 100
+        },
+        "height": 5,
+        "weight": 104,
+        "sprites": {
+          "normal": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/100.png",
+          "shiny": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/shiny/100.png",
+          "artwork": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/other/official-artwork/100.png",
+          "artworkShiny": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/other/official-artwork/shiny/100.png"
+        }
+      }
+    ]
   },
   {
     "dexNumber": 193,
@@ -5499,7 +6243,60 @@
       "artwork": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/other/official-artwork/10232.png",
       "artworkShiny": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/other/official-artwork/shiny/10232.png"
     },
-    "locations": []
+    "locations": [],
+    "forms": [
+      {
+        "key": "hisui",
+        "labelKey": "form.hisui",
+        "id": 10232,
+        "name": "electrode-hisui",
+        "types": [
+          "electric",
+          "grass"
+        ],
+        "stats": {
+          "hp": 60,
+          "attack": 50,
+          "defense": 70,
+          "specialAttack": 80,
+          "specialDefense": 80,
+          "speed": 150
+        },
+        "height": 12,
+        "weight": 710,
+        "sprites": {
+          "normal": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/10232.png",
+          "shiny": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/shiny/10232.png",
+          "artwork": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/other/official-artwork/10232.png",
+          "artworkShiny": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/other/official-artwork/shiny/10232.png"
+        }
+      },
+      {
+        "key": "original",
+        "labelKey": "form.original",
+        "id": 101,
+        "name": "electrode",
+        "types": [
+          "electric"
+        ],
+        "stats": {
+          "hp": 60,
+          "attack": 50,
+          "defense": 70,
+          "specialAttack": 80,
+          "specialDefense": 80,
+          "speed": 150
+        },
+        "height": 12,
+        "weight": 666,
+        "sprites": {
+          "normal": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/101.png",
+          "shiny": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/shiny/101.png",
+          "artwork": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/other/official-artwork/101.png",
+          "artworkShiny": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/other/official-artwork/shiny/101.png"
+        }
+      }
+    ]
   },
   {
     "dexNumber": 194,
@@ -5753,7 +6550,61 @@
       "artwork": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/other/official-artwork/10235.png",
       "artworkShiny": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/other/official-artwork/shiny/10235.png"
     },
-    "locations": []
+    "locations": [],
+    "forms": [
+      {
+        "key": "hisui",
+        "labelKey": "form.hisui",
+        "id": 10235,
+        "name": "sneasel-hisui",
+        "types": [
+          "fighting",
+          "poison"
+        ],
+        "stats": {
+          "hp": 55,
+          "attack": 95,
+          "defense": 55,
+          "specialAttack": 35,
+          "specialDefense": 75,
+          "speed": 115
+        },
+        "height": 9,
+        "weight": 270,
+        "sprites": {
+          "normal": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/10235.png",
+          "shiny": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/shiny/10235.png",
+          "artwork": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/other/official-artwork/10235.png",
+          "artworkShiny": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/other/official-artwork/shiny/10235.png"
+        }
+      },
+      {
+        "key": "original",
+        "labelKey": "form.original",
+        "id": 215,
+        "name": "sneasel",
+        "types": [
+          "dark",
+          "ice"
+        ],
+        "stats": {
+          "hp": 55,
+          "attack": 95,
+          "defense": 55,
+          "specialAttack": 35,
+          "specialDefense": 75,
+          "speed": 115
+        },
+        "height": 9,
+        "weight": 280,
+        "sprites": {
+          "normal": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/215.png",
+          "shiny": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/shiny/215.png",
+          "artwork": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/other/official-artwork/215.png",
+          "artworkShiny": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/other/official-artwork/shiny/215.png"
+        }
+      }
+    ]
   },
   {
     "dexNumber": 203,
@@ -6154,7 +7005,60 @@
       "artwork": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/other/official-artwork/10243.png",
       "artworkShiny": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/other/official-artwork/shiny/10243.png"
     },
-    "locations": []
+    "locations": [],
+    "forms": [
+      {
+        "key": "hisui",
+        "labelKey": "form.hisui",
+        "id": 10243,
+        "name": "avalugg-hisui",
+        "types": [
+          "ice",
+          "rock"
+        ],
+        "stats": {
+          "hp": 95,
+          "attack": 127,
+          "defense": 184,
+          "specialAttack": 34,
+          "specialDefense": 36,
+          "speed": 38
+        },
+        "height": 14,
+        "weight": 2624,
+        "sprites": {
+          "normal": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/10243.png",
+          "shiny": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/shiny/10243.png",
+          "artwork": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/other/official-artwork/10243.png",
+          "artworkShiny": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/other/official-artwork/shiny/10243.png"
+        }
+      },
+      {
+        "key": "original",
+        "labelKey": "form.original",
+        "id": 713,
+        "name": "avalugg",
+        "types": [
+          "ice"
+        ],
+        "stats": {
+          "hp": 95,
+          "attack": 117,
+          "defense": 184,
+          "specialAttack": 44,
+          "specialDefense": 46,
+          "speed": 28
+        },
+        "height": 20,
+        "weight": 5050,
+        "sprites": {
+          "normal": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/713.png",
+          "shiny": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/shiny/713.png",
+          "artwork": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/other/official-artwork/713.png",
+          "artworkShiny": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/other/official-artwork/shiny/713.png"
+        }
+      }
+    ]
   },
   {
     "dexNumber": 217,
@@ -6241,7 +7145,60 @@
       "artwork": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/other/official-artwork/10238.png",
       "artworkShiny": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/other/official-artwork/shiny/10238.png"
     },
-    "locations": []
+    "locations": [],
+    "forms": [
+      {
+        "key": "hisui",
+        "labelKey": "form.hisui",
+        "id": 10238,
+        "name": "zorua-hisui",
+        "types": [
+          "normal",
+          "ghost"
+        ],
+        "stats": {
+          "hp": 35,
+          "attack": 60,
+          "defense": 40,
+          "specialAttack": 85,
+          "specialDefense": 40,
+          "speed": 70
+        },
+        "height": 7,
+        "weight": 125,
+        "sprites": {
+          "normal": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/10238.png",
+          "shiny": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/shiny/10238.png",
+          "artwork": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/other/official-artwork/10238.png",
+          "artworkShiny": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/other/official-artwork/shiny/10238.png"
+        }
+      },
+      {
+        "key": "original",
+        "labelKey": "form.original",
+        "id": 570,
+        "name": "zorua",
+        "types": [
+          "dark"
+        ],
+        "stats": {
+          "hp": 40,
+          "attack": 65,
+          "defense": 40,
+          "specialAttack": 80,
+          "specialDefense": 40,
+          "speed": 65
+        },
+        "height": 7,
+        "weight": 125,
+        "sprites": {
+          "normal": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/570.png",
+          "shiny": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/shiny/570.png",
+          "artwork": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/other/official-artwork/570.png",
+          "artworkShiny": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/other/official-artwork/shiny/570.png"
+        }
+      }
+    ]
   },
   {
     "dexNumber": 220,
@@ -6270,7 +7227,60 @@
       "artwork": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/other/official-artwork/10239.png",
       "artworkShiny": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/other/official-artwork/shiny/10239.png"
     },
-    "locations": []
+    "locations": [],
+    "forms": [
+      {
+        "key": "hisui",
+        "labelKey": "form.hisui",
+        "id": 10239,
+        "name": "zoroark-hisui",
+        "types": [
+          "normal",
+          "ghost"
+        ],
+        "stats": {
+          "hp": 55,
+          "attack": 100,
+          "defense": 60,
+          "specialAttack": 125,
+          "specialDefense": 60,
+          "speed": 110
+        },
+        "height": 16,
+        "weight": 730,
+        "sprites": {
+          "normal": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/10239.png",
+          "shiny": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/shiny/10239.png",
+          "artwork": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/other/official-artwork/10239.png",
+          "artworkShiny": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/other/official-artwork/shiny/10239.png"
+        }
+      },
+      {
+        "key": "original",
+        "labelKey": "form.original",
+        "id": 571,
+        "name": "zoroark",
+        "types": [
+          "dark"
+        ],
+        "stats": {
+          "hp": 60,
+          "attack": 105,
+          "defense": 60,
+          "specialAttack": 120,
+          "specialDefense": 60,
+          "speed": 105
+        },
+        "height": 16,
+        "weight": 811,
+        "sprites": {
+          "normal": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/571.png",
+          "shiny": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/shiny/571.png",
+          "artwork": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/other/official-artwork/571.png",
+          "artworkShiny": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/other/official-artwork/shiny/571.png"
+        }
+      }
+    ]
   },
   {
     "dexNumber": 221,
@@ -6328,7 +7338,61 @@
       "artwork": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/other/official-artwork/10240.png",
       "artworkShiny": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/other/official-artwork/shiny/10240.png"
     },
-    "locations": []
+    "locations": [],
+    "forms": [
+      {
+        "key": "hisui",
+        "labelKey": "form.hisui",
+        "id": 10240,
+        "name": "braviary-hisui",
+        "types": [
+          "psychic",
+          "flying"
+        ],
+        "stats": {
+          "hp": 110,
+          "attack": 83,
+          "defense": 70,
+          "specialAttack": 112,
+          "specialDefense": 70,
+          "speed": 65
+        },
+        "height": 17,
+        "weight": 434,
+        "sprites": {
+          "normal": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/10240.png",
+          "shiny": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/shiny/10240.png",
+          "artwork": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/other/official-artwork/10240.png",
+          "artworkShiny": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/other/official-artwork/shiny/10240.png"
+        }
+      },
+      {
+        "key": "original",
+        "labelKey": "form.original",
+        "id": 628,
+        "name": "braviary",
+        "types": [
+          "normal",
+          "flying"
+        ],
+        "stats": {
+          "hp": 100,
+          "attack": 123,
+          "defense": 75,
+          "specialAttack": 57,
+          "specialDefense": 75,
+          "speed": 80
+        },
+        "height": 15,
+        "weight": 410,
+        "sprites": {
+          "normal": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/628.png",
+          "shiny": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/shiny/628.png",
+          "artwork": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/other/official-artwork/628.png",
+          "artworkShiny": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/other/official-artwork/shiny/628.png"
+        }
+      }
+    ]
   },
   {
     "dexNumber": 223,
@@ -6582,7 +7646,59 @@
       "artwork": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/other/official-artwork/641.png",
       "artworkShiny": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/other/official-artwork/shiny/641.png"
     },
-    "locations": []
+    "locations": [],
+    "forms": [
+      {
+        "key": "incarnate",
+        "labelKey": "form.incarnate",
+        "id": 641,
+        "name": "tornadus-incarnate",
+        "types": [
+          "flying"
+        ],
+        "stats": {
+          "hp": 79,
+          "attack": 115,
+          "defense": 70,
+          "specialAttack": 125,
+          "specialDefense": 80,
+          "speed": 111
+        },
+        "height": 15,
+        "weight": 630,
+        "sprites": {
+          "normal": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/641.png",
+          "shiny": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/shiny/641.png",
+          "artwork": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/other/official-artwork/641.png",
+          "artworkShiny": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/other/official-artwork/shiny/641.png"
+        }
+      },
+      {
+        "key": "therian",
+        "labelKey": "form.therian",
+        "id": 10019,
+        "name": "tornadus-therian",
+        "types": [
+          "flying"
+        ],
+        "stats": {
+          "hp": 79,
+          "attack": 100,
+          "defense": 80,
+          "specialAttack": 110,
+          "specialDefense": 90,
+          "speed": 121
+        },
+        "height": 14,
+        "weight": 630,
+        "sprites": {
+          "normal": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/10019.png",
+          "shiny": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/shiny/10019.png",
+          "artwork": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/other/official-artwork/10019.png",
+          "artworkShiny": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/other/official-artwork/shiny/10019.png"
+        }
+      }
+    ]
   },
   {
     "dexNumber": 232,
@@ -6611,7 +7727,61 @@
       "artwork": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/other/official-artwork/642.png",
       "artworkShiny": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/other/official-artwork/shiny/642.png"
     },
-    "locations": []
+    "locations": [],
+    "forms": [
+      {
+        "key": "incarnate",
+        "labelKey": "form.incarnate",
+        "id": 642,
+        "name": "thundurus-incarnate",
+        "types": [
+          "electric",
+          "flying"
+        ],
+        "stats": {
+          "hp": 79,
+          "attack": 115,
+          "defense": 70,
+          "specialAttack": 125,
+          "specialDefense": 80,
+          "speed": 111
+        },
+        "height": 15,
+        "weight": 610,
+        "sprites": {
+          "normal": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/642.png",
+          "shiny": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/shiny/642.png",
+          "artwork": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/other/official-artwork/642.png",
+          "artworkShiny": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/other/official-artwork/shiny/642.png"
+        }
+      },
+      {
+        "key": "therian",
+        "labelKey": "form.therian",
+        "id": 10020,
+        "name": "thundurus-therian",
+        "types": [
+          "electric",
+          "flying"
+        ],
+        "stats": {
+          "hp": 79,
+          "attack": 105,
+          "defense": 70,
+          "specialAttack": 145,
+          "specialDefense": 80,
+          "speed": 101
+        },
+        "height": 30,
+        "weight": 610,
+        "sprites": {
+          "normal": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/10020.png",
+          "shiny": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/shiny/10020.png",
+          "artwork": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/other/official-artwork/10020.png",
+          "artworkShiny": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/other/official-artwork/shiny/10020.png"
+        }
+      }
+    ]
   },
   {
     "dexNumber": 233,
@@ -6640,7 +7810,61 @@
       "artwork": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/other/official-artwork/645.png",
       "artworkShiny": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/other/official-artwork/shiny/645.png"
     },
-    "locations": []
+    "locations": [],
+    "forms": [
+      {
+        "key": "incarnate",
+        "labelKey": "form.incarnate",
+        "id": 645,
+        "name": "landorus-incarnate",
+        "types": [
+          "ground",
+          "flying"
+        ],
+        "stats": {
+          "hp": 89,
+          "attack": 125,
+          "defense": 90,
+          "specialAttack": 115,
+          "specialDefense": 80,
+          "speed": 101
+        },
+        "height": 15,
+        "weight": 680,
+        "sprites": {
+          "normal": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/645.png",
+          "shiny": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/shiny/645.png",
+          "artwork": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/other/official-artwork/645.png",
+          "artworkShiny": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/other/official-artwork/shiny/645.png"
+        }
+      },
+      {
+        "key": "therian",
+        "labelKey": "form.therian",
+        "id": 10021,
+        "name": "landorus-therian",
+        "types": [
+          "ground",
+          "flying"
+        ],
+        "stats": {
+          "hp": 89,
+          "attack": 145,
+          "defense": 90,
+          "specialAttack": 105,
+          "specialDefense": 80,
+          "speed": 91
+        },
+        "height": 13,
+        "weight": 680,
+        "sprites": {
+          "normal": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/10021.png",
+          "shiny": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/shiny/10021.png",
+          "artwork": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/other/official-artwork/10021.png",
+          "artworkShiny": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/other/official-artwork/shiny/10021.png"
+        }
+      }
+    ]
   },
   {
     "dexNumber": 234,
@@ -6669,7 +7893,61 @@
       "artwork": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/other/official-artwork/905.png",
       "artworkShiny": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/other/official-artwork/shiny/905.png"
     },
-    "locations": []
+    "locations": [],
+    "forms": [
+      {
+        "key": "incarnate",
+        "labelKey": "form.incarnate",
+        "id": 905,
+        "name": "enamorus-incarnate",
+        "types": [
+          "fairy",
+          "flying"
+        ],
+        "stats": {
+          "hp": 74,
+          "attack": 115,
+          "defense": 70,
+          "specialAttack": 135,
+          "specialDefense": 80,
+          "speed": 106
+        },
+        "height": 16,
+        "weight": 480,
+        "sprites": {
+          "normal": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/905.png",
+          "shiny": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/shiny/905.png",
+          "artwork": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/other/official-artwork/905.png",
+          "artworkShiny": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/other/official-artwork/shiny/905.png"
+        }
+      },
+      {
+        "key": "therian",
+        "labelKey": "form.therian",
+        "id": 10249,
+        "name": "enamorus-therian",
+        "types": [
+          "fairy",
+          "flying"
+        ],
+        "stats": {
+          "hp": 74,
+          "attack": 115,
+          "defense": 110,
+          "specialAttack": 135,
+          "specialDefense": 100,
+          "speed": 46
+        },
+        "height": 16,
+        "weight": 480,
+        "sprites": {
+          "normal": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/10249.png",
+          "shiny": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/shiny/10249.png",
+          "artwork": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/other/official-artwork/10249.png",
+          "artworkShiny": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/other/official-artwork/shiny/10249.png"
+        }
+      }
+    ]
   },
   {
     "dexNumber": 235,
@@ -6698,7 +7976,61 @@
       "artwork": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/other/official-artwork/483.png",
       "artworkShiny": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/other/official-artwork/shiny/483.png"
     },
-    "locations": []
+    "locations": [],
+    "forms": [
+      {
+        "key": "default",
+        "labelKey": "form.default",
+        "id": 483,
+        "name": "dialga",
+        "types": [
+          "steel",
+          "dragon"
+        ],
+        "stats": {
+          "hp": 100,
+          "attack": 120,
+          "defense": 120,
+          "specialAttack": 150,
+          "specialDefense": 100,
+          "speed": 90
+        },
+        "height": 54,
+        "weight": 6830,
+        "sprites": {
+          "normal": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/483.png",
+          "shiny": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/shiny/483.png",
+          "artwork": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/other/official-artwork/483.png",
+          "artworkShiny": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/other/official-artwork/shiny/483.png"
+        }
+      },
+      {
+        "key": "origin",
+        "labelKey": "form.origin",
+        "id": 10245,
+        "name": "dialga-origin",
+        "types": [
+          "steel",
+          "dragon"
+        ],
+        "stats": {
+          "hp": 100,
+          "attack": 100,
+          "defense": 120,
+          "specialAttack": 150,
+          "specialDefense": 120,
+          "speed": 90
+        },
+        "height": 70,
+        "weight": 8487,
+        "sprites": {
+          "normal": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/10245.png",
+          "shiny": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/shiny/10245.png",
+          "artwork": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/other/official-artwork/10245.png",
+          "artworkShiny": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/other/official-artwork/shiny/10245.png"
+        }
+      }
+    ]
   },
   {
     "dexNumber": 236,
@@ -6727,7 +8059,61 @@
       "artwork": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/other/official-artwork/484.png",
       "artworkShiny": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/other/official-artwork/shiny/484.png"
     },
-    "locations": []
+    "locations": [],
+    "forms": [
+      {
+        "key": "default",
+        "labelKey": "form.default",
+        "id": 484,
+        "name": "palkia",
+        "types": [
+          "water",
+          "dragon"
+        ],
+        "stats": {
+          "hp": 90,
+          "attack": 120,
+          "defense": 100,
+          "specialAttack": 150,
+          "specialDefense": 120,
+          "speed": 100
+        },
+        "height": 42,
+        "weight": 3360,
+        "sprites": {
+          "normal": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/484.png",
+          "shiny": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/shiny/484.png",
+          "artwork": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/other/official-artwork/484.png",
+          "artworkShiny": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/other/official-artwork/shiny/484.png"
+        }
+      },
+      {
+        "key": "origin",
+        "labelKey": "form.origin",
+        "id": 10246,
+        "name": "palkia-origin",
+        "types": [
+          "water",
+          "dragon"
+        ],
+        "stats": {
+          "hp": 90,
+          "attack": 100,
+          "defense": 100,
+          "specialAttack": 150,
+          "specialDefense": 120,
+          "speed": 120
+        },
+        "height": 63,
+        "weight": 6590,
+        "sprites": {
+          "normal": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/10246.png",
+          "shiny": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/shiny/10246.png",
+          "artwork": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/other/official-artwork/10246.png",
+          "artworkShiny": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/other/official-artwork/shiny/10246.png"
+        }
+      }
+    ]
   },
   {
     "dexNumber": 237,
@@ -6756,7 +8142,61 @@
       "artwork": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/other/official-artwork/487.png",
       "artworkShiny": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/other/official-artwork/shiny/487.png"
     },
-    "locations": []
+    "locations": [],
+    "forms": [
+      {
+        "key": "altered",
+        "labelKey": "form.altered",
+        "id": 487,
+        "name": "giratina-altered",
+        "types": [
+          "ghost",
+          "dragon"
+        ],
+        "stats": {
+          "hp": 150,
+          "attack": 100,
+          "defense": 120,
+          "specialAttack": 100,
+          "specialDefense": 120,
+          "speed": 90
+        },
+        "height": 45,
+        "weight": 7500,
+        "sprites": {
+          "normal": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/487.png",
+          "shiny": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/shiny/487.png",
+          "artwork": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/other/official-artwork/487.png",
+          "artworkShiny": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/other/official-artwork/shiny/487.png"
+        }
+      },
+      {
+        "key": "origin",
+        "labelKey": "form.origin",
+        "id": 10007,
+        "name": "giratina-origin",
+        "types": [
+          "ghost",
+          "dragon"
+        ],
+        "stats": {
+          "hp": 150,
+          "attack": 120,
+          "defense": 100,
+          "specialAttack": 120,
+          "specialDefense": 100,
+          "speed": 90
+        },
+        "height": 69,
+        "weight": 6500,
+        "sprites": {
+          "normal": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/10007.png",
+          "shiny": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/shiny/10007.png",
+          "artwork": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/other/official-artwork/10007.png",
+          "artworkShiny": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/other/official-artwork/shiny/10007.png"
+        }
+      }
+    ]
   },
   {
     "dexNumber": 238,
@@ -6868,7 +8308,60 @@
       "artwork": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/other/official-artwork/492.png",
       "artworkShiny": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/other/official-artwork/shiny/492.png"
     },
-    "locations": []
+    "locations": [],
+    "forms": [
+      {
+        "key": "land",
+        "labelKey": "form.land",
+        "id": 492,
+        "name": "shaymin-land",
+        "types": [
+          "grass"
+        ],
+        "stats": {
+          "hp": 100,
+          "attack": 100,
+          "defense": 100,
+          "specialAttack": 100,
+          "specialDefense": 100,
+          "speed": 100
+        },
+        "height": 2,
+        "weight": 21,
+        "sprites": {
+          "normal": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/492.png",
+          "shiny": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/shiny/492.png",
+          "artwork": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/other/official-artwork/492.png",
+          "artworkShiny": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/other/official-artwork/shiny/492.png"
+        }
+      },
+      {
+        "key": "sky",
+        "labelKey": "form.sky",
+        "id": 10006,
+        "name": "shaymin-sky",
+        "types": [
+          "grass",
+          "flying"
+        ],
+        "stats": {
+          "hp": 100,
+          "attack": 103,
+          "defense": 75,
+          "specialAttack": 120,
+          "specialDefense": 75,
+          "speed": 127
+        },
+        "height": 4,
+        "weight": 52,
+        "sprites": {
+          "normal": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/10006.png",
+          "shiny": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/shiny/10006.png",
+          "artwork": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/other/official-artwork/10006.png",
+          "artworkShiny": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/other/official-artwork/shiny/10006.png"
+        }
+      }
+    ]
   },
   {
     "dexNumber": 242,

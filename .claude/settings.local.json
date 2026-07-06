@@ -40,7 +40,10 @@
       "WebFetch(domain:progameguides.com)",
       "WebFetch(domain:bulbapedia.bulbagarden.net)",
       "Bash(git commit -q -m 'Adaugă locațiile \\(ținuturile Hisui\\) la fiecare Pokémon în detaliu *)",
-      "Bash(git commit -q -m 'Limba implicită engleză la prima vizită \\(RO salvat e păstrat\\) *)"
+      "Bash(git commit -q -m 'Limba implicită engleză la prima vizită \\(RO salvat e păstrat\\) *)",
+      "Bash(curl -s \"https://razvanpaleacu.github.io/hisui-ghid/?v=$\\(date +%s\\)\")",
+      "Bash(echo \"=== EXIT: $? ===\")",
+      "Bash(git commit -q -m 'Forme \\(Hisui/legendari/sex\\), descrieri, sortare, hartă interactivă, shiny plutitor *)"
     ]
   }
 }
