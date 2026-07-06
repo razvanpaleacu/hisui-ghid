@@ -1,1 +1,0 @@
-import{u as a,j as o,T as l,g as r,t as x}from"./index-BvixyY4u.js";function u({type:s,size:e="sm"}){const{lang:t}=a(),n=e==="sm"?"px-2 py-0.5 text-[11px]":"px-2.5 py-1 text-xs";return o.jsx("span",{className:`inline-flex items-center rounded-full font-medium leading-tight ${n}`,style:{backgroundColor:r[s],color:x(s)},children:l[t][s]})}export{u as T};
