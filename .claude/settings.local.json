@@ -39,7 +39,8 @@
       "WebFetch(domain:www.gamerguides.com)",
       "WebFetch(domain:progameguides.com)",
       "WebFetch(domain:bulbapedia.bulbagarden.net)",
-      "Bash(git commit -q -m 'Adaugă locațiile \\(ținuturile Hisui\\) la fiecare Pokémon în detaliu *)"
+      "Bash(git commit -q -m 'Adaugă locațiile \\(ținuturile Hisui\\) la fiecare Pokémon în detaliu *)",
+      "Bash(git commit -q -m 'Limba implicită engleză la prima vizită \\(RO salvat e păstrat\\) *)"
     ]
   }
 }

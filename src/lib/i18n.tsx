@@ -150,16 +150,17 @@ interface LanguageContextValue {
 }
 
 export const LanguageContext = createContext<LanguageContextValue>({
-  lang: 'ro',
+  lang: 'en',
   setLang: () => {},
-  t: (key, params) => translate('ro', key, params),
+  t: (key, params) => translate('en', key, params),
 })
 
 function initialLang(): Lang {
+  // Implicit engleză la prima vizită; o alegere salvată explicit (RO) e păstrată.
   try {
-    return localStorage.getItem(STORAGE_KEY) === 'en' ? 'en' : 'ro'
+    return localStorage.getItem(STORAGE_KEY) === 'ro' ? 'ro' : 'en'
   } catch {
-    return 'ro'
+    return 'en'
   }
 }
 
