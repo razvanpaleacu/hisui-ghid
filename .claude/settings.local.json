@@ -43,7 +43,15 @@
       "Bash(git commit -q -m 'Limba implicită engleză la prima vizită \\(RO salvat e păstrat\\) *)",
       "Bash(curl -s \"https://razvanpaleacu.github.io/hisui-ghid/?v=$\\(date +%s\\)\")",
       "Bash(echo \"=== EXIT: $? ===\")",
-      "Bash(git commit -q -m 'Forme \\(Hisui/legendari/sex\\), descrieri, sortare, hartă interactivă, shiny plutitor *)"
+      "Bash(git commit -q -m 'Forme \\(Hisui/legendari/sex\\), descrieri, sortare, hartă interactivă, shiny plutitor *)",
+      "WebFetch(domain:pokemondb.net)",
+      "WebFetch(domain:www.rpgsite.net)",
+      "WebFetch(domain:rankedboost.com)",
+      "WebFetch(domain:gamefaqs.gamespot.com)",
+      "WebFetch(domain:samurai-gamers.com)",
+      "WebFetch(domain:screenrant.com)",
+      "Bash(node -e \"const d=require\\('./src/data/pokedex-hisui.json'\\); const {PLA_INFO}=0;\")",
+      "Bash(git commit -q -m 'Matchup-uri de tip, evoluție PLA, comportament, distorsiuni, shiny global, tastatură, hartă mai frumoasă *)"
     ]
   }
 }

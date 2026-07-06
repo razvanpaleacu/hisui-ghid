@@ -1,25 +1,33 @@
 import { useEffect, useLayoutEffect, useMemo, useState } from 'react'
 import PokemonCard from '../components/PokemonCard'
-import ShinyToggle from '../components/ShinyToggle'
+import { AREA_ORDER } from '../data/areas'
+import { LOCATIONS } from '../data/locations'
 import { STAT_LABELS, STAT_ORDER, formatPokemonCount } from '../lib/format'
 import { useLanguage } from '../lib/i18n'
 import { pokedex } from '../lib/pokedex'
+import { useShiny } from '../lib/shiny'
 import { ALL_TYPES, TYPE_COLORS, TYPE_LABELS, typeTextColor } from '../lib/typeInfo'
 import type { PokedexEntry, PokemonStats, TypeName } from '../lib/types'
 import { usePageTitle } from '../lib/usePageTitle'
 
-type SortField = 'dex' | 'name' | 'total' | keyof PokemonStats | 'height' | 'weight'
+type SortField =
+  | 'dex'
+  | 'name'
+  | 'total'
+  | keyof PokemonStats
+  | 'height'
+  | 'weight'
+  | 'location'
 type SortDir = 'asc' | 'desc'
 
 /**
  * Starea vizuală a grilei, păstrată la nivel de modul ca să supraviețuiască
  * demontării rutei: la revenirea din pagina de detaliu, filtrele, căutarea,
- * sortarea, comutatorul shiny și poziția de scroll sunt exact cum le-ai lăsat.
+ * sortarea și poziția de scroll sunt exact cum le-ai lăsat.
  */
 interface PokedexView {
   query: string
   types: TypeName[]
-  shiny: boolean
   sortField: SortField
   sortDir: SortDir
   scrollY: number
@@ -28,7 +36,6 @@ interface PokedexView {
 const view: PokedexView = {
   query: '',
   types: [],
-  shiny: false,
   sortField: 'dex',
   sortDir: 'asc',
   scrollY: 0,
@@ -38,29 +45,36 @@ function statTotal(p: PokedexEntry): number {
   return STAT_ORDER.reduce((sum, k) => sum + p.stats[k], 0)
 }
 
+/** Cheia de sortare după locație: indicele primului ținut (în ordinea jocului). */
+function locationKey(p: PokedexEntry): number {
+  const areas = LOCATIONS[p.name]
+  if (!areas || areas.length === 0) return AREA_ORDER.length
+  return Math.min(...areas.map((a) => AREA_ORDER.indexOf(a)))
+}
+
 /** Direcția implicită la alegerea unui criteriu (numeric → descrescător). */
 function defaultDir(field: SortField): SortDir {
-  return field === 'dex' || field === 'name' ? 'asc' : 'desc'
+  return field === 'dex' || field === 'name' || field === 'location'
+    ? 'asc'
+    : 'desc'
 }
 
 export default function Pokedex() {
   const { lang, t } = useLanguage()
+  const { shiny } = useShiny()
   usePageTitle(`Pokédex${t('site.pageTitleSuffix')}`)
 
   const [query, setQuery] = useState(view.query)
   const [selectedTypes, setSelectedTypes] = useState<TypeName[]>(view.types)
-  const [shiny, setShiny] = useState(view.shiny)
   const [sortField, setSortField] = useState<SortField>(view.sortField)
   const [sortDir, setSortDir] = useState<SortDir>(view.sortDir)
 
-  // Oglindim starea în store, ca să o regăsim la revenire.
   useEffect(() => {
     view.query = query
     view.types = selectedTypes
-    view.shiny = shiny
     view.sortField = sortField
     view.sortDir = sortDir
-  }, [query, selectedTypes, shiny, sortField, sortDir])
+  }, [query, selectedTypes, sortField, sortDir])
 
   // Restaurăm poziția de scroll la montare și o salvăm continuu.
   useLayoutEffect(() => {
@@ -113,6 +127,9 @@ export default function Pokedex() {
         case 'weight':
           cmp = a.weight - b.weight
           break
+        case 'location':
+          cmp = locationKey(a) - locationKey(b)
+          break
         default:
           cmp = a.stats[sortField] - b.stats[sortField]
       }
@@ -143,6 +160,7 @@ export default function Pokedex() {
   const sortOptions: { value: SortField; label: string }[] = [
     { value: 'dex', label: t('sort.dex') },
     { value: 'name', label: t('sort.name') },
+    { value: 'location', label: t('sort.location') },
     { value: 'total', label: t('sort.total') },
     ...STAT_ORDER.map((s) => ({ value: s, label: STAT_LABELS[lang][s] })),
     { value: 'height', label: t('sort.height') },
@@ -151,18 +169,15 @@ export default function Pokedex() {
 
   return (
     <div className="animate-fade-in">
-      <div className="flex flex-col gap-4 sm:flex-row sm:items-start sm:justify-between">
-        <div>
-          <h1 className="text-2xl font-semibold tracking-tight">
-            {t('pokedex.title')}
-          </h1>
-          <p className="mt-1 text-sm text-muted">
-            {t('pokedex.intro', {
-              count: formatPokemonCount(pokedex.length, lang),
-            })}
-          </p>
-        </div>
-        <ShinyToggle checked={shiny} onChange={setShiny} />
+      <div>
+        <h1 className="text-2xl font-semibold tracking-tight">
+          {t('pokedex.title')}
+        </h1>
+        <p className="mt-1 text-sm text-muted">
+          {t('pokedex.intro', {
+            count: formatPokemonCount(pokedex.length, lang),
+          })}
+        </p>
       </div>
 
       <div className="mt-6 flex flex-col gap-3 sm:flex-row sm:items-center">
@@ -176,7 +191,7 @@ export default function Pokedex() {
             value={query}
             onChange={(e) => setQuery(e.target.value)}
             placeholder={t('pokedex.searchPlaceholder')}
-            className="w-full max-w-md rounded-lg border border-line bg-surface px-4 py-2.5 text-sm placeholder:text-muted focus:border-accent focus:outline-none"
+            className="w-full rounded-lg border border-line bg-surface px-4 py-2.5 text-sm placeholder:text-muted focus:border-accent focus:outline-none sm:max-w-md"
           />
         </div>
         <div className="flex items-center gap-2">
@@ -200,7 +215,7 @@ export default function Pokedex() {
             onClick={() => setSortDir((d) => (d === 'asc' ? 'desc' : 'asc'))}
             aria-label={t('sort.dirToggle')}
             title={sortDir === 'asc' ? t('sort.dirAsc') : t('sort.dirDesc')}
-            className="rounded-lg border border-line bg-surface px-3 py-2 text-sm text-muted transition-colors hover:text-ink"
+            className="rounded-lg border border-line bg-surface px-3 py-2 text-sm text-muted transition-colors hover:border-accent hover:text-ink"
           >
             {sortDir === 'asc' ? '↑' : '↓'}
           </button>
@@ -220,7 +235,7 @@ export default function Pokedex() {
               type="button"
               aria-pressed={active}
               onClick={() => toggleType(type)}
-              className={`rounded-full border px-3 py-1 text-xs font-medium transition-colors ${
+              className={`rounded-full border px-3 py-1 text-xs font-medium transition-all active:scale-95 ${
                 active
                   ? 'border-transparent'
                   : 'border-line bg-surface text-muted hover:text-ink'
@@ -272,23 +287,6 @@ export default function Pokedex() {
           ))}
         </div>
       )}
-
-      {/* Comutator shiny plutitor — mereu la îndemână, fără scroll până sus. */}
-      <button
-        type="button"
-        role="switch"
-        aria-checked={shiny}
-        aria-label={t('shiny.aria')}
-        onClick={() => setShiny((s) => !s)}
-        className={`fixed bottom-6 right-6 z-20 inline-flex items-center gap-2 rounded-full border px-4 py-2.5 text-sm font-medium shadow-md transition-colors ${
-          shiny
-            ? 'border-transparent bg-accent text-white'
-            : 'border-line bg-surface text-ink hover:border-accent'
-        }`}
-      >
-        <span aria-hidden="true">✦</span>
-        Shiny
-      </button>
     </div>
   )
 }

@@ -2,6 +2,7 @@ import { Suspense, useLayoutEffect } from 'react'
 import { Link, Outlet, useLocation } from 'react-router-dom'
 import { useLanguage, type StringKey } from '../lib/i18n'
 import ErrorBoundary from './ErrorBoundary'
+import FloatingShiny from './FloatingShiny'
 import LanguageSelector from './LanguageSelector'
 import PageLoading from './PageLoading'
 
@@ -37,6 +38,12 @@ export default function Layout() {
   useLayoutEffect(() => {
     if (pathname !== '/') window.scrollTo(0, 0)
   }, [pathname])
+
+  // Butonul shiny apare pe paginile cu sprite-uri (grilă, detaliu, hartă).
+  const showShiny =
+    pathname === '/' ||
+    pathname.startsWith('/pokedex') ||
+    pathname.startsWith('/tinuturi')
 
   return (
     <>
@@ -104,6 +111,8 @@ export default function Layout() {
           </p>
         </div>
       </footer>
+
+      {showShiny && <FloatingShiny />}
     </>
   )
 }

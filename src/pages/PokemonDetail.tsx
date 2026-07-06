@@ -1,9 +1,9 @@
 import { useEffect, useState } from 'react'
-import { Link, useParams } from 'react-router-dom'
+import { Link, useNavigate, useParams } from 'react-router-dom'
 import { AREA_NAMES, sortAreas } from '../data/areas'
 import { DESCRIPTIONS } from '../data/descriptions'
 import { LOCATIONS } from '../data/locations'
-import ShinyToggle from '../components/ShinyToggle'
+import { PLA_INFO } from '../data/pladata'
 import SpriteImage from '../components/SpriteImage'
 import StatBar from '../components/StatBar'
 import TypeBadge from '../components/TypeBadge'
@@ -16,23 +16,30 @@ import {
 } from '../lib/format'
 import { useLanguage, type StringKey } from '../lib/i18n'
 import { byName, pokedex } from '../lib/pokedex'
+import { useShiny } from '../lib/shiny'
+import { defensiveMatchups, formatMultiplier } from '../lib/typeChart'
 import { usePageTitle } from '../lib/usePageTitle'
 
 export default function PokemonDetail() {
   const { lang, t } = useLanguage()
+  const navigate = useNavigate()
+  const { shiny } = useShiny()
   const { name } = useParams<{ name: string }>()
   const pokemon = name ? byName.get(name) : undefined
-  const [shiny, setShiny] = useState(false)
   const [formIdx, setFormIdx] = useState(0)
 
-  // Resetăm forma selectată la schimbarea Pokémonului CHIAR în timpul randării
-  // (nu într-un efect post-paint), ca să nu apară un cadru cu forma greșită
-  // când navighezi între doi Pokémoni care ambii au forme.
+  // Resetăm forma selectată la schimbarea Pokémonului CHIAR în timpul randării,
+  // ca să nu apară un cadru cu forma greșită la navigarea prev/next.
   const [trackedName, setTrackedName] = useState(name)
   if (name !== trackedName) {
     setTrackedName(name)
     setFormIdx(0)
   }
+
+  const index = pokemon ? pokemon.dexNumber - 1 : -1
+  const prev = pokemon && index > 0 ? pokedex[index - 1] : undefined
+  const next =
+    pokemon && index < pokedex.length - 1 ? pokedex[index + 1] : undefined
 
   usePageTitle(
     pokemon
@@ -43,6 +50,19 @@ export default function PokemonDetail() {
   useEffect(() => {
     window.scrollTo(0, 0)
   }, [name])
+
+  // Navigare cu săgețile ← / → între Pokémoni.
+  useEffect(() => {
+    const onKey = (e: KeyboardEvent) => {
+      if (e.metaKey || e.ctrlKey || e.altKey) return
+      const el = e.target as HTMLElement
+      if (/^(INPUT|SELECT|TEXTAREA)$/.test(el.tagName)) return
+      if (e.key === 'ArrowLeft' && prev) navigate(`/pokedex/${prev.name}`)
+      else if (e.key === 'ArrowRight' && next) navigate(`/pokedex/${next.name}`)
+    }
+    window.addEventListener('keydown', onKey)
+    return () => window.removeEventListener('keydown', onKey)
+  }, [prev, next, navigate])
 
   if (!pokemon) {
     return (
@@ -61,15 +81,9 @@ export default function PokemonDetail() {
     )
   }
 
-  // dexNumber e continuu (1–242), deci vecinii se pot lua direct prin index.
-  const index = pokemon.dexNumber - 1
-  const prev = index > 0 ? pokedex[index - 1] : undefined
-  const next = index < pokedex.length - 1 ? pokedex[index + 1] : undefined
-
   const forms = pokemon.forms
   const activeForm =
     forms && forms.length > 0 ? forms[Math.min(formIdx, forms.length - 1)] : undefined
-  // Forma afișată — atât intrarea, cât și PokemonForm au tipuri/stat/sprite-uri.
   const display = activeForm ?? pokemon
 
   const src = shiny ? display.sprites.artworkShiny : display.sprites.artwork
@@ -77,10 +91,36 @@ export default function PokemonDetail() {
     activeForm ? ` (${t(activeForm.labelKey as StringKey)})` : ''
   }${shiny ? t('common.shinyAlt') : ''}`
   const statTotal = STAT_ORDER.reduce((sum, k) => sum + display.stats[k], 0)
+  const matchups = defensiveMatchups(display.types)
 
   const description = DESCRIPTIONS[pokemon.name]?.[lang]
+  const info = PLA_INFO[pokemon.name]
+  const evolvesFromEntry = info?.evolvesFrom ? byName.get(info.evolvesFrom) : undefined
   const locationEntry = LOCATIONS[pokemon.name]
   const areas = locationEntry ? sortAreas(locationEntry) : []
+
+  const matchupRow = (
+    labelKey: StringKey,
+    items: { type: (typeof matchups.weak)[number]['type']; multiplier: number }[],
+    showMultiplier: boolean,
+  ) =>
+    items.length > 0 && (
+      <div className="flex flex-wrap items-center gap-x-3 gap-y-2">
+        <span className="w-24 shrink-0 text-xs text-muted">{t(labelKey)}</span>
+        <div className="flex flex-wrap items-center gap-1.5">
+          {items.map((m) => (
+            <span key={m.type} className="inline-flex items-center gap-1">
+              <TypeBadge type={m.type} />
+              {showMultiplier && (
+                <span className="text-[11px] font-medium tabular-nums text-muted">
+                  {formatMultiplier(m.multiplier)}
+                </span>
+              )}
+            </span>
+          ))}
+        </div>
+      </div>
+    )
 
   return (
     <div className="animate-fade-in">
@@ -112,16 +152,17 @@ export default function PokemonDetail() {
 
       <div className="mt-6 grid gap-8 md:grid-cols-[minmax(0,380px)_1fr]">
         <div>
-          <div className="rounded-2xl border border-line bg-surface p-6">
+          <div className="rounded-2xl border border-line bg-surface p-6 shadow-sm">
             <SpriteImage
+              key={`${display.id}-${shiny}`}
               src={src}
               alt={alt}
-              className="aspect-square w-full"
+              className="aspect-square w-full [&_img]:animate-fade-in"
               loading="eager"
             />
           </div>
-          <div className="mt-3 flex flex-col items-center gap-3">
-            {forms && forms.length > 1 && (
+          {forms && forms.length > 1 && (
+            <div className="mt-3 flex justify-center">
               <div
                 role="group"
                 aria-label={t('form.label')}
@@ -135,7 +176,7 @@ export default function PokemonDetail() {
                       type="button"
                       aria-pressed={active}
                       onClick={() => setFormIdx(i)}
-                      className={`rounded-full px-3 py-1 text-xs font-medium transition-colors ${
+                      className={`rounded-full px-3 py-1 text-xs font-medium transition-all active:scale-95 ${
                         active
                           ? 'bg-accent text-white'
                           : 'text-muted hover:text-ink'
@@ -146,9 +187,8 @@ export default function PokemonDetail() {
                   )
                 })}
               </div>
-            )}
-            <ShinyToggle checked={shiny} onChange={setShiny} />
-          </div>
+            </div>
+          )}
         </div>
 
         <div>
@@ -178,6 +218,21 @@ export default function PokemonDetail() {
             </p>
           )}
 
+          {(info?.behavior || info?.distortionOnly) && (
+            <div className="mt-4 flex flex-wrap gap-2">
+              {info?.behavior && (
+                <span className="inline-flex items-center gap-1.5 rounded-full border border-line bg-surface px-3 py-1 text-xs">
+                  {t(`behavior.${info.behavior}` as StringKey)}
+                </span>
+              )}
+              {info?.distortionOnly && (
+                <span className="inline-flex items-center gap-1.5 rounded-full border border-accent/40 bg-accent/5 px-3 py-1 text-xs font-medium text-accent">
+                  ✦ {t('distortion.only')}
+                </span>
+              )}
+            </div>
+          )}
+
           <dl className="mt-6 flex gap-8 text-sm">
             <div>
               <dt className="text-muted">{t('detail.height')}</dt>
@@ -192,6 +247,29 @@ export default function PokemonDetail() {
               </dd>
             </div>
           </dl>
+
+          {info?.evolveMethod && (
+            <section className="mt-8">
+              <h2 className="text-sm font-semibold uppercase tracking-wide text-muted">
+                {t('evolution.title')}
+              </h2>
+              <p className="mt-2 text-sm">
+                {evolvesFromEntry ? (
+                  <>
+                    <Link
+                      to={`/pokedex/${evolvesFromEntry.name}`}
+                      className="font-medium text-accent hover:underline"
+                    >
+                      {evolvesFromEntry.displayName}
+                    </Link>{' '}
+                    → <span className="text-muted">{info.evolveMethod[lang]}</span>
+                  </>
+                ) : (
+                  <span className="text-muted">{info.evolveMethod[lang]}</span>
+                )}
+              </p>
+            </section>
+          )}
 
           <section className="mt-8">
             <h2 className="text-sm font-semibold uppercase tracking-wide text-muted">
@@ -216,16 +294,29 @@ export default function PokemonDetail() {
 
           <section className="mt-8">
             <h2 className="text-sm font-semibold uppercase tracking-wide text-muted">
+              {t('matchup.title')}
+            </h2>
+            <div className="mt-3 space-y-3">
+              {matchupRow('matchup.weak', matchups.weak, true)}
+              {matchupRow('matchup.resist', matchups.resist, true)}
+              {matchupRow('matchup.immune', matchups.immune, false)}
+            </div>
+          </section>
+
+          <section className="mt-8">
+            <h2 className="text-sm font-semibold uppercase tracking-wide text-muted">
               {t('detail.locations')}
             </h2>
             {areas.length > 0 ? (
               <ul className="mt-2 flex flex-wrap gap-2">
                 {areas.map((id) => (
-                  <li
-                    key={id}
-                    className="rounded-full border border-line bg-surface px-3 py-1 text-xs"
-                  >
-                    {AREA_NAMES[lang][id]}
+                  <li key={id}>
+                    <Link
+                      to={`/tinuturi?zona=${id}`}
+                      className="inline-block rounded-full border border-line bg-surface px-3 py-1 text-xs transition-colors hover:border-accent hover:text-accent"
+                    >
+                      {AREA_NAMES[lang][id]}
+                    </Link>
                   </li>
                 ))}
               </ul>

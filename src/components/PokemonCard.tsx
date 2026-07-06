@@ -20,9 +20,13 @@ export default function PokemonCard({ pokemon, shiny }: Props) {
   return (
     <Link
       to={`/pokedex/${pokemon.name}`}
-      className="group animate-fade-in rounded-xl border border-line bg-surface p-4 transition-[transform,box-shadow] hover:-translate-y-0.5 hover:shadow-sm"
+      className="group animate-fade-in rounded-xl border border-line bg-surface p-4 transition-all duration-200 hover:-translate-y-1 hover:border-accent/30 hover:shadow-lift"
     >
-      <SpriteImage src={src} alt={alt} className="aspect-square w-full" />
+      <SpriteImage
+        src={src}
+        alt={alt}
+        className="aspect-square w-full [&_img]:transition-transform [&_img]:duration-300 group-hover:[&_img]:scale-110"
+      />
       <p className="mt-3 text-[11px] tabular-nums text-muted">
         {formatDexNumber(pokemon.dexNumber)}
       </p>

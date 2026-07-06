@@ -22,7 +22,7 @@ export default function StatBar({ label, value }: Props) {
         className="h-1.5 min-w-0 flex-1 overflow-hidden rounded-full bg-line"
       >
         <div
-          className="h-full rounded-full bg-accent"
+          className="h-full origin-left animate-grow-x rounded-full bg-accent"
           style={{ width: `${width}%` }}
         />
       </div>
