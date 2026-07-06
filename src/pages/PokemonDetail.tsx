@@ -163,30 +163,45 @@ export default function PokemonDetail() {
           </div>
           {forms && forms.length > 1 && (
             <div className="mt-3 flex justify-center">
-              <div
-                role="group"
-                aria-label={t('form.label')}
-                className="inline-flex flex-wrap items-center justify-center rounded-full border border-line bg-surface p-0.5"
-              >
-                {forms.map((f, i) => {
-                  const active = i === Math.min(formIdx, forms.length - 1)
-                  return (
-                    <button
-                      key={f.key}
-                      type="button"
-                      aria-pressed={active}
-                      onClick={() => setFormIdx(i)}
-                      className={`rounded-full px-3 py-1 text-xs font-medium transition-all active:scale-95 ${
-                        active
-                          ? 'bg-accent text-white'
-                          : 'text-muted hover:text-ink'
-                      }`}
-                    >
+              {forms.length > 8 ? (
+                <select
+                  aria-label={t('form.label')}
+                  value={Math.min(formIdx, forms.length - 1)}
+                  onChange={(e) => setFormIdx(Number(e.target.value))}
+                  className="rounded-lg border border-line bg-surface px-3 py-1.5 text-sm focus:border-accent focus:outline-none"
+                >
+                  {forms.map((f, i) => (
+                    <option key={f.key} value={i}>
                       {f.label[lang]}
-                    </button>
-                  )
-                })}
-              </div>
+                    </option>
+                  ))}
+                </select>
+              ) : (
+                <div
+                  role="group"
+                  aria-label={t('form.label')}
+                  className="inline-flex flex-wrap items-center justify-center rounded-full border border-line bg-surface p-0.5"
+                >
+                  {forms.map((f, i) => {
+                    const active = i === Math.min(formIdx, forms.length - 1)
+                    return (
+                      <button
+                        key={f.key}
+                        type="button"
+                        aria-pressed={active}
+                        onClick={() => setFormIdx(i)}
+                        className={`rounded-full px-3 py-1 text-xs font-medium transition-all active:scale-95 ${
+                          active
+                            ? 'bg-accent text-white'
+                            : 'text-muted hover:text-ink'
+                        }`}
+                      >
+                        {f.label[lang]}
+                      </button>
+                    )
+                  })}
+                </div>
+              )}
             </div>
           )}
         </div>

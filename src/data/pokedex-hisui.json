@@ -2665,67 +2665,7 @@
       "artwork": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/other/official-artwork/415.png",
       "artworkShiny": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/other/official-artwork/shiny/415.png"
     },
-    "locations": [],
-    "forms": [
-      {
-        "key": "male",
-        "label": {
-          "ro": "Mascul",
-          "en": "Male"
-        },
-        "id": 415,
-        "name": "combee",
-        "types": [
-          "bug",
-          "flying"
-        ],
-        "stats": {
-          "hp": 30,
-          "attack": 30,
-          "defense": 42,
-          "specialAttack": 30,
-          "specialDefense": 42,
-          "speed": 70
-        },
-        "height": 3,
-        "weight": 55,
-        "sprites": {
-          "normal": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/415.png",
-          "shiny": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/shiny/415.png",
-          "artwork": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/other/official-artwork/415.png",
-          "artworkShiny": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/other/official-artwork/shiny/415.png"
-        }
-      },
-      {
-        "key": "female",
-        "label": {
-          "ro": "Femelă",
-          "en": "Female"
-        },
-        "id": 415,
-        "name": "combee",
-        "types": [
-          "bug",
-          "flying"
-        ],
-        "stats": {
-          "hp": 30,
-          "attack": 30,
-          "defense": 42,
-          "specialAttack": 30,
-          "specialDefense": 42,
-          "speed": 70
-        },
-        "height": 3,
-        "weight": 55,
-        "sprites": {
-          "normal": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/other/home/female/415.png",
-          "shiny": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/other/home/shiny/female/415.png",
-          "artwork": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/other/home/female/415.png",
-          "artworkShiny": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/other/home/shiny/female/415.png"
-        }
-      }
-    ]
+    "locations": []
   },
   {
     "dexNumber": 71,
@@ -3965,65 +3905,7 @@
       "artwork": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/other/official-artwork/449.png",
       "artworkShiny": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/other/official-artwork/shiny/449.png"
     },
-    "locations": [],
-    "forms": [
-      {
-        "key": "male",
-        "label": {
-          "ro": "Mascul",
-          "en": "Male"
-        },
-        "id": 449,
-        "name": "hippopotas",
-        "types": [
-          "ground"
-        ],
-        "stats": {
-          "hp": 68,
-          "attack": 72,
-          "defense": 78,
-          "specialAttack": 38,
-          "specialDefense": 42,
-          "speed": 32
-        },
-        "height": 8,
-        "weight": 495,
-        "sprites": {
-          "normal": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/449.png",
-          "shiny": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/shiny/449.png",
-          "artwork": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/other/official-artwork/449.png",
-          "artworkShiny": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/other/official-artwork/shiny/449.png"
-        }
-      },
-      {
-        "key": "female",
-        "label": {
-          "ro": "Femelă",
-          "en": "Female"
-        },
-        "id": 449,
-        "name": "hippopotas",
-        "types": [
-          "ground"
-        ],
-        "stats": {
-          "hp": 68,
-          "attack": 72,
-          "defense": 78,
-          "specialAttack": 38,
-          "specialDefense": 42,
-          "speed": 32
-        },
-        "height": 8,
-        "weight": 495,
-        "sprites": {
-          "normal": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/other/home/female/449.png",
-          "shiny": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/other/home/shiny/female/449.png",
-          "artwork": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/other/home/female/449.png",
-          "artworkShiny": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/other/home/shiny/female/449.png"
-        }
-      }
-    ]
+    "locations": []
   },
   {
     "dexNumber": 108,
@@ -4051,65 +3933,7 @@
       "artwork": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/other/official-artwork/450.png",
       "artworkShiny": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/other/official-artwork/shiny/450.png"
     },
-    "locations": [],
-    "forms": [
-      {
-        "key": "male",
-        "label": {
-          "ro": "Mascul",
-          "en": "Male"
-        },
-        "id": 450,
-        "name": "hippowdon",
-        "types": [
-          "ground"
-        ],
-        "stats": {
-          "hp": 108,
-          "attack": 112,
-          "defense": 118,
-          "specialAttack": 68,
-          "specialDefense": 72,
-          "speed": 47
-        },
-        "height": 20,
-        "weight": 3000,
-        "sprites": {
-          "normal": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/450.png",
-          "shiny": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/shiny/450.png",
-          "artwork": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/other/official-artwork/450.png",
-          "artworkShiny": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/other/official-artwork/shiny/450.png"
-        }
-      },
-      {
-        "key": "female",
-        "label": {
-          "ro": "Femelă",
-          "en": "Female"
-        },
-        "id": 450,
-        "name": "hippowdon",
-        "types": [
-          "ground"
-        ],
-        "stats": {
-          "hp": 108,
-          "attack": 112,
-          "defense": 118,
-          "specialAttack": 68,
-          "specialDefense": 72,
-          "speed": 47
-        },
-        "height": 20,
-        "weight": 3000,
-        "sprites": {
-          "normal": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/other/home/female/450.png",
-          "shiny": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/other/home/shiny/female/450.png",
-          "artwork": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/other/home/female/450.png",
-          "artworkShiny": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/other/home/shiny/female/450.png"
-        }
-      }
-    ]
+    "locations": []
   },
   {
     "dexNumber": 109,
@@ -5258,7 +5082,793 @@
       "artwork": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/other/official-artwork/201.png",
       "artworkShiny": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/other/official-artwork/shiny/201.png"
     },
-    "locations": []
+    "locations": [],
+    "forms": [
+      {
+        "key": "a",
+        "label": {
+          "ro": "A",
+          "en": "A"
+        },
+        "id": 201,
+        "name": "unown",
+        "types": [
+          "psychic"
+        ],
+        "stats": {
+          "hp": 48,
+          "attack": 72,
+          "defense": 48,
+          "specialAttack": 72,
+          "specialDefense": 48,
+          "speed": 48
+        },
+        "height": 5,
+        "weight": 50,
+        "sprites": {
+          "normal": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/other/home/201-a.png",
+          "shiny": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/other/home/shiny/201-a.png",
+          "artwork": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/other/home/201-a.png",
+          "artworkShiny": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/other/home/shiny/201-a.png"
+        }
+      },
+      {
+        "key": "b",
+        "label": {
+          "ro": "B",
+          "en": "B"
+        },
+        "id": 201,
+        "name": "unown",
+        "types": [
+          "psychic"
+        ],
+        "stats": {
+          "hp": 48,
+          "attack": 72,
+          "defense": 48,
+          "specialAttack": 72,
+          "specialDefense": 48,
+          "speed": 48
+        },
+        "height": 5,
+        "weight": 50,
+        "sprites": {
+          "normal": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/other/home/201-b.png",
+          "shiny": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/other/home/shiny/201-b.png",
+          "artwork": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/other/home/201-b.png",
+          "artworkShiny": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/other/home/shiny/201-b.png"
+        }
+      },
+      {
+        "key": "c",
+        "label": {
+          "ro": "C",
+          "en": "C"
+        },
+        "id": 201,
+        "name": "unown",
+        "types": [
+          "psychic"
+        ],
+        "stats": {
+          "hp": 48,
+          "attack": 72,
+          "defense": 48,
+          "specialAttack": 72,
+          "specialDefense": 48,
+          "speed": 48
+        },
+        "height": 5,
+        "weight": 50,
+        "sprites": {
+          "normal": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/other/home/201-c.png",
+          "shiny": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/other/home/shiny/201-c.png",
+          "artwork": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/other/home/201-c.png",
+          "artworkShiny": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/other/home/shiny/201-c.png"
+        }
+      },
+      {
+        "key": "d",
+        "label": {
+          "ro": "D",
+          "en": "D"
+        },
+        "id": 201,
+        "name": "unown",
+        "types": [
+          "psychic"
+        ],
+        "stats": {
+          "hp": 48,
+          "attack": 72,
+          "defense": 48,
+          "specialAttack": 72,
+          "specialDefense": 48,
+          "speed": 48
+        },
+        "height": 5,
+        "weight": 50,
+        "sprites": {
+          "normal": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/other/home/201-d.png",
+          "shiny": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/other/home/shiny/201-d.png",
+          "artwork": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/other/home/201-d.png",
+          "artworkShiny": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/other/home/shiny/201-d.png"
+        }
+      },
+      {
+        "key": "e",
+        "label": {
+          "ro": "E",
+          "en": "E"
+        },
+        "id": 201,
+        "name": "unown",
+        "types": [
+          "psychic"
+        ],
+        "stats": {
+          "hp": 48,
+          "attack": 72,
+          "defense": 48,
+          "specialAttack": 72,
+          "specialDefense": 48,
+          "speed": 48
+        },
+        "height": 5,
+        "weight": 50,
+        "sprites": {
+          "normal": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/other/home/201-e.png",
+          "shiny": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/other/home/shiny/201-e.png",
+          "artwork": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/other/home/201-e.png",
+          "artworkShiny": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/other/home/shiny/201-e.png"
+        }
+      },
+      {
+        "key": "f",
+        "label": {
+          "ro": "F",
+          "en": "F"
+        },
+        "id": 201,
+        "name": "unown",
+        "types": [
+          "psychic"
+        ],
+        "stats": {
+          "hp": 48,
+          "attack": 72,
+          "defense": 48,
+          "specialAttack": 72,
+          "specialDefense": 48,
+          "speed": 48
+        },
+        "height": 5,
+        "weight": 50,
+        "sprites": {
+          "normal": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/other/home/201-f.png",
+          "shiny": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/other/home/shiny/201-f.png",
+          "artwork": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/other/home/201-f.png",
+          "artworkShiny": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/other/home/shiny/201-f.png"
+        }
+      },
+      {
+        "key": "g",
+        "label": {
+          "ro": "G",
+          "en": "G"
+        },
+        "id": 201,
+        "name": "unown",
+        "types": [
+          "psychic"
+        ],
+        "stats": {
+          "hp": 48,
+          "attack": 72,
+          "defense": 48,
+          "specialAttack": 72,
+          "specialDefense": 48,
+          "speed": 48
+        },
+        "height": 5,
+        "weight": 50,
+        "sprites": {
+          "normal": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/other/home/201-g.png",
+          "shiny": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/other/home/shiny/201-g.png",
+          "artwork": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/other/home/201-g.png",
+          "artworkShiny": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/other/home/shiny/201-g.png"
+        }
+      },
+      {
+        "key": "h",
+        "label": {
+          "ro": "H",
+          "en": "H"
+        },
+        "id": 201,
+        "name": "unown",
+        "types": [
+          "psychic"
+        ],
+        "stats": {
+          "hp": 48,
+          "attack": 72,
+          "defense": 48,
+          "specialAttack": 72,
+          "specialDefense": 48,
+          "speed": 48
+        },
+        "height": 5,
+        "weight": 50,
+        "sprites": {
+          "normal": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/other/home/201-h.png",
+          "shiny": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/other/home/shiny/201-h.png",
+          "artwork": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/other/home/201-h.png",
+          "artworkShiny": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/other/home/shiny/201-h.png"
+        }
+      },
+      {
+        "key": "i",
+        "label": {
+          "ro": "I",
+          "en": "I"
+        },
+        "id": 201,
+        "name": "unown",
+        "types": [
+          "psychic"
+        ],
+        "stats": {
+          "hp": 48,
+          "attack": 72,
+          "defense": 48,
+          "specialAttack": 72,
+          "specialDefense": 48,
+          "speed": 48
+        },
+        "height": 5,
+        "weight": 50,
+        "sprites": {
+          "normal": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/other/home/201-i.png",
+          "shiny": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/other/home/shiny/201-i.png",
+          "artwork": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/other/home/201-i.png",
+          "artworkShiny": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/other/home/shiny/201-i.png"
+        }
+      },
+      {
+        "key": "j",
+        "label": {
+          "ro": "J",
+          "en": "J"
+        },
+        "id": 201,
+        "name": "unown",
+        "types": [
+          "psychic"
+        ],
+        "stats": {
+          "hp": 48,
+          "attack": 72,
+          "defense": 48,
+          "specialAttack": 72,
+          "specialDefense": 48,
+          "speed": 48
+        },
+        "height": 5,
+        "weight": 50,
+        "sprites": {
+          "normal": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/other/home/201-j.png",
+          "shiny": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/other/home/shiny/201-j.png",
+          "artwork": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/other/home/201-j.png",
+          "artworkShiny": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/other/home/shiny/201-j.png"
+        }
+      },
+      {
+        "key": "k",
+        "label": {
+          "ro": "K",
+          "en": "K"
+        },
+        "id": 201,
+        "name": "unown",
+        "types": [
+          "psychic"
+        ],
+        "stats": {
+          "hp": 48,
+          "attack": 72,
+          "defense": 48,
+          "specialAttack": 72,
+          "specialDefense": 48,
+          "speed": 48
+        },
+        "height": 5,
+        "weight": 50,
+        "sprites": {
+          "normal": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/other/home/201-k.png",
+          "shiny": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/other/home/shiny/201-k.png",
+          "artwork": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/other/home/201-k.png",
+          "artworkShiny": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/other/home/shiny/201-k.png"
+        }
+      },
+      {
+        "key": "l",
+        "label": {
+          "ro": "L",
+          "en": "L"
+        },
+        "id": 201,
+        "name": "unown",
+        "types": [
+          "psychic"
+        ],
+        "stats": {
+          "hp": 48,
+          "attack": 72,
+          "defense": 48,
+          "specialAttack": 72,
+          "specialDefense": 48,
+          "speed": 48
+        },
+        "height": 5,
+        "weight": 50,
+        "sprites": {
+          "normal": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/other/home/201-l.png",
+          "shiny": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/other/home/shiny/201-l.png",
+          "artwork": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/other/home/201-l.png",
+          "artworkShiny": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/other/home/shiny/201-l.png"
+        }
+      },
+      {
+        "key": "m",
+        "label": {
+          "ro": "M",
+          "en": "M"
+        },
+        "id": 201,
+        "name": "unown",
+        "types": [
+          "psychic"
+        ],
+        "stats": {
+          "hp": 48,
+          "attack": 72,
+          "defense": 48,
+          "specialAttack": 72,
+          "specialDefense": 48,
+          "speed": 48
+        },
+        "height": 5,
+        "weight": 50,
+        "sprites": {
+          "normal": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/other/home/201-m.png",
+          "shiny": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/other/home/shiny/201-m.png",
+          "artwork": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/other/home/201-m.png",
+          "artworkShiny": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/other/home/shiny/201-m.png"
+        }
+      },
+      {
+        "key": "n",
+        "label": {
+          "ro": "N",
+          "en": "N"
+        },
+        "id": 201,
+        "name": "unown",
+        "types": [
+          "psychic"
+        ],
+        "stats": {
+          "hp": 48,
+          "attack": 72,
+          "defense": 48,
+          "specialAttack": 72,
+          "specialDefense": 48,
+          "speed": 48
+        },
+        "height": 5,
+        "weight": 50,
+        "sprites": {
+          "normal": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/other/home/201-n.png",
+          "shiny": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/other/home/shiny/201-n.png",
+          "artwork": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/other/home/201-n.png",
+          "artworkShiny": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/other/home/shiny/201-n.png"
+        }
+      },
+      {
+        "key": "o",
+        "label": {
+          "ro": "O",
+          "en": "O"
+        },
+        "id": 201,
+        "name": "unown",
+        "types": [
+          "psychic"
+        ],
+        "stats": {
+          "hp": 48,
+          "attack": 72,
+          "defense": 48,
+          "specialAttack": 72,
+          "specialDefense": 48,
+          "speed": 48
+        },
+        "height": 5,
+        "weight": 50,
+        "sprites": {
+          "normal": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/other/home/201-o.png",
+          "shiny": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/other/home/shiny/201-o.png",
+          "artwork": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/other/home/201-o.png",
+          "artworkShiny": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/other/home/shiny/201-o.png"
+        }
+      },
+      {
+        "key": "p",
+        "label": {
+          "ro": "P",
+          "en": "P"
+        },
+        "id": 201,
+        "name": "unown",
+        "types": [
+          "psychic"
+        ],
+        "stats": {
+          "hp": 48,
+          "attack": 72,
+          "defense": 48,
+          "specialAttack": 72,
+          "specialDefense": 48,
+          "speed": 48
+        },
+        "height": 5,
+        "weight": 50,
+        "sprites": {
+          "normal": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/other/home/201-p.png",
+          "shiny": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/other/home/shiny/201-p.png",
+          "artwork": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/other/home/201-p.png",
+          "artworkShiny": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/other/home/shiny/201-p.png"
+        }
+      },
+      {
+        "key": "q",
+        "label": {
+          "ro": "Q",
+          "en": "Q"
+        },
+        "id": 201,
+        "name": "unown",
+        "types": [
+          "psychic"
+        ],
+        "stats": {
+          "hp": 48,
+          "attack": 72,
+          "defense": 48,
+          "specialAttack": 72,
+          "specialDefense": 48,
+          "speed": 48
+        },
+        "height": 5,
+        "weight": 50,
+        "sprites": {
+          "normal": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/other/home/201-q.png",
+          "shiny": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/other/home/shiny/201-q.png",
+          "artwork": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/other/home/201-q.png",
+          "artworkShiny": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/other/home/shiny/201-q.png"
+        }
+      },
+      {
+        "key": "r",
+        "label": {
+          "ro": "R",
+          "en": "R"
+        },
+        "id": 201,
+        "name": "unown",
+        "types": [
+          "psychic"
+        ],
+        "stats": {
+          "hp": 48,
+          "attack": 72,
+          "defense": 48,
+          "specialAttack": 72,
+          "specialDefense": 48,
+          "speed": 48
+        },
+        "height": 5,
+        "weight": 50,
+        "sprites": {
+          "normal": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/other/home/201-r.png",
+          "shiny": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/other/home/shiny/201-r.png",
+          "artwork": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/other/home/201-r.png",
+          "artworkShiny": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/other/home/shiny/201-r.png"
+        }
+      },
+      {
+        "key": "s",
+        "label": {
+          "ro": "S",
+          "en": "S"
+        },
+        "id": 201,
+        "name": "unown",
+        "types": [
+          "psychic"
+        ],
+        "stats": {
+          "hp": 48,
+          "attack": 72,
+          "defense": 48,
+          "specialAttack": 72,
+          "specialDefense": 48,
+          "speed": 48
+        },
+        "height": 5,
+        "weight": 50,
+        "sprites": {
+          "normal": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/other/home/201-s.png",
+          "shiny": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/other/home/shiny/201-s.png",
+          "artwork": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/other/home/201-s.png",
+          "artworkShiny": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/other/home/shiny/201-s.png"
+        }
+      },
+      {
+        "key": "t",
+        "label": {
+          "ro": "T",
+          "en": "T"
+        },
+        "id": 201,
+        "name": "unown",
+        "types": [
+          "psychic"
+        ],
+        "stats": {
+          "hp": 48,
+          "attack": 72,
+          "defense": 48,
+          "specialAttack": 72,
+          "specialDefense": 48,
+          "speed": 48
+        },
+        "height": 5,
+        "weight": 50,
+        "sprites": {
+          "normal": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/other/home/201-t.png",
+          "shiny": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/other/home/shiny/201-t.png",
+          "artwork": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/other/home/201-t.png",
+          "artworkShiny": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/other/home/shiny/201-t.png"
+        }
+      },
+      {
+        "key": "u",
+        "label": {
+          "ro": "U",
+          "en": "U"
+        },
+        "id": 201,
+        "name": "unown",
+        "types": [
+          "psychic"
+        ],
+        "stats": {
+          "hp": 48,
+          "attack": 72,
+          "defense": 48,
+          "specialAttack": 72,
+          "specialDefense": 48,
+          "speed": 48
+        },
+        "height": 5,
+        "weight": 50,
+        "sprites": {
+          "normal": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/other/home/201-u.png",
+          "shiny": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/other/home/shiny/201-u.png",
+          "artwork": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/other/home/201-u.png",
+          "artworkShiny": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/other/home/shiny/201-u.png"
+        }
+      },
+      {
+        "key": "v",
+        "label": {
+          "ro": "V",
+          "en": "V"
+        },
+        "id": 201,
+        "name": "unown",
+        "types": [
+          "psychic"
+        ],
+        "stats": {
+          "hp": 48,
+          "attack": 72,
+          "defense": 48,
+          "specialAttack": 72,
+          "specialDefense": 48,
+          "speed": 48
+        },
+        "height": 5,
+        "weight": 50,
+        "sprites": {
+          "normal": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/other/home/201-v.png",
+          "shiny": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/other/home/shiny/201-v.png",
+          "artwork": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/other/home/201-v.png",
+          "artworkShiny": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/other/home/shiny/201-v.png"
+        }
+      },
+      {
+        "key": "w",
+        "label": {
+          "ro": "W",
+          "en": "W"
+        },
+        "id": 201,
+        "name": "unown",
+        "types": [
+          "psychic"
+        ],
+        "stats": {
+          "hp": 48,
+          "attack": 72,
+          "defense": 48,
+          "specialAttack": 72,
+          "specialDefense": 48,
+          "speed": 48
+        },
+        "height": 5,
+        "weight": 50,
+        "sprites": {
+          "normal": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/other/home/201-w.png",
+          "shiny": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/other/home/shiny/201-w.png",
+          "artwork": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/other/home/201-w.png",
+          "artworkShiny": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/other/home/shiny/201-w.png"
+        }
+      },
+      {
+        "key": "x",
+        "label": {
+          "ro": "X",
+          "en": "X"
+        },
+        "id": 201,
+        "name": "unown",
+        "types": [
+          "psychic"
+        ],
+        "stats": {
+          "hp": 48,
+          "attack": 72,
+          "defense": 48,
+          "specialAttack": 72,
+          "specialDefense": 48,
+          "speed": 48
+        },
+        "height": 5,
+        "weight": 50,
+        "sprites": {
+          "normal": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/other/home/201-x.png",
+          "shiny": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/other/home/shiny/201-x.png",
+          "artwork": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/other/home/201-x.png",
+          "artworkShiny": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/other/home/shiny/201-x.png"
+        }
+      },
+      {
+        "key": "y",
+        "label": {
+          "ro": "Y",
+          "en": "Y"
+        },
+        "id": 201,
+        "name": "unown",
+        "types": [
+          "psychic"
+        ],
+        "stats": {
+          "hp": 48,
+          "attack": 72,
+          "defense": 48,
+          "specialAttack": 72,
+          "specialDefense": 48,
+          "speed": 48
+        },
+        "height": 5,
+        "weight": 50,
+        "sprites": {
+          "normal": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/other/home/201-y.png",
+          "shiny": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/other/home/shiny/201-y.png",
+          "artwork": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/other/home/201-y.png",
+          "artworkShiny": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/other/home/shiny/201-y.png"
+        }
+      },
+      {
+        "key": "z",
+        "label": {
+          "ro": "Z",
+          "en": "Z"
+        },
+        "id": 201,
+        "name": "unown",
+        "types": [
+          "psychic"
+        ],
+        "stats": {
+          "hp": 48,
+          "attack": 72,
+          "defense": 48,
+          "specialAttack": 72,
+          "specialDefense": 48,
+          "speed": 48
+        },
+        "height": 5,
+        "weight": 50,
+        "sprites": {
+          "normal": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/other/home/201-z.png",
+          "shiny": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/other/home/shiny/201-z.png",
+          "artwork": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/other/home/201-z.png",
+          "artworkShiny": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/other/home/shiny/201-z.png"
+        }
+      },
+      {
+        "key": "exclamation",
+        "label": {
+          "ro": "!",
+          "en": "!"
+        },
+        "id": 201,
+        "name": "unown",
+        "types": [
+          "psychic"
+        ],
+        "stats": {
+          "hp": 48,
+          "attack": 72,
+          "defense": 48,
+          "specialAttack": 72,
+          "specialDefense": 48,
+          "speed": 48
+        },
+        "height": 5,
+        "weight": 50,
+        "sprites": {
+          "normal": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/other/home/201-exclamation.png",
+          "shiny": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/other/home/shiny/201-exclamation.png",
+          "artwork": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/other/home/201-exclamation.png",
+          "artworkShiny": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/other/home/shiny/201-exclamation.png"
+        }
+      },
+      {
+        "key": "question",
+        "label": {
+          "ro": "?",
+          "en": "?"
+        },
+        "id": 201,
+        "name": "unown",
+        "types": [
+          "psychic"
+        ],
+        "stats": {
+          "hp": 48,
+          "attack": 72,
+          "defense": 48,
+          "specialAttack": 72,
+          "specialDefense": 48,
+          "speed": 48
+        },
+        "height": 5,
+        "weight": 50,
+        "sprites": {
+          "normal": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/other/home/201-question.png",
+          "shiny": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/other/home/shiny/201-question.png",
+          "artwork": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/other/home/201-question.png",
+          "artworkShiny": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/other/home/shiny/201-question.png"
+        }
+      }
+    ]
   },
   {
     "dexNumber": 143,
@@ -9388,7 +9998,513 @@
       "artwork": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/other/official-artwork/493.png",
       "artworkShiny": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/other/official-artwork/shiny/493.png"
     },
-    "locations": []
+    "locations": [],
+    "forms": [
+      {
+        "key": "normal",
+        "label": {
+          "ro": "Normal",
+          "en": "Normal"
+        },
+        "id": 493,
+        "name": "arceus",
+        "types": [
+          "normal"
+        ],
+        "stats": {
+          "hp": 120,
+          "attack": 120,
+          "defense": 120,
+          "specialAttack": 120,
+          "specialDefense": 120,
+          "speed": 120
+        },
+        "height": 32,
+        "weight": 3200,
+        "sprites": {
+          "normal": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/493.png",
+          "shiny": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/shiny/493.png",
+          "artwork": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/other/official-artwork/493.png",
+          "artworkShiny": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/other/official-artwork/shiny/493.png"
+        }
+      },
+      {
+        "key": "fighting",
+        "label": {
+          "ro": "Fighting",
+          "en": "Fighting"
+        },
+        "id": 493,
+        "name": "arceus",
+        "types": [
+          "fighting"
+        ],
+        "stats": {
+          "hp": 120,
+          "attack": 120,
+          "defense": 120,
+          "specialAttack": 120,
+          "specialDefense": 120,
+          "speed": 120
+        },
+        "height": 32,
+        "weight": 3200,
+        "sprites": {
+          "normal": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/493.png",
+          "shiny": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/shiny/493.png",
+          "artwork": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/other/official-artwork/493.png",
+          "artworkShiny": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/other/official-artwork/shiny/493.png"
+        }
+      },
+      {
+        "key": "flying",
+        "label": {
+          "ro": "Flying",
+          "en": "Flying"
+        },
+        "id": 493,
+        "name": "arceus",
+        "types": [
+          "flying"
+        ],
+        "stats": {
+          "hp": 120,
+          "attack": 120,
+          "defense": 120,
+          "specialAttack": 120,
+          "specialDefense": 120,
+          "speed": 120
+        },
+        "height": 32,
+        "weight": 3200,
+        "sprites": {
+          "normal": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/493.png",
+          "shiny": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/shiny/493.png",
+          "artwork": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/other/official-artwork/493.png",
+          "artworkShiny": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/other/official-artwork/shiny/493.png"
+        }
+      },
+      {
+        "key": "poison",
+        "label": {
+          "ro": "Poison",
+          "en": "Poison"
+        },
+        "id": 493,
+        "name": "arceus",
+        "types": [
+          "poison"
+        ],
+        "stats": {
+          "hp": 120,
+          "attack": 120,
+          "defense": 120,
+          "specialAttack": 120,
+          "specialDefense": 120,
+          "speed": 120
+        },
+        "height": 32,
+        "weight": 3200,
+        "sprites": {
+          "normal": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/493.png",
+          "shiny": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/shiny/493.png",
+          "artwork": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/other/official-artwork/493.png",
+          "artworkShiny": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/other/official-artwork/shiny/493.png"
+        }
+      },
+      {
+        "key": "ground",
+        "label": {
+          "ro": "Ground",
+          "en": "Ground"
+        },
+        "id": 493,
+        "name": "arceus",
+        "types": [
+          "ground"
+        ],
+        "stats": {
+          "hp": 120,
+          "attack": 120,
+          "defense": 120,
+          "specialAttack": 120,
+          "specialDefense": 120,
+          "speed": 120
+        },
+        "height": 32,
+        "weight": 3200,
+        "sprites": {
+          "normal": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/493.png",
+          "shiny": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/shiny/493.png",
+          "artwork": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/other/official-artwork/493.png",
+          "artworkShiny": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/other/official-artwork/shiny/493.png"
+        }
+      },
+      {
+        "key": "rock",
+        "label": {
+          "ro": "Rock",
+          "en": "Rock"
+        },
+        "id": 493,
+        "name": "arceus",
+        "types": [
+          "rock"
+        ],
+        "stats": {
+          "hp": 120,
+          "attack": 120,
+          "defense": 120,
+          "specialAttack": 120,
+          "specialDefense": 120,
+          "speed": 120
+        },
+        "height": 32,
+        "weight": 3200,
+        "sprites": {
+          "normal": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/493.png",
+          "shiny": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/shiny/493.png",
+          "artwork": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/other/official-artwork/493.png",
+          "artworkShiny": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/other/official-artwork/shiny/493.png"
+        }
+      },
+      {
+        "key": "bug",
+        "label": {
+          "ro": "Bug",
+          "en": "Bug"
+        },
+        "id": 493,
+        "name": "arceus",
+        "types": [
+          "bug"
+        ],
+        "stats": {
+          "hp": 120,
+          "attack": 120,
+          "defense": 120,
+          "specialAttack": 120,
+          "specialDefense": 120,
+          "speed": 120
+        },
+        "height": 32,
+        "weight": 3200,
+        "sprites": {
+          "normal": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/493.png",
+          "shiny": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/shiny/493.png",
+          "artwork": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/other/official-artwork/493.png",
+          "artworkShiny": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/other/official-artwork/shiny/493.png"
+        }
+      },
+      {
+        "key": "ghost",
+        "label": {
+          "ro": "Ghost",
+          "en": "Ghost"
+        },
+        "id": 493,
+        "name": "arceus",
+        "types": [
+          "ghost"
+        ],
+        "stats": {
+          "hp": 120,
+          "attack": 120,
+          "defense": 120,
+          "specialAttack": 120,
+          "specialDefense": 120,
+          "speed": 120
+        },
+        "height": 32,
+        "weight": 3200,
+        "sprites": {
+          "normal": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/493.png",
+          "shiny": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/shiny/493.png",
+          "artwork": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/other/official-artwork/493.png",
+          "artworkShiny": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/other/official-artwork/shiny/493.png"
+        }
+      },
+      {
+        "key": "steel",
+        "label": {
+          "ro": "Steel",
+          "en": "Steel"
+        },
+        "id": 493,
+        "name": "arceus",
+        "types": [
+          "steel"
+        ],
+        "stats": {
+          "hp": 120,
+          "attack": 120,
+          "defense": 120,
+          "specialAttack": 120,
+          "specialDefense": 120,
+          "speed": 120
+        },
+        "height": 32,
+        "weight": 3200,
+        "sprites": {
+          "normal": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/493.png",
+          "shiny": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/shiny/493.png",
+          "artwork": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/other/official-artwork/493.png",
+          "artworkShiny": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/other/official-artwork/shiny/493.png"
+        }
+      },
+      {
+        "key": "fire",
+        "label": {
+          "ro": "Fire",
+          "en": "Fire"
+        },
+        "id": 493,
+        "name": "arceus",
+        "types": [
+          "fire"
+        ],
+        "stats": {
+          "hp": 120,
+          "attack": 120,
+          "defense": 120,
+          "specialAttack": 120,
+          "specialDefense": 120,
+          "speed": 120
+        },
+        "height": 32,
+        "weight": 3200,
+        "sprites": {
+          "normal": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/493.png",
+          "shiny": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/shiny/493.png",
+          "artwork": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/other/official-artwork/493.png",
+          "artworkShiny": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/other/official-artwork/shiny/493.png"
+        }
+      },
+      {
+        "key": "water",
+        "label": {
+          "ro": "Water",
+          "en": "Water"
+        },
+        "id": 493,
+        "name": "arceus",
+        "types": [
+          "water"
+        ],
+        "stats": {
+          "hp": 120,
+          "attack": 120,
+          "defense": 120,
+          "specialAttack": 120,
+          "specialDefense": 120,
+          "speed": 120
+        },
+        "height": 32,
+        "weight": 3200,
+        "sprites": {
+          "normal": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/493.png",
+          "shiny": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/shiny/493.png",
+          "artwork": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/other/official-artwork/493.png",
+          "artworkShiny": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/other/official-artwork/shiny/493.png"
+        }
+      },
+      {
+        "key": "grass",
+        "label": {
+          "ro": "Grass",
+          "en": "Grass"
+        },
+        "id": 493,
+        "name": "arceus",
+        "types": [
+          "grass"
+        ],
+        "stats": {
+          "hp": 120,
+          "attack": 120,
+          "defense": 120,
+          "specialAttack": 120,
+          "specialDefense": 120,
+          "speed": 120
+        },
+        "height": 32,
+        "weight": 3200,
+        "sprites": {
+          "normal": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/493.png",
+          "shiny": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/shiny/493.png",
+          "artwork": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/other/official-artwork/493.png",
+          "artworkShiny": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/other/official-artwork/shiny/493.png"
+        }
+      },
+      {
+        "key": "electric",
+        "label": {
+          "ro": "Electric",
+          "en": "Electric"
+        },
+        "id": 493,
+        "name": "arceus",
+        "types": [
+          "electric"
+        ],
+        "stats": {
+          "hp": 120,
+          "attack": 120,
+          "defense": 120,
+          "specialAttack": 120,
+          "specialDefense": 120,
+          "speed": 120
+        },
+        "height": 32,
+        "weight": 3200,
+        "sprites": {
+          "normal": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/493.png",
+          "shiny": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/shiny/493.png",
+          "artwork": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/other/official-artwork/493.png",
+          "artworkShiny": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/other/official-artwork/shiny/493.png"
+        }
+      },
+      {
+        "key": "psychic",
+        "label": {
+          "ro": "Psychic",
+          "en": "Psychic"
+        },
+        "id": 493,
+        "name": "arceus",
+        "types": [
+          "psychic"
+        ],
+        "stats": {
+          "hp": 120,
+          "attack": 120,
+          "defense": 120,
+          "specialAttack": 120,
+          "specialDefense": 120,
+          "speed": 120
+        },
+        "height": 32,
+        "weight": 3200,
+        "sprites": {
+          "normal": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/493.png",
+          "shiny": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/shiny/493.png",
+          "artwork": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/other/official-artwork/493.png",
+          "artworkShiny": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/other/official-artwork/shiny/493.png"
+        }
+      },
+      {
+        "key": "ice",
+        "label": {
+          "ro": "Ice",
+          "en": "Ice"
+        },
+        "id": 493,
+        "name": "arceus",
+        "types": [
+          "ice"
+        ],
+        "stats": {
+          "hp": 120,
+          "attack": 120,
+          "defense": 120,
+          "specialAttack": 120,
+          "specialDefense": 120,
+          "speed": 120
+        },
+        "height": 32,
+        "weight": 3200,
+        "sprites": {
+          "normal": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/493.png",
+          "shiny": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/shiny/493.png",
+          "artwork": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/other/official-artwork/493.png",
+          "artworkShiny": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/other/official-artwork/shiny/493.png"
+        }
+      },
+      {
+        "key": "dragon",
+        "label": {
+          "ro": "Dragon",
+          "en": "Dragon"
+        },
+        "id": 493,
+        "name": "arceus",
+        "types": [
+          "dragon"
+        ],
+        "stats": {
+          "hp": 120,
+          "attack": 120,
+          "defense": 120,
+          "specialAttack": 120,
+          "specialDefense": 120,
+          "speed": 120
+        },
+        "height": 32,
+        "weight": 3200,
+        "sprites": {
+          "normal": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/493.png",
+          "shiny": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/shiny/493.png",
+          "artwork": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/other/official-artwork/493.png",
+          "artworkShiny": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/other/official-artwork/shiny/493.png"
+        }
+      },
+      {
+        "key": "dark",
+        "label": {
+          "ro": "Dark",
+          "en": "Dark"
+        },
+        "id": 493,
+        "name": "arceus",
+        "types": [
+          "dark"
+        ],
+        "stats": {
+          "hp": 120,
+          "attack": 120,
+          "defense": 120,
+          "specialAttack": 120,
+          "specialDefense": 120,
+          "speed": 120
+        },
+        "height": 32,
+        "weight": 3200,
+        "sprites": {
+          "normal": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/493.png",
+          "shiny": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/shiny/493.png",
+          "artwork": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/other/official-artwork/493.png",
+          "artworkShiny": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/other/official-artwork/shiny/493.png"
+        }
+      },
+      {
+        "key": "fairy",
+        "label": {
+          "ro": "Fairy",
+          "en": "Fairy"
+        },
+        "id": 493,
+        "name": "arceus",
+        "types": [
+          "fairy"
+        ],
+        "stats": {
+          "hp": 120,
+          "attack": 120,
+          "defense": 120,
+          "specialAttack": 120,
+          "specialDefense": 120,
+          "speed": 120
+        },
+        "height": 32,
+        "weight": 3200,
+        "sprites": {
+          "normal": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/493.png",
+          "shiny": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/shiny/493.png",
+          "artwork": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/other/official-artwork/493.png",
+          "artworkShiny": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/other/official-artwork/shiny/493.png"
+        }
+      }
+    ]
   },
   {
     "dexNumber": 239,

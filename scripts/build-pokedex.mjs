@@ -245,51 +245,34 @@ function extractForm(pokemon) {
   }
 }
 
-// Specii cu diferențe de sex vizibile care merită un comutator. Majoritatea
-// speciilor marcate `has_gender_differences` au diferențe minuscule (coada lui
-// Pikachu etc.) și n-au artwork oficial femelă — le sărim ca să nu aglomerăm.
-// (Basculegion e tratat separat, prin varietăți male/female, cu artwork oficial.)
-const GENDER_DIFF_NOTABLE = new Set(['hippopotas', 'hippowdon', 'combee'])
+// NOTĂ: nu adăugăm forme mascul/femelă bazate pe sprite-uri (Combee/Hippopotas/
+// Hippowdon) — femela nu are artwork oficial, doar render HOME, care se abate de
+// la stilul restului. Basculegion păstrează male/female prin varietăți (au artwork).
 
-/**
- * Forme mascul/femelă din sprite-urile HOME (același stil pentru ambele, ca să
- * se schimbe doar aspectul de sex, nu stilul de desen). Întoarce [male, female]
- * sau null dacă nu există sprite femelă.
- */
-function genderForms(pokemon, base) {
-  const s = pokemon.sprites
-  const home = s.other?.home ?? {}
-  if (!home.front_female) return null
-  const commonMeta = {
-    id: pokemon.id,
-    name: pokemon.name,
-    // Diferențele de sex sunt cosmetice: tipuri/statistici/dimensiuni identice.
-    types: base.types,
-    stats: base.stats,
-    height: base.height,
-    weight: base.weight,
+// Arceus își schimbă tipul după placa echipată; formele arată aproape identic,
+// deci refolosim artwork-ul oficial de bază și schimbăm doar tipul + eticheta.
+const ARCEUS_TYPES = [
+  'normal', 'fighting', 'flying', 'poison', 'ground', 'rock', 'bug', 'ghost',
+  'steel', 'fire', 'water', 'grass', 'electric', 'psychic', 'ice', 'dragon',
+  'dark', 'fairy',
+]
+
+// Unown: cele 28 de forme (A–Z, ! și ?). Nu au artwork oficial per literă —
+// singura sursă sunt render-urile HOME.
+const UNOWN_FORMS = [
+  ...'abcdefghijklmnopqrstuvwxyz'.split(''),
+  'exclamation',
+  'question',
+]
+const UNOWN_SYMBOL = { exclamation: '!', question: '?' }
+
+function homeSprites(suffix) {
+  return {
+    normal: `${HOME}/201-${suffix}.png`,
+    shiny: `${HOME}/shiny/201-${suffix}.png`,
+    artwork: `${HOME}/201-${suffix}.png`,
+    artworkShiny: `${HOME}/shiny/201-${suffix}.png`,
   }
-  return [
-    {
-      key: 'male',
-      label: { ro: 'Mascul', en: 'Male' },
-      ...commonMeta,
-      // Masculul e forma principală → păstrăm official-artwork (coerent cu grila).
-      sprites: base.sprites,
-    },
-    {
-      key: 'female',
-      label: { ro: 'Femelă', en: 'Female' },
-      ...commonMeta,
-      // Nu există artwork oficial pentru femelă; folosim render-ul HOME (HD).
-      sprites: {
-        normal: home.front_female,
-        shiny: home.front_shiny_female ?? home.front_female,
-        artwork: home.front_female,
-        artworkShiny: home.front_shiny_female ?? home.front_female,
-      },
-    },
-  ]
 }
 
 async function buildEntry(entry) {
@@ -340,13 +323,41 @@ async function buildEntry(entry) {
     }
   }
 
-  // Diferențe de sex vizibile (când nu există deja o varietate de sex).
-  const hasGenderVariety = forms.some((f) => f.key === 'female' || f.key === 'male')
-  if (GENDER_DIFF_NOTABLE.has(species.name) && !hasGenderVariety) {
-    const pair = genderForms(pokemon, form)
-    if (pair) {
-      // Înlocuim forma principală cu perechea mascul/femelă (același stil HOME).
-      forms.splice(0, 1, ...pair)
+  // Arceus: 18 forme după plăci (artwork oficial de bază, tip diferit).
+  if (species.name === 'arceus') {
+    forms.length = 0
+    for (const type of ARCEUS_TYPES) {
+      const cap = type.charAt(0).toUpperCase() + type.slice(1)
+      forms.push({
+        key: type,
+        label: { ro: cap, en: cap },
+        id: form.id,
+        name: form.name,
+        types: [type],
+        stats: form.stats,
+        height: form.height,
+        weight: form.weight,
+        sprites: form.sprites,
+      })
+    }
+  }
+
+  // Unown: cele 28 de litere/simboluri (render HOME — nu există artwork oficial).
+  if (species.name === 'unown') {
+    forms.length = 0
+    for (const f of UNOWN_FORMS) {
+      const label = UNOWN_SYMBOL[f] ?? f.toUpperCase()
+      forms.push({
+        key: f,
+        label: { ro: label, en: label },
+        id: form.id,
+        name: form.name,
+        types: form.types,
+        stats: form.stats,
+        height: form.height,
+        weight: form.weight,
+        sprites: homeSprites(f),
+      })
     }
   }
 

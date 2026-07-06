@@ -246,12 +246,8 @@ export const LanguageContext = createContext<LanguageContextValue>({
 })
 
 function initialLang(): Lang {
-  // Implicit engleză la prima vizită; o alegere salvată explicit (RO) e păstrată.
-  try {
-    return localStorage.getItem(STORAGE_KEY) === 'ro' ? 'ro' : 'en'
-  } catch {
-    return 'en'
-  }
+  // Site-ul e doar în engleză.
+  return 'en'
 }
 
 export function LanguageProvider({ children }: { children: ReactNode }) {

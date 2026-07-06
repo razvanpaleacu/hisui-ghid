@@ -4,7 +4,6 @@ import { useLanguage, type StringKey } from '../lib/i18n'
 import BackToTop from './BackToTop'
 import ErrorBoundary from './ErrorBoundary'
 import FloatingShiny from './FloatingShiny'
-import LanguageSelector from './LanguageSelector'
 import PageLoading from './PageLoading'
 import ThemeToggle from './ThemeToggle'
 
@@ -70,7 +69,6 @@ export default function Layout() {
             <span className="text-sm text-muted">{t('site.tagline')}</span>
             <div className="ml-auto flex items-center gap-2">
               <ThemeToggle />
-              <LanguageSelector />
             </div>
           </div>
           <nav
